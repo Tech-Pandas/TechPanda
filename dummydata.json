@@ -1,0 +1,13 @@
+{
+    "product_id": 1,
+    "type": "phone",
+    "name": "Pixel 4",
+    "price": 899,
+    "storage": "128GB",
+    "color": "Clearly White",
+    "size": 5.7,
+    "image_1": "http://t0.gstatic.com/images?q=tbn%3AANd9GcQ8kBFQ88nYhI8akvl14IochCL5RjKl03WAMfUaJp2aMeW_v0m6_kDdqrd_ZGyclmfTuhoyYqM&usqp=CAc",
+    "image_2": "http://t0.gstatic.com/images?q=tbn%3AANd9GcQG2rEWBGjSgyqcjwH31yKvZ8My8o3by1WCXDNUM5rMrudJIt1J6cdtqIbSENGQgY8Sa-FucD0&usqp=CAc",
+    "image_3": "http://t0.gstatic.com/images?q=tbn%3AANd9GcTHNhjcoREG-LgDBGXVetieZNDrlVCnpIi9HD6FRO0yCI8uD_wuGfmzB9yQJ81it-OhfJYuOa8&usqp=CAc",
+    "ram": null
+}
