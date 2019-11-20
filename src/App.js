@@ -1,12 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Provider} from 'react-redux';
+import store from './redux/store';
+import {Route} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import './App.css';
-import TestComp from './TestComp';
+
+import HomePage from './Components/HomeProductPage/HomePage';
+
 
 function App() {
   return (
     <div className="App">
-      <TestComp />
+      <Provider store={store}>
+      <HashRouter>
+        <Route exact path='/' component={HomePage}/>
+        
+      </HashRouter>
+      </Provider>
     </div>
   );
 }
