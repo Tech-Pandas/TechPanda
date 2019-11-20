@@ -1,0 +1,43 @@
+#home-product-page-header-1 {
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+    height: 12vh;
+    width: 100%;
+    background-color: white;
+}
+
+#home-product-page-header-2 {
+    display: flex;
+    align-items: center;
+    padding-left: 2.5%;
+    height: 12vh;
+    width: 100%;
+    border-bottom: 1px rgb(230, 230, 230) solid;
+    box-shadow: -10px 15px 10px -10px rgb(225, 225, 225);
+    margin-bottom: 50px;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+
+#logo {
+    height: 60px;
+}
+
+#home-product-body {
+    height: auto;
+    margin-bottom: 100px;
+}
+
+.pixel-4-photo-1 {
+    height: 120vh;
+}
+
+.pixel-4-photo-2 {
+    height: 120vh;
+}
+
+.pixel-4-photo-3 {
+    height: 120vh;
+}
