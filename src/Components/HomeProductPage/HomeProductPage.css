@@ -1,8 +1,10 @@
+/* HEADERS */
+
 #home-product-page-header-1 {
     display: flex;
     align-items: center;
-    padding-left: 2%;
-    height: 12vh;
+    padding-left: 2.15%;
+    height: 9.3vh;
     width: 100%;
     background-color: white;
 }
@@ -10,8 +12,8 @@
 #home-product-page-header-2 {
     display: flex;
     align-items: center;
-    padding-left: 2.5%;
-    height: 12vh;
+    justify-content: space-between;
+    height: 9.3vh;
     width: 100%;
     border-bottom: 1px rgb(230, 230, 230) solid;
     box-shadow: -10px 15px 10px -10px rgb(225, 225, 225);
@@ -22,22 +24,124 @@
 }
 
 #logo {
-    height: 60px;
+    height: 35px;
 }
 
-#home-product-body {
+.product-logo {
+    margin-left: 2.5%;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(100, 100, 100);
+}
+
+.product-header-2-center-menu {
+    margin-left: 17.65%;
+}
+
+.product-header-2-menu-buttons {
+    font-size: 16px;
+    border: 0px;
+    border-radius: 15px;
+    outline: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: rgb(245, 245, 245);
+    padding: 10px;
+}
+
+.product-header-2-menu-buttons:hover {
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+}
+
+.product-header-2-right-stuff {
+    margin-right: 2.5%;
+    display: flex;
+    align-items: center;
+}
+
+.product-header-2-text {
+    margin-right: 15px;
+}
+
+.product-header-2-text-p-1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 4px;
+    font-weight: 600;
+}
+
+.product-header-2-text-p-2{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.product-header-2-buy-button {
+    color: white;
+    background-color: rgb(50, 125, 230);
+    outline: 0px;
+    border: 0px;
+    border-radius: 2px;
+    height: 7.5vh;
+    width: 18.5vh;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Gill Sans';
+}
+
+/* BODY */
+
+#home-product-heading {
+    font-size: 60px;
+    font-weight: 700;
+    color: rgb(127, 127, 127);
+}
+
+.home-product-heading-button{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    font-weight: 600;
+    font-family: 'Gill Sans';
+    color: rgb(50, 125, 230);
+    border: 2px rgb(50, 125, 230) solid;
+    border-radius: 3px;
+    outline: 0px;
+}
+
+.home-product-heading-button:hover{
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border: 2px rgb(50, 50, 50) solid;
+}
+
+#home-product-body-top-images {
     height: auto;
     margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .pixel-4-photo-1 {
     height: 120vh;
+    width: auto;
+    margin-top: 10vh;
 }
 
 .pixel-4-photo-2 {
     height: 120vh;
+    width: auto;
+
+    margin-top: 40vh;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .pixel-4-photo-3 {
     height: 120vh;
+    width: auto;
+
 }
