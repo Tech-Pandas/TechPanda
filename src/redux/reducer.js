@@ -4,7 +4,8 @@ import axios from 'axios';
 const initialState = {
     email: '',
     user: {},
-    loggedIn: false
+    loggedIn: false,
+    cart: {}
 }
 
 const UPDATE_EMAIL = 'UPDATE_EMAIL';

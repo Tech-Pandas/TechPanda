@@ -11,7 +11,7 @@ app.use(express.json())
 
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET } = process.env
-const userCtrl = require('./userController')
+const cartCtrl = require('./cartController')
 
 app.use(
     session({
@@ -107,7 +107,10 @@ app.post('/api/redirect', (req, res, next) => {
 
 // ---------- AUTH0
 
-app.get('/api/currentuser', userCtrl.getUsers)
+
+// ----------cart
+app.post('/api/cart', cartCtrl.addCart)
+
 
 
 //---- This is the Server Port Running Section ----// 
