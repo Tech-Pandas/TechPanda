@@ -22,7 +22,7 @@ function HomeProductHeaderOne(props) {
             <img id='logo' src='https://static.thenounproject.com/png/337525-200.png'/>
             {props.loggedIn ? (
                 <div> 
-                    {props.user.user_name}
+                    <img src={props.user.user_image} alt='' className='user-image'/>
                     <button
                         onClick={() => props.logout()}
                     >Logout</button>
