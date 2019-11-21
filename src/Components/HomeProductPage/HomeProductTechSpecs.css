@@ -1,0 +1,10 @@
+.techspec {
+    /* width: 100vw; */
+    height: 100vh;
+    margin-top: -50px;
+    z-index: -1;
+    background-image: url('https://lh3.googleusercontent.com/SJxeikcC86X77oVFQtTcXaS7Du0sMKHwv6C7GwTyVafPs-K4MXkkEBPzN42M5BEXQBdDwWJqLgDFZiikBee_Iw=rw-w1790');
+    background-size: cover;
+    background-color: black;
+    color: white;
+}
