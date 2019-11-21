@@ -27,6 +27,10 @@
     height: 35px;
 }
 
+.user-image {
+    height: 35px;
+}
+
 .product-logo {
     margin-left: 2.5%;
     font-size: 24px;
@@ -132,75 +136,103 @@
     margin-bottom: 100px;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    padding-bottom: 900px;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+}
+
+#home-product-body-top-images {
+    display: flex;
+    justify-content: space-between;
+    height: 120vh;
 }
 
 .pixel-4-photo-1 {
     height: 120vh;
     width: auto;
-    margin-top: 10vh;
+    margin-top: 60vh;
+    transform: translateZ(-1px) scale(1.5);
+    z-index: -2;
 }
 
 .pixel-4-photo-2 {
-    height: 120vh;
+    height: 100vh;
     width: auto;
-
-    margin-top: 40vh;
+    margin-top: 30vh;
     margin-left: 100px;
     margin-right: 100px;
+    z-index: -1;
 }
 
 .pixel-4-photo-3 {
     height: 120vh;
     width: auto;
-
+    margin-top: 50vh;
+    transform: translateZ(-1px) scale(1.5);
+    z-index: -1;
 }
 
 #home-product-heading-2 {
     font-size: 60px;
     font-weight: 700;
     color: rgb(127, 127, 127);
-    margin-top: 200px;
     margin-bottom: 0px;
+    height: auto;
+    background-color: white;
 }
 
 #home-product-heading-3 {
     font-size: 62px;
     font-weight: 700;
     color: rgb(127, 127, 127);
-    margin-top: 10px;
-    margin-bottom: 200px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 200px;
+    background-color: white;
 }
 
 .big-phone-camera {
     position: relative;
     height: 100vh;
-    z-index: -1;
-    margin-bottom: -300px;  
+    margin-bottom: -100px; 
+    z-index: -1; 
 }
 
 #black-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 300vh;
     width: 100%;
     background-color: black;
     z-index: 2;
 }
 
 .photo-behind-hole {
-    height: 300px;
+    height: 350px;
     width: 406px;
     background-color: white;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border: 3px rgb(85, 85, 85) solid;
+    border-radius: 90px;
+    margin-top: 100px;
 }
 
 #home-product-heading-4 {
     font-size: 60px;
     font-weight: 700;
     color: white;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 0px;
 }
 

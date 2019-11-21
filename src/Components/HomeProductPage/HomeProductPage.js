@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 import "./HomeProductPage.css"
 
 import TestData from '../../dummydata.json';
@@ -30,6 +31,9 @@ function HomeProductPage() {
                 <img className='photo-behind-hole' src='https://techpandas.s3-us-west-1.amazonaws.com/Pixel4womanimg.jpg'/>
                 <div><h1 id='home-product-heading-4'>Shoot without the flash.</h1></div>
                 <div><p id='home-product-heading-5'>Capture rich detail and color, even in the dark, with the next generation of Night Sight.</p></div>
+                <div>
+                    <ReactPlayer url='https://techpandas.s3-us-west-1.amazonaws.com/googlesittingvideo.mp4' playing />
+                </div>
             </div>      
         </div>
     )
