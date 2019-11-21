@@ -6,6 +6,7 @@ import {HashRouter} from 'react-router-dom';
 import './App.css';
 
 import HomeProductPage from './Components/HomeProductPage/HomeProductPage';
+import ProductSelectorPage from './Components/ProductSelectorPage/ProductSelectorPage';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Provider store={store}>
       <HashRouter>
         <Route exact path='/' component={HomeProductPage}/>
+        <Route path='/productconfig' component={ProductSelectorPage}/>
         
       </HashRouter>
       </Provider>
