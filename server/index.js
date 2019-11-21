@@ -61,7 +61,8 @@ passport.use(
                             .create_user_by_auth_id([
                                 profile.id,
                                 profile.emails,
-                                profile.name.givenName
+                                profile.name.givenName,
+                                profile.picture
                             ])
                             .then(created => {
                                 return done(null, created[0]);
