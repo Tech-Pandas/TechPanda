@@ -3,10 +3,12 @@ import React, {useState, useEffect} from 'react';
 function HomeProductHeaderTwo() {
     return(  
         <div id='home-product-page-header-2'>
-            <p className='product-logo'>Google Pixel 4</p>
+            <div className='logos'>
+                <p className='product-logo'>Google Pixel 4</p>
+            </div>
 
             <div className='product-header-2-center-menu'>
-                <button className='product-header-2-menu-buttons'>Overview</button>
+                <a href='/'><button className='product-header-2-menu-buttons'>Overview</button></a>
                 <button className='product-header-2-menu-buttons'>Tech Specs</button>
             </div>
 
