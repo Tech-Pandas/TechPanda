@@ -11,7 +11,7 @@ app.use(express.json())
 
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET } = process.env
-const authCtrl = require('./authController')
+const userCtrl = require('./userController')
 
 app.use(
     session({
@@ -39,6 +39,7 @@ app.use(passport.initialize());
 
 app.use(passport.session());
 
+
 passport.use(
     new Auth0Strategy({
         domain: AUTH0_DOMAIN,
@@ -51,8 +52,8 @@ passport.use(
                 .get('db')
                 .get_user_by_auth_id([profile.id])
                 .then(res => {
-                    // console.log(res)
-                    // console.log(profile)
+                    // console.log("res", res)
+                    // console.log("profiile", profile)
 
                     if (!res[0]) {
                         app
@@ -72,8 +73,8 @@ passport.use(
         }
     )
 )
-// console.log(session)
-console.log('Auth0')
+// console.log('session', session)
+// console.log('passport', passport)
 passport.serializeUser(function (user, done) {
     done(null, user);
 });
@@ -81,8 +82,8 @@ passport.deserializeUser(function (obj, done) {
     done(null, obj);
 });
 app.get('/api/getUser', (req, res, next) => {
-    if (req.user) {
-        res.status(200).json(req.user);
+    if (req.session.passport.user) {
+        res.status(200).send(req.session.passport.user);
     } else res.sendStatus(500);
 });
 app.get('/api/login', passport.authenticate('auth0', {
@@ -92,6 +93,7 @@ app.get('/api/login', passport.authenticate('auth0', {
         res.redirect('http://localhost:3000/#/');
     });
 app.get('/api/logout', (req, res) => {
+    console.log('hit logout')
     req.logout();
     let returnTo = 'http://localhost:3000/';
     res.redirect(
@@ -104,6 +106,8 @@ app.post('/api/redirect', (req, res, next) => {
 });
 
 // ---------- AUTH0
+
+app.get('/api/currentuser', userCtrl.getUsers)
 
 
 //---- This is the Server Port Running Section ----// 

@@ -1,26 +1,51 @@
 import React, {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
+import {getUser, logout} from '../../redux/reducer'
 
-function HomeProductHeaderTwo() {
+function HomeProductHeaderOne(props) {
 
-    const componentDidMount = () => {
-        
-    }
+    useEffect(() => {
+        if (!props.user.loggedIn) {
+            props.getUser();
+        }
+    }, [])
 
     const userLogin = () => {
-        // console.log('login before')
         window.location.href = 'http://localhost:5000/api/login';
-        // console.log('login')
     };
-
+   
+    console.log(props.user)
+    console.log(props.loggedIn)
 
     return(  
         <div id='home-product-page-header-1'>
             <img id='logo' src='https://static.thenounproject.com/png/337525-200.png'/>
-            <button
+            {props.loggedIn ? (
+                <div> 
+                    {props.user.user_name}
+                    <button
+                        onClick={() => props.logout()}
+                    >Logout</button>
+                </div>
+            ) : (
+                <button
                 onClick={() => userLogin()}
             >Login</button>
+            )}
         </div> 
     )
 }
 
-export default HomeProductHeaderTwo;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user,
+        loggedIn: state.loggedIn
+    }
+}
+
+const mapDispatchToProps = {
+    getUser,
+    logout
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeProductHeaderOne)
