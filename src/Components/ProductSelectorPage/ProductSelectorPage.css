@@ -1,1 +1,67 @@
-/* Hi */
+
+.product-config-body {
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.config-toggles {
+    height: 70vh;
+    width: 100%;
+    border: solid black .5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(248,249,250)
+}
+
+.product-options {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.product-option {
+    margin: 0px 8vw
+}
+
+.product-storage-option {
+    background-color: white;
+    width: 20vw;
+    height: 20vh;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+#panda-care {
+    background-color: white;
+    width: 20vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#po-image {
+    height: 30vh;
+}
+
+.product-config-footer {
+    height: 10vh;
+    width: 100%;
+    border: black solid .5px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
