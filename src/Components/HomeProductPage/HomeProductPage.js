@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect}from 'react';
 import ReactPlayer from 'react-player';
 import "./HomeProductPage.css"
 
@@ -7,6 +7,8 @@ import HomeProductHeaderOne from './HomeProductHeaderOne';
 import HomeProductHeaderTwo from './HomeProductHeaderTwo';
 
 function HomeProductPage() {
+    
+    
     return(
         <div>
             <HomeProductHeaderOne/>
