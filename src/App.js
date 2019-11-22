@@ -6,7 +6,11 @@ import {HashRouter} from 'react-router-dom';
 import './App.css';
 
 import HomeProductPage from './Components/HomeProductPage/HomeProductPage';
+
 import ProductSelectorPage from './Components/ProductSelectorPage/ProductSelectorPage';
+
+import HomeProductTechSpecs from './Components/HomeProductPage/HomeProductTechSpecs';
+
 
 
 function App() {
@@ -15,7 +19,11 @@ function App() {
       <Provider store={store}>
       <HashRouter>
         <Route exact path='/' component={HomeProductPage}/>
+
         <Route path='/productconfig' component={ProductSelectorPage}/>
+
+        <Route exact path='/techspecs' component={HomeProductTechSpecs}/>
+
         
       </HashRouter>
       </Provider>
