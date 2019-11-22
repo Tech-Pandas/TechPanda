@@ -58,7 +58,7 @@ function HomeProductHeaderOne(props) {
 
     return (
         <div id='home-product-page-header-1'>
-            <img id='logo' src='https://static.thenounproject.com/png/337525-200.png' />
+            <a href='/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' /></a>
             <div className='cart-user-icons'>
                 <div>
                     <img src='https://carlisletheacarlisletheatre.org/images/shopping-cart-icon-grey-9.jpg' className='cart-icon' />

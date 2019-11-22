@@ -19,7 +19,7 @@ function HomeProductHeaderTwo() {
                     <p className='product-header-2-text-p-2'>with 0% APR Google Store Financing*</p>
                 </div>
                 
-                <button className='product-header-2-buy-button'>Buy</button>
+                <a href='#/productconfig'><button className='product-header-2-buy-button'>Buy</button></a>
             </div>
         </div>
         
