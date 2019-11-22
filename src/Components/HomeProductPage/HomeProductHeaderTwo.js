@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 function HomeProductHeaderTwo() {
     return(  
@@ -9,7 +10,7 @@ function HomeProductHeaderTwo() {
 
             <div className='product-header-2-center-menu'>
                 <a href='/'><button className='product-header-2-menu-buttons'>Overview</button></a>
-                <button className='product-header-2-menu-buttons'>Tech Specs</button>
+                <Link to ='/techspecs'><button className='product-header-2-menu-buttons'>Tech Specs</button></Link>
             </div>
 
             <div className='product-header-2-right-stuff'>
