@@ -83,6 +83,7 @@ passport.deserializeUser(function (obj, done) {
     done(null, obj);
 });
 app.get('/api/getUser', (req, res, next) => {
+    // console.log(req.session.passport.user)
     if (req.session.passport.user) {
         res.status(200).send(req.session.passport.user);
     } else res.sendStatus(500);
