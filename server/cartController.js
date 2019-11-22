@@ -1,5 +1,15 @@
  
  module.exports = {
+    getProductID: async (req, res) => {
+        const {productSize, productColor, productStorage} = req.body
+        const db = req.app.get('db')
+
+        let product = await db.get_product({productSize, productColor, productStorage})
+        
+        console.log(product[0].product_id)
+        res.status(200).send(product[0].product_id)
+    },
+
      addCart: async (req, res) => {
         const {user_id, product_id, quantity} = req.body
         const db = req.app.get('db')
