@@ -272,24 +272,22 @@ function ProductSelectorPage(props){
                     <div>
                         <h1 className='product-selector-heading'>How much storage?</h1>
                         <div className='product-options'>
-                            <div className='product-storage-option'>
-                                <p>64GB</p><br/>
+                            <div className='product-storage-option' onClick={() => decreaseStorage()}>
+                                <p className='product-storage-option-text'>64GB</p>
                                 {XL ? (
-                                    <p>$899</p>
+                                    <p className='product-storage-option-text-2'>$899</p>
                                 ) : (
-                                    <p>$799</p>
-                                )}<br/>
-                                <button onClick={() => decreaseStorage()}>Select</button>
+                                    <p className='product-storage-option-text-2'>$799</p>
+                                )}  
                             </div>
 
-                            <div className='product-storage-option'>
-                                <p>128GB</p><br/>
+                            <div className='product-storage-option' onClick={() => increaseStorage()}>
+                                <p className='product-storage-option-text'>128GB</p>
                                 {XL ? (
-                                    <p>$999</p>
+                                    <p className='product-storage-option-text-2'>$999</p>
                                 ) : (
-                                    <p>$899</p>
-                                )}<br/>
-                                <button onClick={() => increaseStorage()}>Select</button>
+                                    <p className='product-storage-option-text-2'>$899</p>
+                                )}
                             </div>
                         </div>
                     </div>
