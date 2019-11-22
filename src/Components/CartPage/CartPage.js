@@ -3,10 +3,13 @@
 import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/reducer'
+import axios from 'axios';
+import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
+
 
 
 function CartPage(props){
-    
+    const [productId, setProductId] = useState(0)
 
     useEffect(() => {
         if (!props.user.loggedIn) {
@@ -14,14 +17,19 @@ function CartPage(props){
         }
     }, [])
 
+    const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
     useEffect(() => {
-        // need to have an axios request here to get the product's id from the db
+        axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
+        .then(res => {
+            setProductId(res.data)
+        })
     }, [])
 
-    console.log(props)
+    console.log(props.cart)
 
     return(
         <div>
+            <HomeProductHeaderOne />
             CartPage
         </div>
     )
