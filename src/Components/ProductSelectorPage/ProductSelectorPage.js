@@ -1,13 +1,21 @@
 import React, {useState, useEffect} from 'react';
-import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
-import './ProductSelectorPage.css'
 
-function ProductSelectorPage(){
+import {connect} from 'react-redux';
+import {addDeviceToCart} from '../../redux/reducer';
+import './ProductSelectorPage.css';
+
+import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
+
+
+
+function ProductSelectorPage(props){
     const [productSize, setProductSize] = useState('product size')
     const [productColor, setProductColor] = useState('product color')
     const [productStorage, setProductStorage] = useState('product storage')
     const [pandaCare, setPandaCare] = useState(false)
-    const [productReview, setProductReview] = useState({productSize: '', productColor: '', productStorage: '', pandaCare: false})
+    const [productReview, setProductReview] = useState({productSize: '', productColor: '', productStorage: '', pandaCare: false, productPrice: 0, type: 'phone', name: 'Pixel 4'})
+    const [XL, setXL] = useState(false)
+    const [extraStorage, setExtraStorage] = useState(false)
     const [displayProductSize, setDisplayProductSize] = useState(true)
     const [displayProductColor, setDisplayProductColor] = useState(false)
     const [displayProductStorage, setDisplayProductStorage] = useState(false)
@@ -90,6 +98,50 @@ function ProductSelectorPage(){
         }
     }
 
+    const increaseProductSize = () => {
+        setProductSize('Pixel 4 XL 6.3 display')
+        setXL(true)
+    }
+
+    const decreaseProductSize = () => {
+        setProductSize('Pixel 4 5.7 display')
+        setXL(false)
+    }
+
+    const changeStorage = () => {
+        setExtraStorage(true)
+        setProductStorage('64GB')
+    }
+
+    const productPrice = () => {
+        let price = 799
+        if(XL){
+            price += 100
+        }
+        if(extraStorage){
+            price += 100
+        }
+        if(pandaCare){
+            price += 100
+        }
+        return price
+    }
+
+    let price = productPrice()
+    const addToCart = (productSize, productColor, productStorage, pandaCare, price) => {
+        setProductReview({
+            productSize,
+            productColor, 
+            productStorage, 
+            pandaCare,
+            productPrice: price,
+        })
+        props.addDeviceToCart(productSize, productColor, productStorage, pandaCare)
+        props.history.push('/cart')
+    }
+    
+    console.log(productReview)
+    console.log(props)
     return(
         <div>
             <HomeProductHeaderOne/>
@@ -100,6 +152,7 @@ function ProductSelectorPage(){
                         <h1 className='product-selector-heading'>Choose your Google Pixel 4</h1>
                         <div className='product-options'>
                             <div className='product-option'>
+
                                 <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>
                                 <p className='product-selector-heading-2'>Google Pixel 4</p>
                                 <p className='product-selector-heading-3'>Fullscreen 5.7" display</p>
@@ -119,7 +172,7 @@ function ProductSelectorPage(){
 
                 {displayProductColor ? (
                    <div>
-                        <h1>Choose your Color</h1>
+                        <h1>Choose a color</h1>
                         <div className='product-options'>
                             <div className='product-option'>
                                 {/* picture of the color will go here */}
@@ -147,12 +200,22 @@ function ProductSelectorPage(){
                         <div className='product-options'>
                             <div className='product-storage-option'>
                                 <p>64GB</p><br/>
-                                <p>$799</p>
+                                {XL ? (
+                                    <p>$899</p>
+                                ) : (
+                                    <p>$799</p>
+                                )}<br/>
+                                <button onClick={() => setExtraStorage(false), () => setProductStorage('64GB')}>Select</button>
                             </div>
 
                             <div className='product-storage-option'>
                                 <p>128GB</p><br/>
-                                <p>$899</p>
+                                {XL ? (
+                                    <p>$999</p>
+                                ) : (
+                                    <p>$899</p>
+                                )}<br/>
+                                <button onClick={() => changeStorage()}>Select</button>
                             </div>
                         </div>
                     </div>
@@ -164,7 +227,8 @@ function ProductSelectorPage(){
                         <div className='product-options'>
                         <div id='panda-care'>
                             <img id='po-image' src='https://vignette.wikia.nocookie.net/kungfupanda/images/7/73/KFP3-promo-po4.jpg/revision/latest/scale-to-width-down/350?cb=20150726165358' />
-                            <button>Get PandaCare!</button>
+                            <button onClick={() => setPandaCare(true)}>Get PandaCare!</button>
+                            <button onClick={() => setPandaCare(false)}>No thanks</button>
                             <p>$100</p>
                         </div>
                     </div>
@@ -177,8 +241,11 @@ function ProductSelectorPage(){
                         {productSize}<br/>
                         {productColor}<br/>
                         {productStorage}<br/>
-                        {pandaCare}<br/>
-                        <button>Add to cart</button>
+                        {pandaCare ? (
+                            <div>PandaCare</div>
+                        ) : null}
+                        {productPrice()}<br/>
+                        <button onClick={() => addToCart(productSize, productColor, productStorage, pandaCare)}>Add to cart</button>
                     </div>
                 ) : null}
             </div>
@@ -191,4 +258,14 @@ function ProductSelectorPage(){
     )
 }
 
-export default ProductSelectorPage
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart
+    }
+}
+
+const mapDispatchToProps = {
+    addDeviceToCart
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductSelectorPage)

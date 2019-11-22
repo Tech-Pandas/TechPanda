@@ -11,6 +11,19 @@ const initialState = {
 const UPDATE_EMAIL = 'UPDATE_EMAIL';
 const GET_USER = 'GET_USER'
 const LOGOUT = 'LOGOUT'
+const ADD_DEVICE_TO_CART = 'ADD_DEVICE_TO_CART'
+
+export function addDeviceToCart(productSize, productColor, productStorage, pandaCare){
+    return{
+        type: ADD_DEVICE_TO_CART,
+        payload: {
+            productSize,
+            productColor, 
+            productStorage, 
+            pandaCare
+        }
+    }
+}
 
 export function updateEmail(emailObj){
     return{
@@ -20,7 +33,6 @@ export function updateEmail(emailObj){
 }
 
 export const getUser = () => {
-    console.log('hit getUser in reducer')
     return {
       type: GET_USER,
       payload: axios.get("/api/getUser").then(res => res.data)
@@ -35,6 +47,7 @@ export const logout = () => {
     };
 };
 
+console.log(initialState.cart)
 export default function reducer(state = initialState, action){
     const {type, payload} = action;
     switch(type){
@@ -48,7 +61,8 @@ export default function reducer(state = initialState, action){
         case UPDATE_EMAIL:
             let email = payload;
             return {...state, email};
-
+        case ADD_DEVICE_TO_CART:
+            return {...state, cart: payload}
         default:
             return state;
     }
