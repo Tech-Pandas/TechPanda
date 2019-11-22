@@ -4,6 +4,7 @@ import { getUser, logout } from '../../redux/reducer';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import axios from 'axios';
 
 
 
@@ -19,8 +20,11 @@ function HomeProductHeaderOne(props) {
         window.location.href = 'http://localhost:5000/api/login';
     };
 
-    console.log(props.user)
-    console.log(props.loggedIn)
+    const logoutUser = () => {
+        console.log(props)
+        // axios.post('/api/cart', {user_id: props.users.id, product_id: })
+        // props.logout()
+    }
 
 
     //------- Adding Style here --------///
@@ -57,7 +61,7 @@ function HomeProductHeaderOne(props) {
                             onClose={handleClose}
                         >
                             <MenuItem >{props.user.user_name}</MenuItem>
-                            <MenuItem onClick={() => props.logout()}>Logout</MenuItem>
+                            <MenuItem onClick={() => logoutUser()}>Logout</MenuItem>
                         </Menu>
                     </div>
                 ) : (
@@ -80,7 +84,8 @@ function HomeProductHeaderOne(props) {
 const mapStateToProps = (state) => {
     return {
         user: state.user,
-        loggedIn: state.loggedIn
+        loggedIn: state.loggedIn,
+        cart: state.cart
     }
 }
 
