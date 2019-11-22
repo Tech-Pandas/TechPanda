@@ -2,6 +2,7 @@
 
 #home-product-page-header-1 {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding-left: 2.5%;
     height: 9.3vh;
@@ -27,8 +28,19 @@
     height: 35px;
 }
 
+.cart-icon{
+    height: 35px;
+}
+
+.cart-user-icons{
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .user-image {
     height: 35px;
+    border-radius: 50%;
 }
 
 .product-logo {
