@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-
 import {connect} from 'react-redux';
 import {addDeviceToCart} from '../../redux/reducer';
 import './ProductSelectorPage.css';
@@ -23,8 +22,8 @@ function ProductSelectorPage(props){
     const [displayProductReview, setDisplayProductReview] = useState(false)
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-    })
+        window.scrollTo(0, 0);  
+    }, [])
 
     const moveForward = () => {
         if(displayProductSize === true){
@@ -172,23 +171,23 @@ function ProductSelectorPage(props){
 
                 {displayProductColor ? (
                    <div>
-                        <h1>Choose a color</h1>
+                        <h1 className='product-selector-heading'>Choose a color</h1>
                         <div className='product-options'>
                             <div className='product-option'>
-                                {/* picture of the color will go here */}
-                                <h3>Just Black</h3><br/>
-                                <button onClick={() => setProductColor('Just Black')}>Select</button>
+                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/iFTsXZZ6XJeWsBkczmU7tNZjipAbAx9WT8VpuAP2ADNwnvZ0uO5hrD-X7MFAGmsSFqBi=rw-w1144'/>                             
+                                <p className='product-selector-heading-random'>Just Black</p>
+                                <button className='product-selector-button' onClick={() => setProductColor('Just Black')}>Select</button>
                             </div>
                             <div className='product-option'>
-                                {/* picture of the color will go here */}
-                                <h3>Clearly White</h3><br/>
-                                <button onClick={() => setProductColor('Clearly White')}>Select</button>
+                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/8SX9vrX4at1Q3jOwkywP8TnjGvECUDB7LVKtc2g6D9cR1dOH_3UuFfI0awcwUYGpTw=rw-w1144'/>
+                                <p className='product-selector-heading-random'>Clearly White</p>
+                                <button className='product-selector-button' onClick={() => setProductColor('Clearly White')}>Select</button>
                             </div>
                             <div className='product-option'>
-                                {/* picture of the color will go here */}
-                                <h3>Oh So Orange</h3><br/>
-                                <p>Limited Edition</p><br/>
-                                <button onClick={() => setProductColor('Oh So Orange')}>Select</button>
+                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/5mfu9wvv04QIsSUbKz_6Uqlsjl9w7n_G260CHlux1U_dbVcxpkwWhUrQXyC2fQt3AkE=rw-w1144'/>
+                                <p className='product-selector-heading-2'>Oh So Orange</p>
+                                <p className='product-selector-heading-3'>Limited Edition</p><br/>
+                                <button className='product-selector-button' onClick={() => setProductColor('Oh So Orange')}>Select</button>
                             </div>
                         </div>
                    </div>
@@ -196,7 +195,7 @@ function ProductSelectorPage(props){
 
                 {displayProductStorage ? (
                     <div>
-                        <h1>How much storage?</h1>
+                        <h1 className='product-selector-heading'>How much storage?</h1>
                         <div className='product-options'>
                             <div className='product-storage-option'>
                                 <p>64GB</p><br/>
@@ -249,11 +248,14 @@ function ProductSelectorPage(props){
                     </div>
                 ) : null}
             </div>
+            
+        </body>
+        <footer>
             <nav className='product-config-footer'>
                 <button className='product-selector-bottom-button-1' onClick={() => moveBack()}>Back</button>
                 <button className='product-selector-bottom-button-2' onClick={() => moveForward()}>Next</button>
             </nav>
-        </body>
+        </footer>
         </div>
     )
 }
