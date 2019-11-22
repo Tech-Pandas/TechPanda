@@ -4,6 +4,7 @@ import { getUser, logout } from '../../redux/reducer';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 
@@ -42,7 +43,8 @@ function HomeProductHeaderOne(props) {
             <a href='/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' /></a>
             <div className='cart-user-icons'>
                 <div>
-                    <img src='https://carlisletheacarlisletheatre.org/images/shopping-cart-icon-grey-9.jpg' className='cart-icon' />
+                    <ShoppingCartIcon></ShoppingCartIcon>
+                    {/* <img src='https://carlisletheacarlisletheatre.org/images/shopping-cart-icon-grey-9.jpg' className='cart-icon' /> */}
                 </div>
                 {props.loggedIn ? (
                     <div>
