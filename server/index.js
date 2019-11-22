@@ -113,6 +113,7 @@ app.post('/api/redirect', (req, res, next) => {
 // ----------cart
 app.post('/api/productid', cartCtrl.getProductID)
 app.post('/api/cart', cartCtrl.addCart)
+app.get('/api/cart/:userid', cartCtrl.getCart)
 
 
 

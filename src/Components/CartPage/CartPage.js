@@ -10,6 +10,7 @@ import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 
 function CartPage(props){
     const [productId, setProductId] = useState(0)
+    const [cart, setCart] = useState({})
 
     useEffect(() => {
         if (!props.user.loggedIn) {
@@ -25,7 +26,18 @@ function CartPage(props){
         })
     }, [])
 
-    console.log(props.cart)
+    useEffect(() => {
+        console.log(props.user.user_id)
+        console.log(props)
+        console.log(props, productId)
+        axios.get(`/api/cart/${props.user.resuser_id}`)
+        .then(res => {
+            console.log(res)
+            setCart(res.data)
+        })
+    }, [])
+
+    console.log(cart)
 
     return(
         <div>
@@ -38,7 +50,8 @@ function CartPage(props){
 const mapStateToProps = (state) => {
     return {
         cart: state.cart,
-        user: state.user
+        user: state.user,
+        loggedIn: state.loggedIn
     }
 }
 

@@ -10,6 +10,8 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 function HomeProductHeaderOne(props) {
+    const [productId, setProductId] = useState(0)
+
 
     useEffect(() => {
         if (!props.user.loggedIn) {
@@ -17,14 +19,24 @@ function HomeProductHeaderOne(props) {
         }
     }, [])
 
+    const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
+    useEffect(() => {
+        axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
+        .then(res => {
+            setProductId(res.data)
+        })
+    }, [])
+
     const userLogin = () => {
         window.location.href = 'http://localhost:5000/api/login';
     };
 
     const logoutUser = () => {
-        console.log(props)
-        // axios.post('/api/cart', {user_id: props.users.id, product_id: })
-        // props.logout()
+        axios.post('/api/cart', {user_id: props.user.id, product_id: productId, quantity: 1})
+        .then(res => {
+            console.log(res)
+        })
+        props.logout()
     }
 
 

@@ -329,7 +329,8 @@ function ProductSelectorPage(props){
             <nav className='product-config-footer'>
                 {!displayProductSize ? (
                     <button className='product-selector-bottom-button-1' onClick={() => moveBack()}>Back</button>
-                ) : null}
+                ) : <button className='blank-white-button'></button>
+            }
                 
                 <div>
                     <button onClick={() => moveToSize()}>Size</button>
@@ -340,7 +341,7 @@ function ProductSelectorPage(props){
 
                 {!displayProductReview ? (
                     <button className='product-selector-bottom-button-2' onClick={() => moveForward()}>Next</button>
-                ) : null}
+                ) : <button className='blank-white-button'></button>}
             </nav>
         </footer>
         </div>

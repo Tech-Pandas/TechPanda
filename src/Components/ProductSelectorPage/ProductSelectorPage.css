@@ -162,3 +162,12 @@
     font-family: 'Gill Sans';
     margin-right: 2.5%;
 }
+
+.blank-white-button {
+    background-color: white;
+    color: white;
+    border: none;
+    width: 10.5vh;
+    margin-left: 2.5%;
+    outline: 0;
+}
