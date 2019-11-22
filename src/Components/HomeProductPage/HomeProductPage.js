@@ -14,7 +14,7 @@ function HomeProductPage() {
 
             <div><h1 id='home-product-heading'>The Google Phone.</h1></div>
 
-            <button className='home-product-heading-button'>Buy</button>
+            <a href='#/productconfig'><button className='home-product-heading-button'>Buy</button></a>
 
             <div id='home-product-body-top-images'>
                 <img className='pixel-4-photo-1' src={TestData.image_1} />
@@ -64,11 +64,11 @@ function HomeProductPage() {
                 <div id='home-product-bottom-bottom'>
                     <div className='home-product-bottom-image-box'>
                         <img className='home-product-bottom-image' src='https://lh3.googleusercontent.com/Nf8OxPaactgEts5WOUegp9l28MOmyeHqRqQ3xMu7rOvh1egFSEHQLwcjcffXTpA70T3NgvVSQdbv0KHWNuvcthI=rw'/>
-                        <button className='home-product-bottom-button'>Select</button>
+                        <a href='#/productconfig'><button className='home-product-bottom-button'>Select</button></a>
                     </div>
                     <div className='home-product-bottom-image-box'>
                         <img className='home-product-bottom-image' src='https://lh3.googleusercontent.com/U0QWvETe2EmQVPHhUaTz0SUMHWz3dOPIWIgIOhJqt4fXRi48VMEB5C5xe6EyM5eWWpIdfcTXPxtr-hNkXPtcoQ=rw'/>
-                        <button className='home-product-bottom-button'>Select</button>
+                        <a href='#/productconfig'><button className='home-product-bottom-button'>Select</button></a>
                     </div>
                     {/* <div className='home-product-bottom-image-box'>
                         <img className='home-product-bottom-image' src='http://t0.gstatic.com/images?q=tbn%3AANd9GcQniCsTAMWRqKGbea5zP03LAqkqZ9um0NZbFECgZBggPKFBeUY4gvYLrGnTXzE7NUy365ouDZc'/>
