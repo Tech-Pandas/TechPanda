@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 import './ProductSelectorPage.css'
 
 function ProductSelectorPage(){
@@ -12,6 +13,10 @@ function ProductSelectorPage(){
     const [displayProductStorage, setDisplayProductStorage] = useState(false)
     const [displayPandaCare, setDisplayPandaCare] = useState(false)
     const [displayProductReview, setDisplayProductReview] = useState(false)
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
 
     const moveForward = () => {
         if(displayProductSize === true){
@@ -84,30 +89,31 @@ function ProductSelectorPage(){
 
         }
     }
-    
 
     return(
+        <div>
+            <HomeProductHeaderOne/>
         <body className='product-config-body'>
             <div className='config-toggles'>
                 {displayProductSize ? (
                     <div>
-                        <h1>Choose your Google Pixel 4</h1>
+                        <h1 className='product-selector-heading'>Choose your Google Pixel 4</h1>
                         <div className='product-options'>
                             <div className='product-option'>
-                                 {/* picture of the size will go here */}
-                                <h3>Google Pixel 4</h3><br/>
-                                <p>Fullscreen 5.7" display</p><br/>
-                                <p>From $799</p>
-                                <button onClick={() => setProductSize('5.7')}>Select</button>
+                                <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>
+                                <p className='product-selector-heading-2'>Google Pixel 4</p>
+                                <p className='product-selector-heading-3'>Fullscreen 5.7" display</p>
+                                <p className='product-selector-heading-3'>From $799</p>
+                                <button className='product-selector-button' onClick={() => setProductSize('5.7')}>Select</button>
                             </div>
                             <div className='product-option'>
-                                {/* picture of the size will go here */}
-                                <h3>Google Pixel 4</h3><br/>
-                                <p>Fullscreen 6.3" display</p><br/>
-                                <p>From $799</p>
-                                <button onClick={() => setProductSize('6.3')}>Select</button>
+                                <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>                             
+                                <p className='product-selector-heading-2'>Google Pixel 4 XL</p>
+                                <p className='product-selector-heading-3'>Fullscreen 6.3" display</p>
+                                <p className='product-selector-heading-3'>From $899</p>
+                                <button className='product-selector-button' onClick={() => setProductSize('6.3')}>Select</button>
                             </div>
-                    </div>
+                        </div>
                       </div>
                 ) : null}
 
@@ -177,10 +183,11 @@ function ProductSelectorPage(){
                 ) : null}
             </div>
             <nav className='product-config-footer'>
-                <button onClick={() => moveBack()}>Back</button>
-                <button onClick={() => moveForward()}>Next</button>
+                <button className='product-selector-bottom-button-1' onClick={() => moveBack()}>Back</button>
+                <button className='product-selector-bottom-button-2' onClick={() => moveForward()}>Next</button>
             </nav>
         </body>
+        </div>
     )
 }
 
