@@ -133,18 +133,19 @@ function CartPage(props) {
         }
     }, [])
 
-    const { productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor } = props.cart
-    useEffect(() => {
-        axios.post('/api/productid', { productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor })
-            .then(res => {
-                setProductId(res.data)
-            })
-    }, [])
+
+    // const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
+    // useEffect(() => {
+    //     axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
+    //     .then(res => {
+    //         setProductId(res.data)
+    //     })
+    // }, [])
 
     useEffect(() => {
-        console.log(props.user.user_id)
-        console.log(props)
-        console.log(props, productId)
+        // console.log(props.user.user_id)
+        // console.log(props)
+        // console.log(props, productId)
         axios.get(`/api/cart/${props.user.resuser_id}`)
             .then(res => {
                 console.log(res)
@@ -152,7 +153,10 @@ function CartPage(props) {
             })
     }, [])
 
-    console.log(props.cart)
+
+    console.log(props)
+    console.log(cart)
+
 
     return (
         <div>

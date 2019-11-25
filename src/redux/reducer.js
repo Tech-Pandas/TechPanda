@@ -57,7 +57,7 @@ export const getUser = () => {
 export const logout = () => {
     return {
       type: LOGOUT,
-      payload: axios.delete(`/api/logout`).then(res => console.log('delete', res)).catch(err => console.log(err))
+      payload: axios.get(`/api/logout`).then(res => console.log('delete', res)).catch(err => console.log(err))
     };
 };
 
