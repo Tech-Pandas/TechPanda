@@ -196,7 +196,7 @@
     font-weight: 200;
   }
 
-  .laststadiaimg > h1, h3 {
+  .laststadiaimg1, .laststadiaimg3 {
       animation: pop 15s infinite;
   }
 
@@ -216,14 +216,18 @@
   .stadiafooterpic {
       width: 50%;
       margin-top: -150px;
-      animation: grow 4s linear;
+      animation: grow 5s linear;
   }
 
   @keyframes grow {
       0%{
-          transform: scale(.8);
+          transform: scale(.6);
       }
       100%{
           transform: scale(1);
       }
+  }
+
+  .ctrlspec {
+      margin-top: 50px;
   }

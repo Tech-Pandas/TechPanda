@@ -17,22 +17,22 @@ const HomeProductTechSpecs = () => {
 
             <div className='specimg'>
                 <h2>Peek inside Pixel 4.</h2>
-                <img src='https://venturebeat.com/wp-content/uploads/2019/10/google-pixel-4-specs.png?fit=2000%2C1000&strip=all' />
+                <img src='https://venturebeat.com/wp-content/uploads/2019/10/google-pixel-4-specs.png?fit=2000%2C1000&strip=all' alt='pic' />
             </div>
             <div className='icon-container'>
                 <h1>Apps to enrich your life.</h1>
                 <h1>Already on your phone.</h1>
                 <div className='icon'>
-                    <img className='icnmap' src='https://lh3.googleusercontent.com/CItP8QkfnjEVGvQ6X04k8Rz9LkDZYwlXadAdA2avexOVMkcUS6k1UDdmYD6MmwOX9OY0dnp2qsj4sw2WPO7-=rw-w270' />
-                    <img className='icnyoutube' src='https://lh3.googleusercontent.com/yqGsuyKtS1PqdiS2Gb-ciUnTbFy3Dl8XmDp5QTf7V2NriyCbzOPXYo6JBcQa1jKNeIS6IkXrHQ79T3CwPkQlZDY=rw-w270' />
-                    <img className='icnmail' src='https://lh3.googleusercontent.com/MGuM-zeLzrHIOapkNrN988guME-6mRHksyhTWKeiSJPPC_3MkiuJ9_WGwPJMyGM5qJKa9go4YeZeUKj6Ty31wWI=rw-w270' />
-                    <img className='icnchrome' src='https://lh3.googleusercontent.com/RR91GX4bO7Vb68SXjmz42sYfOB0ap6ECXD7-ugiAEffNsCxVeKnN0-wKI8cRdaoIDA7Is4xr28Z_0V0ePJg4gXk=rw-w270' />
-                    <img className='icnphotos' src='https://lh3.googleusercontent.com/lpzcken_gkH10CjQn_bAgj3nzuyiei2me4RfZbnfH01p5_8tYlX5mlVzmo5bfBWICoL_fvfkAIeu_KhTjeyv-w=rw-w270' />
-                    <img className='icnplay' src='https://lh3.googleusercontent.com/2RXo-NW6UHzyvTcjemkEU6Ng1gZdFPQf-xUjCoscEPFRW5bLiCc5sBqVaB7BVLSiBWEpncDlv-LkPUhoNRaI=rw-w270' />
-                    <img className='icnmessages' src='https://lh3.googleusercontent.com/HwZJHbzN085QqEDEiEsm_5EEL7A8LptO8s7P4BvSW7uF7qL-4hgVa_e6oblB3feX9NsteSYxVsc-wmfTXKb8XQ=rw-w270' />
-                    <img className='icnnews' src='https://lh3.googleusercontent.com/n_idYH1Lctw33RRwSzUv7YoHLs-m_i8iiRwViTN2VsLa8DYLJzdbYgfD5DFIAeZiHbO4T-tAikZcVDPHnqnA9A=rw-w270' />
-                    <img className='icnkeep' src='https://lh3.googleusercontent.com/09HaIQpYFBaIV0nd6f-jf45BVcqslvN2b92wE2Hbp6l6_XUXFhAh6pYiEKt4bQpvDSzAntIvscfGqJeUxdpw=rw-w270' />
-                    <img className='icndrive' src='https://lh3.googleusercontent.com/ozqBuhnBTQePnX1x_hkNl9FJB7NAger6NhkKsmG-43ywtIlXC8A_WsTZaJgOnXYZZSPEVNONOaNh2T-YCvZo=rw-w270' />
+                    <img className='icnmap' src='https://lh3.googleusercontent.com/CItP8QkfnjEVGvQ6X04k8Rz9LkDZYwlXadAdA2avexOVMkcUS6k1UDdmYD6MmwOX9OY0dnp2qsj4sw2WPO7-=rw-w270' alt='pic' />
+                    <img className='icnyoutube' src='https://lh3.googleusercontent.com/yqGsuyKtS1PqdiS2Gb-ciUnTbFy3Dl8XmDp5QTf7V2NriyCbzOPXYo6JBcQa1jKNeIS6IkXrHQ79T3CwPkQlZDY=rw-w270' alt='pic' />
+                    <img className='icnmail' src='https://lh3.googleusercontent.com/MGuM-zeLzrHIOapkNrN988guME-6mRHksyhTWKeiSJPPC_3MkiuJ9_WGwPJMyGM5qJKa9go4YeZeUKj6Ty31wWI=rw-w270' alt='pic' />
+                    <img className='icnchrome' src='https://lh3.googleusercontent.com/RR91GX4bO7Vb68SXjmz42sYfOB0ap6ECXD7-ugiAEffNsCxVeKnN0-wKI8cRdaoIDA7Is4xr28Z_0V0ePJg4gXk=rw-w270' alt='pic' />
+                    <img className='icnphotos' src='https://lh3.googleusercontent.com/lpzcken_gkH10CjQn_bAgj3nzuyiei2me4RfZbnfH01p5_8tYlX5mlVzmo5bfBWICoL_fvfkAIeu_KhTjeyv-w=rw-w270' alt='pic' />
+                    <img className='icnplay' src='https://lh3.googleusercontent.com/2RXo-NW6UHzyvTcjemkEU6Ng1gZdFPQf-xUjCoscEPFRW5bLiCc5sBqVaB7BVLSiBWEpncDlv-LkPUhoNRaI=rw-w270' alt='pic' />
+                    <img className='icnmessages' src='https://lh3.googleusercontent.com/HwZJHbzN085QqEDEiEsm_5EEL7A8LptO8s7P4BvSW7uF7qL-4hgVa_e6oblB3feX9NsteSYxVsc-wmfTXKb8XQ=rw-w270' alt='pic' />
+                    <img className='icnnews' src='https://lh3.googleusercontent.com/n_idYH1Lctw33RRwSzUv7YoHLs-m_i8iiRwViTN2VsLa8DYLJzdbYgfD5DFIAeZiHbO4T-tAikZcVDPHnqnA9A=rw-w270' alt='pic' />
+                    <img className='icnkeep' src='https://lh3.googleusercontent.com/09HaIQpYFBaIV0nd6f-jf45BVcqslvN2b92wE2Hbp6l6_XUXFhAh6pYiEKt4bQpvDSzAntIvscfGqJeUxdpw=rw-w270' alt='pic' />
+                    <img className='icndrive' src='https://lh3.googleusercontent.com/ozqBuhnBTQePnX1x_hkNl9FJB7NAger6NhkKsmG-43ywtIlXC8A_WsTZaJgOnXYZZSPEVNONOaNh2T-YCvZo=rw-w270' alt='pic' />
                 </div>
             </div>
             <div className='techspecsdetails'>

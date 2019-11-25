@@ -74,7 +74,7 @@ function HomeProductHeaderOne(props) {
             
             <div id='left-header-1-stuff'>
 
-                <a href='/#/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' /></a>
+                <a href='/#/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' alt='pic' /></a>
                 <a href='/#/'><p className='left-header-1-text'>Pixel 4</p></a>
 //                 <a href='/#/'><p className='left-header-1-text'>iPhone 11 Pro Max</p></a>
       
@@ -89,7 +89,7 @@ function HomeProductHeaderOne(props) {
                 {props.loggedIn ? (
                     <div>
                         <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                            <img src={props.user.user_image} alt='' className='user-image' />
+                            <img src={props.user.user_image} alt='' className='user-image' alt='pic' />
                         </Button>
                         <Menu
                             id="simple-menu"
@@ -107,6 +107,7 @@ function HomeProductHeaderOne(props) {
                             src='https://static.thenounproject.com/png/2366460-200.png' 
                             onClick={() => userLogin()}
                             className='user-icon'
+                            alt='pic'
                         ></img>
                     )}
             </div>
