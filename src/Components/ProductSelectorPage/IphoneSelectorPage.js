@@ -12,11 +12,12 @@ function ProductSelectorPage(props){
     const [productColor, setProductColor] = useState('product color')
     const [productStorage, setProductStorage] = useState('product storage')
     const [pandaCare, setPandaCare] = useState(false)
-    const [productName, setProductName] = useState('Pixel 4')
+    const [productName, setProductName] = useState('iPhone 11 Pro')
     const [productType, setProductType] = useState('phone')
-    const [productReview, setProductReview] = useState({productSize: '', productColor: '', productStorage: '', pandaCare: false, productPrice: 0, productType: 'phone', productName: 'Pixel 4'})
-    const [XL, setXL] = useState(false)
+    const [productReview, setProductReview] = useState({productSize: '', productColor: '', productStorage: '', pandaCare: false, productPrice: 0, productType: 'phone', productName: 'iPhone 11 Pro'})
+    const [Max, setMax] = useState(false)
     const [extraStorage, setExtraStorage] = useState(false)
+    const [doubleExtraStorage, setDoubleExtraStorage] = useState(false)
     const [displayProductSize, setDisplayProductSize] = useState(true)
     const [displayProductColor, setDisplayProductColor] = useState(false)
     const [displayProductStorage, setDisplayProductStorage] = useState(false)
@@ -132,22 +133,29 @@ function ProductSelectorPage(props){
     }
 
     const increaseProductSize = () => {
-        setProductSize('6.3')
-        setProductName('Pixel 4 XL')
-        setXL(true)
+        setProductSize('6.5')
+        setProductName('iPhone 11 Pro Max')
+        setMax(true)
         moveForward()
     }
 
     const decreaseProductSize = () => {
-        setProductName('Pixel 4')
-        setProductSize('5.7')
-        setXL(false)
+        setProductName('iPhone 11 Pro')
+        setProductSize('5.8')
+        setMax(false)
+        moveForward()
+    }
+
+    const doubleIncreaseStorage = () => {
+        setExtraStorage(false)
+        setDoubleExtraStorage(true)
+        setProductStorage('516GB')
         moveForward()
     }
 
     const increaseStorage = () => {
         setExtraStorage(true)
-        setProductStorage('128GB')
+        setProductStorage('256GB')
         moveForward()
     }
 
@@ -157,19 +165,25 @@ function ProductSelectorPage(props){
         moveForward()
     }
 
-    const chooseOrange = () => {
-        setProductColor('Oh So Orange')
+    const chooseSpaceGray = () => {
+        setProductColor('Space Gray')
         moveForward()
     }
 
-    const chooseWhite = () => {
-        setProductColor('Clearly White')
+    const chooseSilver = () => {
+        setProductColor('Silver')
         moveForward()
 
     }
 
-    const chooseBlack = () => {
-        setProductColor('Just Black')
+    const chooseMidnightGreen = () => {
+        setProductColor('Midnight Green')
+        moveForward()
+
+    }
+
+    const chooseGold = () => {
+        setProductColor('Gold')
         moveForward()
 
     }
@@ -184,12 +198,19 @@ function ProductSelectorPage(props){
         moveForward()
     }
 
+    console.log(Max)
+    console.log(extraStorage)
+    console.log(doubleExtraStorage)
+    console.log(pandaCare)
     const determineProductPrice = () => {
-        let price = 799
-        if(XL){
+        let price = 999
+        if(Max){
             price += 100
         }
         if(extraStorage){
+            price += 149
+        }
+        if(doubleExtraStorage){
             price += 100
         }
         if(pandaCare){
@@ -223,20 +244,21 @@ function ProductSelectorPage(props){
             <div className='config-toggles'>
                 {displayProductSize ? (
                     <div>
-                        <h1 className='product-selector-heading'>Choose your Google Pixel 4</h1>
+                        <h1 className='product-selector-heading'>Choose your iPhone 11 Pro</h1>
                         <div className='product-options'>
                             <div className='product-option'>
+
                                 <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>
-                                <p className='product-selector-heading-2'>Google Pixel 4</p>
-                                <p className='product-selector-heading-3'>Fullscreen 5.7" display</p>
-                                <p className='product-selector-heading-3'>From $799</p>
+                                <p className='product-selector-heading-2'>iPhone 11 Pro</p>
+                                <p className='product-selector-heading-3'>5.8" display</p>
+                                <p className='product-selector-heading-3'>From $999</p>
                                 <button className='product-selector-button' onClick={() => decreaseProductSize()}>Select</button>
                             </div>
                             <div className='product-option'>
                                 <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>                             
-                                <p className='product-selector-heading-2'>Google Pixel 4 XL</p>
-                                <p className='product-selector-heading-3'>Fullscreen 6.3" display</p>
-                                <p className='product-selector-heading-3'>From $899</p>
+                                <p className='product-selector-heading-2'>iPhone 11 Pro Max</p>
+                                <p className='product-selector-heading-3'>6.5" display</p>
+                                <p className='product-selector-heading-3'>From $1099</p>
                                 <button className='product-selector-button' onClick={() => increaseProductSize()}>Select</button>
                             </div>
                         </div>
@@ -249,19 +271,23 @@ function ProductSelectorPage(props){
                         <div className='product-options'>
                             <div className='product-option'>
                                 <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/iFTsXZZ6XJeWsBkczmU7tNZjipAbAx9WT8VpuAP2ADNwnvZ0uO5hrD-X7MFAGmsSFqBi=rw-w1144'/>                             
-                                <p className='product-selector-heading-random'>Just Black</p>
-                                <button className='product-selector-button' onClick={() => chooseBlack()}>Select</button>
+                                <p className='product-selector-heading-random'>Space Gray</p>
+                                <button className='product-selector-button' onClick={() => chooseSpaceGray()}>Select</button>
                             </div>
                             <div className='product-option'>
                                 <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/8SX9vrX4at1Q3jOwkywP8TnjGvECUDB7LVKtc2g6D9cR1dOH_3UuFfI0awcwUYGpTw=rw-w1144'/>
-                                <p className='product-selector-heading-random'>Clearly White</p>
-                                <button className='product-selector-button' onClick={() => chooseWhite()}>Select</button>
+                                <p className='product-selector-heading-random'>Silver</p>
+                                <button className='product-selector-button' onClick={() => chooseSilver()}>Select</button>
                             </div>
                             <div className='product-option'>
                                 <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/5mfu9wvv04QIsSUbKz_6Uqlsjl9w7n_G260CHlux1U_dbVcxpkwWhUrQXyC2fQt3AkE=rw-w1144'/>
-                                <p className='product-selector-heading-2'>Oh So Orange</p>
-                                <p className='product-selector-heading-3'>Limited Edition</p><br/>
-                                <button className='product-selector-button' onClick={() => chooseOrange()}>Select</button>
+                                <p className='product-selector-heading-2'>Midnight Green</p>
+                                <button className='product-selector-button' onClick={() => chooseMidnightGreen()}>Select</button>
+                            </div>
+                            <div className='product-option'>
+                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/5mfu9wvv04QIsSUbKz_6Uqlsjl9w7n_G260CHlux1U_dbVcxpkwWhUrQXyC2fQt3AkE=rw-w1144'/>
+                                <p className='product-selector-heading-2'>Gold</p>
+                                <button className='product-selector-button' onClick={() => chooseGold()}>Select</button>
                             </div>
                         </div>
                    </div>
@@ -273,19 +299,28 @@ function ProductSelectorPage(props){
                         <div className='product-options'>
                             <div className='product-storage-option' onClick={() => decreaseStorage()}>
                                 <p className='product-storage-option-text'>64GB</p>
-                                {XL ? (
-                                    <p className='product-storage-option-text-2'>$899</p>
+                                {!Max ? (
+                                    <p className='product-storage-option-text-2'>$999</p>
                                 ) : (
-                                    <p className='product-storage-option-text-2'>$799</p>
+                                    <p className='product-storage-option-text-2'>$1099</p>
                                 )}  
                             </div>
 
                             <div className='product-storage-option' onClick={() => increaseStorage()}>
-                                <p className='product-storage-option-text'>128GB</p>
-                                {XL ? (
-                                    <p className='product-storage-option-text-2'>$999</p>
+                                <p className='product-storage-option-text'>256GB</p>
+                                {!Max ? (
+                                    <p className='product-storage-option-text-2'>$1149</p>
                                 ) : (
-                                    <p className='product-storage-option-text-2'>$899</p>
+                                    <p className='product-storage-option-text-2'>$1249</p>
+                                )}
+                            </div>
+
+                            <div className='product-storage-option' onClick={() => doubleIncreaseStorage()}>
+                                <p className='product-storage-option-text'>512GB</p>
+                                {!Max ? (
+                                    <p className='product-storage-option-text-2'>$1349</p>
+                                ) : (
+                                    <p className='product-storage-option-text-2'>$1449</p>
                                 )}
                             </div>
                         </div>
@@ -294,13 +329,13 @@ function ProductSelectorPage(props){
 
                 {displayPandaCare ? (
                    <div>
-                        <h1 className='product-selector-heading'>Let Po protect your device!</h1>
+                        <h1>Let Po protect your device!</h1>
                         <div className='product-options'>
                         <div id='panda-care'>
                             <img id='po-image' src='https://vignette.wikia.nocookie.net/kungfupanda/images/7/73/KFP3-promo-po4.jpg/revision/latest/scale-to-width-down/350?cb=20150726165358' />
-                            <p className='product-storage-option-text-3'>$100</p>
-                            <button className='product-selector-button-2' onClick={() => yesIFreakingWantPandaCare()}>Get PandaCare!</button>
-                            <button className='product-selector-button-2' onClick={() => noIDontWantPandaCare()}>No thanks</button>
+                            <button onClick={() => yesIFreakingWantPandaCare()}>Get PandaCare!</button>
+                            <button onClick={() => noIDontWantPandaCare()}>No thanks</button>
+                            <p>$100</p>
                         </div>
                     </div>
                    </div>
@@ -308,19 +343,15 @@ function ProductSelectorPage(props){
 
                 {displayProductReview ? (
                     <div>
-                        <h1 className='product-selector-heading'>Review your choices</h1>
-
-
-
-                        <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>
-                <p className='product-storage-option-text-3'>{productReview.name} {productSize}" display</p>
-                        <p className='product-storage-option-text-4'>{productColor}</p>
-                        <p className='product-storage-option-text-4'>{productStorage}</p>
-                        <p className='product-storage-option-text-4'>{pandaCare ? (
+                        {/* pic of chosen product */}
+                <p>{productReview.name} {productSize}" display</p><br/>
+                        {productColor}<br/>
+                        {productStorage}<br/>
+                        {pandaCare ? (
                             <div>PandaCare</div>
-                        ) : null}</p>
-                        <p className='product-storage-option-text-4'>{`${determineProductPrice()}`}</p>
-                        <button className='product-selector-button-2' onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)}>Add to cart</button>
+                        ) : null}
+                        {determineProductPrice()}<br/>
+                        <button onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)}>Add to cart</button>
                     </div>
                 ) : null}
             </div>
@@ -334,10 +365,10 @@ function ProductSelectorPage(props){
             }
                 
                 <div>
-                    <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
-                    <button className='progress-buttons-2' onClick={() => moveToColor()}></button>
-                    <button className='progress-buttons-2' onClick={() => moveToStorage()}></button>
-                    <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>
+                    <button onClick={() => moveToSize()}>Size</button>
+                    <button onClick={() => moveToColor()}>Color</button>
+                    <button onClick={() => moveToStorage()}>Storage</button>
+                    <button onClick={() => moveToPandaCare()}>PandaCare</button>
                 </div>
 
                 {!displayProductReview ? (
