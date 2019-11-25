@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./HomeProductTechSpecs.css"
+
 import HomeProductHeaderOne from './HomeProductHeaderOne';
 import HomeProductHeaderTwo from './HomeProductHeaderTwo';
 
 const HomeProductTechSpecs = () => {
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);  
+    }, []);
+    
     return (
         <div className='spec-container'>
             <HomeProductHeaderOne/>

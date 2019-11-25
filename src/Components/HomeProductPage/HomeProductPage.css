@@ -45,10 +45,14 @@
 }
 
 .product-logo {
-    margin-left: 2.5%;
+    width: 180px;
     font-size: 24px;
     font-weight: 700;
     color: rgb(100, 100, 100);
+}
+
+a:link {
+    text-decoration: none;
 }
 
 .logos {
