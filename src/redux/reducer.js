@@ -24,6 +24,7 @@ const LOGOUT = 'LOGOUT'
 const ADD_DEVICE_TO_CART = 'ADD_DEVICE_TO_CART'
 
 export function addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productRam, productProcessor){
+    console.log('hit addToCart')
     return{
         type: ADD_DEVICE_TO_CART,
         payload: {

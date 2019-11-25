@@ -20,7 +20,6 @@ import Stadia from './Components/Gaming/Stadia';
 import IphoneSelectorPage from './Components/ProductSelectorPage/IphoneSelectorPage';
 
 function App() {
-  useEffect(() => window.scrollTo(0,0), [])
   return (
     <div className="App">
       <StripeProvider apiKey={stripeApiKey}>
