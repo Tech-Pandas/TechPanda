@@ -226,14 +226,14 @@ function ProductSelectorPage(props){
                         <h1 className='product-selector-heading'>Choose your Google Pixel 4</h1>
                         <div className='product-options'>
                             <div className='product-option'>
-                                <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>
+                                <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440' alt='pic' />
                                 <p className='product-selector-heading-2'>Google Pixel 4</p>
                                 <p className='product-selector-heading-3'>Fullscreen 5.7" display</p>
                                 <p className='product-selector-heading-3'>From $799</p>
                                 <button className='product-selector-button' onClick={() => decreaseProductSize()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>                             
+                                <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440' alt='pic' />                             
                                 <p className='product-selector-heading-2'>Google Pixel 4 XL</p>
                                 <p className='product-selector-heading-3'>Fullscreen 6.3" display</p>
                                 <p className='product-selector-heading-3'>From $899</p>
@@ -248,17 +248,17 @@ function ProductSelectorPage(props){
                         <h1 className='product-selector-heading'>Choose a color</h1>
                         <div className='product-options'>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/iFTsXZZ6XJeWsBkczmU7tNZjipAbAx9WT8VpuAP2ADNwnvZ0uO5hrD-X7MFAGmsSFqBi=rw-w1144'/>                             
+                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/iFTsXZZ6XJeWsBkczmU7tNZjipAbAx9WT8VpuAP2ADNwnvZ0uO5hrD-X7MFAGmsSFqBi=rw-w1144' alt='pic' />                             
                                 <p className='product-selector-heading-random'>Just Black</p>
                                 <button className='product-selector-button' onClick={() => chooseBlack()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/8SX9vrX4at1Q3jOwkywP8TnjGvECUDB7LVKtc2g6D9cR1dOH_3UuFfI0awcwUYGpTw=rw-w1144'/>
+                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/8SX9vrX4at1Q3jOwkywP8TnjGvECUDB7LVKtc2g6D9cR1dOH_3UuFfI0awcwUYGpTw=rw-w1144' alt='pic' />
                                 <p className='product-selector-heading-random'>Clearly White</p>
                                 <button className='product-selector-button' onClick={() => chooseWhite()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/5mfu9wvv04QIsSUbKz_6Uqlsjl9w7n_G260CHlux1U_dbVcxpkwWhUrQXyC2fQt3AkE=rw-w1144'/>
+                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/5mfu9wvv04QIsSUbKz_6Uqlsjl9w7n_G260CHlux1U_dbVcxpkwWhUrQXyC2fQt3AkE=rw-w1144' alt='pic' />
                                 <p className='product-selector-heading-2'>Oh So Orange</p>
                                 <p className='product-selector-heading-3'>Limited Edition</p><br/>
                                 <button className='product-selector-button' onClick={() => chooseOrange()}>Select</button>
@@ -297,7 +297,7 @@ function ProductSelectorPage(props){
                         <h1 className='product-selector-heading'>Let Po protect your device!</h1>
                         <div className='product-options'>
                         <div id='panda-care'>
-                            <img id='po-image' src='https://vignette.wikia.nocookie.net/kungfupanda/images/7/73/KFP3-promo-po4.jpg/revision/latest/scale-to-width-down/350?cb=20150726165358' />
+                            <img id='po-image' src='https://vignette.wikia.nocookie.net/kungfupanda/images/7/73/KFP3-promo-po4.jpg/revision/latest/scale-to-width-down/350?cb=20150726165358' alt='pic' />
                             <p className='product-storage-option-text-3'>$100</p>
                             <button className='product-selector-button-2' onClick={() => yesIFreakingWantPandaCare()}>Get PandaCare!</button>
                             <button className='product-selector-button-2' onClick={() => noIDontWantPandaCare()}>No thanks</button>
@@ -311,7 +311,7 @@ function ProductSelectorPage(props){
                         <h1 className='product-selector-heading'>Review your choice</h1>
 
                         <div id='review-info-box'>
-                            <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>
+                            <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440' alt='pic' />
                             <div id='review-info-box-text'>
                                 <p className='product-storage-option-text-3'>{productReview.name} {productSize}" display</p>
                                 <p className='product-storage-option-text-4'>{productColor}</p>
