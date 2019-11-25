@@ -6,7 +6,7 @@ import { HashRouter } from 'react-router-dom';
 import './App.css';
 
 //----Stripe----//
-import { StripeProvider } from 'react-stripe-elements';
+import { StripeProvider, Elements } from 'react-stripe-elements';
 import { stripeApiKey } from './stripeApiKey';
 //----EndStripe----//
 
@@ -24,16 +24,18 @@ function App() {
   return (
     <div className="App">
       <StripeProvider apiKey={stripeApiKey}>
-        <Provider store={store}>
-          <HashRouter>
-            <Route exact path='/' component={HomeProductPage} />
-            <Route path='/productconfig' component={ProductSelectorPage} />
-            <Route path='/productconfigiphone' component={IphoneSelectorPage} />
-            <Route exact path='/techspecs' component={HomeProductTechSpecs} />
-            <Route path='/cart' component={CartPage} />
-            <Route path='/stadia' component={Stadia} />
-          </HashRouter>
-        </Provider>
+        <Elements>
+          <Provider store={store}>
+            <HashRouter>
+              <Route exact path='/' component={HomeProductPage} />
+              <Route path='/productconfig' component={ProductSelectorPage} />
+              <Route path='/productconfigiphone' component={IphoneSelectorPage} />
+              <Route exact path='/techspecs' component={HomeProductTechSpecs} />
+              <Route path='/cart' component={CartPage} />
+              <Route path='/stadia' component={Stadia} />
+            </HashRouter>
+          </Provider>
+        </Elements>
       </StripeProvider>
     </div>
   );
