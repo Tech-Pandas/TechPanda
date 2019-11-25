@@ -322,15 +322,7 @@ function ProductSelectorPage(props){
                                 <p className='product-storage-option-text-4'>{`$${determineProductPrice()}`}</p>
                             </div>
                         </div>
-
-                        <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>
-                <p className='product-storage-option-text-3'>{productReview.name} {productSize}" display</p>
-                        <p className='product-storage-option-text-4'>{productColor}</p>
-                        <p className='product-storage-option-text-4'>{productStorage}</p>
-                        <p className='product-storage-option-text-4'>{pandaCare ? (
-                            <div>PandaCare</div>
-                        ) : null}</p>
-                        <p className='product-storage-option-text-4'>${`${determineProductPrice()}`}</p>
+                        
                         <button className='product-selector-button-2' onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)}>Add to cart</button>
                     </div>
                 ) : null}
