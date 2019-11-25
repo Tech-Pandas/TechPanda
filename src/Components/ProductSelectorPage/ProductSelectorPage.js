@@ -226,7 +226,6 @@ function ProductSelectorPage(props){
                         <h1 className='product-selector-heading'>Choose your Google Pixel 4</h1>
                         <div className='product-options'>
                             <div className='product-option'>
-
                                 <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>
                                 <p className='product-selector-heading-2'>Google Pixel 4</p>
                                 <p className='product-selector-heading-3'>Fullscreen 5.7" display</p>
@@ -295,13 +294,13 @@ function ProductSelectorPage(props){
 
                 {displayPandaCare ? (
                    <div>
-                        <h1>Let Po protect your device!</h1>
+                        <h1 className='product-selector-heading'>Let Po protect your device!</h1>
                         <div className='product-options'>
                         <div id='panda-care'>
                             <img id='po-image' src='https://vignette.wikia.nocookie.net/kungfupanda/images/7/73/KFP3-promo-po4.jpg/revision/latest/scale-to-width-down/350?cb=20150726165358' />
-                            <button onClick={() => yesIFreakingWantPandaCare()}>Get PandaCare!</button>
-                            <button onClick={() => noIDontWantPandaCare()}>No thanks</button>
-                            <p>$100</p>
+                            <p className='product-storage-option-text-3'>$100</p>
+                            <button className='product-selector-button-2' onClick={() => yesIFreakingWantPandaCare()}>Get PandaCare!</button>
+                            <button className='product-selector-button-2' onClick={() => noIDontWantPandaCare()}>No thanks</button>
                         </div>
                     </div>
                    </div>
@@ -309,15 +308,19 @@ function ProductSelectorPage(props){
 
                 {displayProductReview ? (
                     <div>
-                        {/* pic of chosen product */}
-                <p>{productReview.name} {productSize}" display</p><br/>
-                        {productColor}<br/>
-                        {productStorage}<br/>
-                        {pandaCare ? (
+                        <h1 className='product-selector-heading'>Review your choices</h1>
+
+
+
+                        <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'/>
+                <p className='product-storage-option-text-3'>{productReview.name} {productSize}" display</p>
+                        <p className='product-storage-option-text-4'>{productColor}</p>
+                        <p className='product-storage-option-text-4'>{productStorage}</p>
+                        <p className='product-storage-option-text-4'>{pandaCare ? (
                             <div>PandaCare</div>
-                        ) : null}
-                        {determineProductPrice()}<br/>
-                        <button onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)}>Add to cart</button>
+                        ) : null}</p>
+                        <p className='product-storage-option-text-4'>{`${determineProductPrice()}`}</p>
+                        <button className='product-selector-button-2' onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)}>Add to cart</button>
                     </div>
                 ) : null}
             </div>
@@ -331,10 +334,10 @@ function ProductSelectorPage(props){
             }
                 
                 <div>
-                    <button onClick={() => moveToSize()}>Size</button>
-                    <button onClick={() => moveToColor()}>Color</button>
-                    <button onClick={() => moveToStorage()}>Storage</button>
-                    <button onClick={() => moveToPandaCare()}>PandaCare</button>
+                    <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
+                    <button className='progress-buttons-2' onClick={() => moveToColor()}></button>
+                    <button className='progress-buttons-2' onClick={() => moveToStorage()}></button>
+                    <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>
                 </div>
 
                 {!displayProductReview ? (

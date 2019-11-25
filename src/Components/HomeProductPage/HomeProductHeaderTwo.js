@@ -5,7 +5,7 @@ function HomeProductHeaderTwo() {
     return(  
         <div id='home-product-page-header-2'>
             <div className='logos'>
-                <p className='product-logo'>Google Pixel 4</p>
+                <a href='/'><p className='product-logo'>Google Pixel 4</p></a>
             </div>
 
             <div className='product-header-2-center-menu'>

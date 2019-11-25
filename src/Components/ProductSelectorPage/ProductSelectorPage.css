@@ -79,6 +79,27 @@
     border: 2px rgb(50, 50, 50) solid;
 }
 
+.product-selector-button-2{
+    width: auto;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 700;
+    font-weight: 600;
+    font-family: 'Gill Sans';
+    color: rgb(50, 125, 230);
+    background-color: white;
+    border: 1px rgb(220, 220, 220) solid;
+    border-radius: 5px;
+    outline: 0px;
+    margin-top: 10px;
+}
+
+.product-selector-button-2:hover{
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border: 2px rgb(50, 50, 50) solid;
+}
+
 .product-options {
     width: 100%;
     display: flex;
@@ -125,10 +146,24 @@
     color: rgb(100, 100, 100);
 }
 
+.product-storage-option-text-3 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(100, 100, 100);
+}
+
+.product-storage-option-text-4 {
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(100, 100, 100);
+}
+
 #panda-care {
     background-color: white;
     width: 20vw;
-    height: 50vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -138,6 +173,7 @@
 
 #po-image {
     height: 30vh;
+    margin-top: -10px;
 }
 
 .product-config-footer {
@@ -191,4 +227,26 @@
     width: 10.5vh;
     margin-left: 2.5%;
     outline: 0;
+}
+
+.progress-buttons-1 {
+    background-color: rgb(50, 125, 230);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 0px;
+    outline: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.progress-buttons-2 {
+    background-color: rgb(180, 180, 180);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 0px;
+    outline: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
