@@ -319,7 +319,7 @@ function ProductSelectorPage(props){
                         <p className='product-storage-option-text-4'>{pandaCare ? (
                             <div>PandaCare</div>
                         ) : null}</p>
-                        <p className='product-storage-option-text-4'>{`${determineProductPrice()}`}</p>
+                        <p className='product-storage-option-text-4'>${`${determineProductPrice()}`}</p>
                         <button className='product-selector-button-2' onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)}>Add to cart</button>
                     </div>
                 ) : null}
@@ -334,10 +334,26 @@ function ProductSelectorPage(props){
             }
                 
                 <div>
-                    <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
-                    <button className='progress-buttons-2' onClick={() => moveToColor()}></button>
-                    <button className='progress-buttons-2' onClick={() => moveToStorage()}></button>
-                    <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>
+                    {displayProductSize ? (
+                        <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
+                    ) : (
+                        <button className='progress-buttons-2' onClick={() => moveToSize()}></button>
+                    )}
+                    {displayProductColor ? (
+                        <button className='progress-buttons-1' onClick={() => moveToColor()}></button>
+                    ) : (
+                        <button className='progress-buttons-2' onClick={() => moveToColor()}></button>
+                    )}
+                    {displayProductStorage ? (
+                        <button className='progress-buttons-1' onClick={() => moveToStorage()}></button>
+                    ) : (
+                        <button className='progress-buttons-2' onClick={() => moveToStorage()}></button>
+                    )}
+                    {displayPandaCare ? (
+                        <button className='progress-buttons-1' onClick={() => moveToPandaCare()}></button>
+                    ): (
+                        <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>
+                    )}
                 </div>
 
                 {!displayProductReview ? (
