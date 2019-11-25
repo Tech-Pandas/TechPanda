@@ -6,6 +6,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import axios from 'axios';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import {withRouter} from 'react-router-dom';
 
 
 
@@ -19,24 +20,28 @@ function HomeProductHeaderOne(props) {
         }
     }, [])
 
-    const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
-    useEffect(() => {
-        axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
-        .then(res => {
-            setProductId(res.data)
-        })
-    }, [])
 
     const userLogin = () => {
         window.location.href = 'http://localhost:5000/api/login';
     };
 
     const logoutUser = () => {
+        const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
+        
+        axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
+        .then(res => {
+            setProductId(res.data)
+        })
         axios.post('/api/cart', {user_id: props.user.id, product_id: productId, quantity: 1})
         .then(res => {
             console.log(res)
         })
+
+        console.log('hitting logout', props)
         props.logout()
+
+        props.history.push('/')
+        // console.log(props)
     }
 
 
@@ -108,4 +113,4 @@ const mapDispatchToProps = {
     logout
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeProductHeaderOne)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomeProductHeaderOne))
