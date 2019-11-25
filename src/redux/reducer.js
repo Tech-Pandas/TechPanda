@@ -5,23 +5,14 @@ const initialState = {
     email: '',
     user: {},
     loggedIn: false,
-    cart: {
-        productSize: null,
-        productColor: null, 
-        productStorage: null, 
-        pandaCare: null,
-        productPrice: null,
-        productType: null,
-        productName: null,
-        productRam: null,
-        productProcessor: null
-    }
+    cart: []
 }
 
 const UPDATE_EMAIL = 'UPDATE_EMAIL';
 const GET_USER = 'GET_USER'
 const LOGOUT = 'LOGOUT'
 const ADD_DEVICE_TO_CART = 'ADD_DEVICE_TO_CART'
+const GET_CART = 'GET_CART'
 
 export function addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productRam, productProcessor){
     return{
@@ -54,6 +45,17 @@ export const getUser = () => {
     };
 };
 
+export const getCart = (user_id) => {
+    console.log('hit cart')
+    axios.get(`/api/cart/${user_id}`).then(res => res.data).then(res => {
+        console.log(res)
+    })
+    return {
+        type: GET_CART,
+        payload: axios.get(`/api/cart/${user_id}`).then(res => res.data)
+    }
+}
+
 export const logout = () => {
     return {
       type: LOGOUT,
@@ -68,13 +70,19 @@ export default function reducer(state = initialState, action){
             return { ...state };
         case GET_USER + "_FULFILLED":
             return { ...state, user: payload, loggedIn: true };
+        case GET_CART + "_PENDING":
+            console.log('still pending', payload)
+            return {...state}
+        case GET_USER + "_FULFILLED":
+            console.log(payload)
+            return {...state, cart: [...state.cart, payload]}
         case LOGOUT + "_FULFILLED":
             return { user: {}, users: {}, loggedIn: false };
         case UPDATE_EMAIL:
             let email = payload;
             return {...state, email};
-        case ADD_DEVICE_TO_CART:
-            return {...state, cart: payload}
+        case ADD_DEVICE_TO_CART:            
+            return {...state, cart: [...state.cart, payload]}
         default:
             return state;
     }

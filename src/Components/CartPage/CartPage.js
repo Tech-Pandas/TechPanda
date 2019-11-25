@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { getUser, addDeviceToCart } from '../../redux/reducer'
+import { getUser, getCart } from '../../redux/reducer'
 import axios from 'axios';
 import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 // import { withRouter } from 'react-router-dom';
@@ -31,14 +31,9 @@ function CartPage(props) {
 
     useEffect(() => {
         if(props.user.user_id){
-            axios.get(`/api/cart/${props.user.user_id}`)
-            .then(res => {
-                setCart(res.data)
-            })
-        } else {
-            setCart(props.cart)
+           props.getCart(props.user.user_id)
         }
-    }, [])
+    }, [props.cart])
 
     console.log(props)
     console.log(cart)    
@@ -86,13 +81,17 @@ function CartPage(props) {
                     <div>
                         {cart.productName ? (
                             <div>
-                                hit cart.productName
-                                {cart.productName}
-                                {cart.productColor}
-                                {cart.productStorage}
+                                hit cart.productName<br/>
+                                {cart.productName}<br/>
+                                {cart.productColor}<br/>
+                                {cart.productStorage}<br/>
                                 {cart.productSize}
-                                {cart.pandaCare}
-                                {cart.productPrice}
+                                {cart.pandaCare ? (
+                                    <p>with PandaCare</p>
+                                ) : (
+                                    <p>You are defenseless.</p>
+                                )}
+                                {cart.productPrice}<br/>
                             </div>
                         ) : (
                             <p>nothing in cart</p>
@@ -116,7 +115,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    getUser, addDeviceToCart
+    getUser, 
+    getCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
