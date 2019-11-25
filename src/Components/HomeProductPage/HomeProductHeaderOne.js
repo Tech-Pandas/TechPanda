@@ -80,7 +80,7 @@ function HomeProductHeaderOne(props) {
             
             <div className='cart-user-icons'>
                 <div>
-                    <ShoppingCartIcon></ShoppingCartIcon>
+                    <a href='/#/cart'><ShoppingCartIcon></ShoppingCartIcon></a>
                     {/* <img src='https://carlisletheacarlisletheatre.org/images/shopping-cart-icon-grey-9.jpg' className='cart-icon' /> */}
                 </div>
                 {props.loggedIn ? (

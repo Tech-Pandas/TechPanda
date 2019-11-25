@@ -10,7 +10,7 @@ function StadiaHeader() {
             </div>
 
             <div className='product-header-2-center-menu'>
-                <a href='/'><button className='product-header-2-menu-buttons'>Overview</button></a>
+                <a href='/#/stadia'><button className='product-header-2-menu-buttons'>Overview</button></a>
                 <Link to ='/stadiaspecs'><button className='product-header-2-menu-buttons'>Tech Specs</button></Link>
             </div>
 
