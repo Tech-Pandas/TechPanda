@@ -2,16 +2,17 @@
 
 require('dotenv').config()
 
-const express = require('express')
-const massive = require('massive')
-const session = require('express-session')
+const express = require('express');
+const massive = require('massive');
+const session = require('express-session');
 
-const app = express()
-app.use(express.json())
+const app = express();
+app.use(express.json());
 
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET } = process.env
-const cartCtrl = require('./cartController')
+const cartCtrl = require('./cartController');
+const stripeCtrl = require('./stripeController');
 
 app.use(
     session({
@@ -110,10 +111,17 @@ app.post('/api/redirect', (req, res, next) => {
 // ---------- AUTH0
 
 
-// ----------cart
+// ----------cart ---------//
+
 app.post('/api/productid', cartCtrl.getProductID)
 app.post('/api/cart', cartCtrl.addCart)
 app.get('/api/cart/:userid', cartCtrl.getCart)
+
+
+//------ Stripe Endpoints -------//
+
+app.post('/charge/create', stripeCtrl.charge);
+app.post('/customer/create', stripeCtrl.createCustomer);
 
 
 
