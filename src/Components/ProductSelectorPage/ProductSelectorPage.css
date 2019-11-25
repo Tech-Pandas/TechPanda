@@ -245,6 +245,11 @@
     outline: 0;
 }
 
+.product-selector-dots {
+    display: flex;
+    align-items: center;
+}
+
 .progress-buttons-1 {
     background-color: rgb(50, 125, 230);
     height: 15px;
@@ -252,8 +257,8 @@
     border-radius: 50%;
     border: 0px;
     outline: 0px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .progress-buttons-2 {
@@ -263,6 +268,18 @@
     border-radius: 50%;
     border: 0px;
     outline: 0px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.product-selector-button-lines {
+    height: 3px;
+    width: 150px;
+    background-color: rgb(180, 180, 180);
+}
+
+.product-selector-button-lines-2 {
+    height: 3px;
+    width: 150px;
+    background-color: rgb(50, 125, 230);
 }
