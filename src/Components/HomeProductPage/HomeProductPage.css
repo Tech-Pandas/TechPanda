@@ -29,6 +29,15 @@
     margin-left: 40px;
 }
 
+#left-header-1-stuff {
+    display: flex;
+    align-items: center;
+}
+
+.left-header-1-text {
+    color: rgb(50, 50, 50);
+    margin-left: 30px;
+}
 
 .cart-user-icons{
     width: 7%;

@@ -61,8 +61,14 @@ function HomeProductHeaderOne(props) {
 
     return (
         <div id='home-product-page-header-1'>
-            <a href='/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' /></a>
-
+            
+            <div id='left-header-1-stuff'>
+                <a href='/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' /></a>
+                <p className='left-header-1-text'>Pixel 4</p>
+                <p className='left-header-1-text'>iPhone 11 Pro Max</p>
+                <p className='left-header-1-text'>Stadia</p>
+            </div>
+            
             <div className='cart-user-icons'>
                 <div>
                     <ShoppingCartIcon></ShoppingCartIcon>
