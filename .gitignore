@@ -13,6 +13,7 @@
 /build
 
 .env
+stripeApiKey.js
 
 # misc
 .DS_Store
