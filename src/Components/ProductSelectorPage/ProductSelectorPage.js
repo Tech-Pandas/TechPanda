@@ -217,7 +217,7 @@ function ProductSelectorPage(props){
     // console.log(props)
     console.log(determineProductPrice())
     return(
-        <div>
+        <nav>
             <HomeProductHeaderOne/>
         <body className='product-config-body'>
             <div className='config-toggles'>
@@ -364,7 +364,7 @@ function ProductSelectorPage(props){
                 ) : <button className='blank-white-button'></button>}
             </nav>
         </footer>
-        </div>
+        </nav>
     )
 }
 

@@ -4,7 +4,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 2.5%;
     height: 9.3vh;
     width: 100%;
     background-color: white;
@@ -27,16 +26,24 @@
 
 #logo {
     height: 35px;
+    margin-left: 40px;
+}
+
+
+.cart-user-icons{
+    width: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 1.5%;
 }
 
 .cart-icon{
     height: 35px;
 }
 
-.cart-user-icons{
-    width: 20%;
-    display: flex;
-    justify-content: space-evenly;
+.user-icon {
+    height: 25px;
 }
 
 .user-image {

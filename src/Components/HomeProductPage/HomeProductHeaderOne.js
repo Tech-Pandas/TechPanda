@@ -62,6 +62,7 @@ function HomeProductHeaderOne(props) {
     return (
         <div id='home-product-page-header-1'>
             <a href='/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' /></a>
+
             <div className='cart-user-icons'>
                 <div>
                     <ShoppingCartIcon></ShoppingCartIcon>
@@ -84,9 +85,11 @@ function HomeProductHeaderOne(props) {
                         </Menu>
                     </div>
                 ) : (
-                        <button
+                        <img 
+                            src='https://static.thenounproject.com/png/2366460-200.png' 
                             onClick={() => userLogin()}
-                        >Login</button>
+                            className='user-icon'
+                        ></img>
                     )}
             </div>
         </div>
