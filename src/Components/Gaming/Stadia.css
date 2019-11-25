@@ -1,0 +1,178 @@
+#stadiaheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    border-bottom: 1px rgb(230, 230, 230) solid;
+    box-shadow: 0px 5px 7px 0px rgb(225, 225, 225);
+    margin-bottom: 50px;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 600;
+    margin-bottom: 0px;
+}
+
+/* .stadia-container {
+} */
+
+.vid {
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    font-family: "Google Sans",Arial,sans-serif;
+    color: #828286;
+}
+
+.vid > h2 {
+    font-family: "Google Sans",Arial,sans-serif;
+    color: #828286;
+}
+
+.belowvidcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.playwherewant {
+    font-family: "Google Sans",Arial,sans-serif;
+    color: #828286;
+    word-wrap: break-word;
+    width: 50%;
+    padding: 40px;
+    font-size: 18px;
+}
+
+.playwherewant > h1 {
+    margin: 4px;
+}
+
+.playwherewant > h4 {
+    font-family: "Google Sans",Arial,sans-serif;
+    color: #7e7e7e;
+    word-wrap: break-word;
+    display: flex;
+    line-height: 32px;
+    font-weight: 100;
+}
+
+.stadiabuy {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Gill Sans';
+    color: white;
+    /* color: rgb(50, 125, 230); */
+    background: #1973E7;
+    border: 2px rgb(50, 125, 230) solid;
+    border-radius: 3px;
+    outline: 0px;
+    text-align: center;
+}
+
+.stadiabuy:hover {
+    cursor: pointer;
+    background: #423E3E;
+    transition: .3s ease;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Gill Sans';
+    border: 2px #423E3E solid;
+    /* z-index: 15; */
+}
+
+.stadianame {
+    margin-left: 2.5%;
+    font-size: 22px;
+    font-weight: 650;
+    color: rgb(100, 100, 100);
+}
+
+.stadiactrl {
+    max-width: 1500px;
+    padding: 20px;
+    animation: raise 9s infinite;
+    animation-timing-function: ease;
+    transition: 2s ease;
+    transform: translateZ(-1px);
+    opacity: .6;
+    z-index: -100;
+    border-radius: 50%;
+    /* transform: translateX(-1px) scale(1); */
+}
+
+@keyframes raise {
+    0%{
+        opacity: .5;
+        transform: scale(1.05);
+    }
+    25%{
+        transform: scale(1.1);
+        opacity: .6;
+    }
+    50%{
+        transform: scale(1.15);
+        transform: translateZ(-.2px) scale(1.15);
+        opacity: .7;
+    }
+    75%{
+        transform: scale(1.1);
+        opacity: .8;
+    }
+    100%{
+        transform: scale(1.05);
+        opacity: .6;
+        transition: 10s step-end;
+    }
+}
+
+.animating {
+    /* box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3); */
+    /* transition: box-shadow 0.5s; */
+    will-change: transform;
+    overflow: hidden;
+    padding: 50px;
+  }
+
+  .below-animation-container {
+      display: flex;
+      width: 100vw;
+      padding-left: 50px;
+      padding-right: 50px;
+  }
+
+  .below-animation-img {
+      max-width: 60vw;
+  }
+
+  .below-animation {
+      width: 30vw;
+      font-family: "Google Sans",Arial,sans-serif;
+      color: #828286;
+      word-wrap: break-word;
+      font-size: 18px;
+      text-align: left;
+      padding-top: 30px;
+  }
+
+  .below-animation > h4 {
+    font-weight: 100;
+  }
+
+  .lastimg {
+    max-width: 100vw;
+  }
