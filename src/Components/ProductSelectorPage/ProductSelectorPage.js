@@ -215,7 +215,7 @@ function ProductSelectorPage(props){
     
     // console.log(productReview)
     // console.log(props)
-    console.log(determineProductPrice())
+    // console.log(determineProductPrice())
     return(
         <nav>
             <HomeProductHeaderOne/>

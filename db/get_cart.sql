@@ -1,2 +1,2 @@
 select * from carts
-where user_id = ${userid};
+where user_id = $1;
