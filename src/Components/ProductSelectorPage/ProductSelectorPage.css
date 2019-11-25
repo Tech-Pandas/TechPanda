@@ -228,3 +228,25 @@
     margin-left: 2.5%;
     outline: 0;
 }
+
+.progress-buttons-1 {
+    background-color: rgb(50, 125, 230);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 0px;
+    outline: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.progress-buttons-2 {
+    background-color: rgb(180, 180, 180);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 0px;
+    outline: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
