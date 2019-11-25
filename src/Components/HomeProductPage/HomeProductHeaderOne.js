@@ -13,12 +13,21 @@ import {withRouter} from 'react-router-dom';
 function HomeProductHeaderOne(props) {
     const [productId, setProductId] = useState(0)
 
-
     useEffect(() => {
         if (!props.user.loggedIn) {
             props.getUser();
         }
     }, [])
+
+    // useEffect(() => {
+    //     if(props.user.loggedIn){
+    //         axios.get(`/api/cart/${props.user.id}`)
+    //         .then(res => {
+                
+    //         })
+    //         .catch(err => console.log(err))
+    //     }
+    // })
 
 
     const userLogin = () => {
