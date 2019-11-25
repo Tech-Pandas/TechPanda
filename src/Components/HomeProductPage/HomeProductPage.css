@@ -91,6 +91,7 @@ a:link {
     margin-left: 10px;
     background-color: rgb(245, 245, 245);
     padding: 10px;
+    text-align: center;
 }
 
 .product-header-2-menu-buttons:hover {

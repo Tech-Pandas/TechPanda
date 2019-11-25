@@ -66,7 +66,11 @@ const Stadia = () => {
                 </div>
             </div>
             <div className='laststadiaimg'>
-                <img className='lastimg' src='https://lh3.googleusercontent.com/QnbFFJO87lKklxe1_X1vmBnhPTxd6Et3WPrwqVHFY0FCFC4S5FB5qcwZyzVwTQqA_neZtowCInjXA-K8yoch0Q=rw-w2010' />
+                <h1>Bring Stadia into your living room</h1>
+                <h1>through Google Chromecast Ultra.</h1>
+                <h3>Play on your TV in up to 4K Ultra HD with HDR.</h3>
+                <h3>Stunning graphics at up to 60 FPS.</h3>
+                <h3>Works seamlessly with the Stadia Controller.</h3>
             </div>
         </div>
     )
