@@ -9,6 +9,7 @@ import HomeProductPage from './Components/HomeProductPage/HomeProductPage';
 import ProductSelectorPage from './Components/ProductSelectorPage/ProductSelectorPage';
 import HomeProductTechSpecs from './Components/HomeProductPage/HomeProductTechSpecs';
 import CartPage from './Components/CartPage/CartPage'
+import Stadia from './Components/Gaming/Stadia';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/productconfig' component={ProductSelectorPage}/>
         <Route exact path='/techspecs' component={HomeProductTechSpecs}/>
         <Route path='/cart' component={CartPage}/>        
+        <Route path='/stadia' component={Stadia}/>        
       </HashRouter>
       </Provider>
     </div>
