@@ -6,12 +6,12 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import axios from 'axios';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import {withRouter} from 'react-router-dom';
 
 
 
 function HomeProductHeaderOne(props) {
     const [productId, setProductId] = useState(0)
-
 
     useEffect(() => {
         if (!props.user.loggedIn) {
@@ -19,24 +19,38 @@ function HomeProductHeaderOne(props) {
         }
     }, [])
 
-    const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
-    useEffect(() => {
-        axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
-        .then(res => {
-            setProductId(res.data)
-        })
-    }, [])
+    // useEffect(() => {
+    //     if(props.user.loggedIn){
+    //         axios.get(`/api/cart/${props.user.id}`)
+    //         .then(res => {
+                
+    //         })
+    //         .catch(err => console.log(err))
+    //     }
+    // })
+
 
     const userLogin = () => {
         window.location.href = 'http://localhost:5000/api/login';
     };
 
     const logoutUser = () => {
+        const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
+        
+        axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
+        .then(res => {
+            setProductId(res.data)
+        })
         axios.post('/api/cart', {user_id: props.user.id, product_id: productId, quantity: 1})
         .then(res => {
             console.log(res)
         })
+
+        console.log('hitting logout', props)
         props.logout()
+
+        props.history.push('/')
+        // console.log(props)
     }
 
 
@@ -56,7 +70,14 @@ function HomeProductHeaderOne(props) {
 
     return (
         <div id='home-product-page-header-1'>
-            <a href='/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' /></a>
+            
+            <div id='left-header-1-stuff'>
+                <a href='/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' /></a>
+                <a href='/'><p className='left-header-1-text'>Pixel 4</p></a>
+                <a href='/'><p className='left-header-1-text'>iPhone 11 Pro Max</p></a>
+                <a href='/#/stadia'><p className='left-header-1-text'>Stadia</p></a>
+            </div>
+            
             <div className='cart-user-icons'>
                 <div>
                     <ShoppingCartIcon></ShoppingCartIcon>
@@ -79,9 +100,11 @@ function HomeProductHeaderOne(props) {
                         </Menu>
                     </div>
                 ) : (
-                        <button
+                        <img 
+                            src='https://static.thenounproject.com/png/2366460-200.png' 
                             onClick={() => userLogin()}
-                        >Login</button>
+                            className='user-icon'
+                        ></img>
                     )}
             </div>
         </div>
@@ -108,4 +131,4 @@ const mapDispatchToProps = {
     logout
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeProductHeaderOne)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomeProductHeaderOne))

@@ -1,4 +1,4 @@
-const stripe = require('stripe')('sk_test_IVI3ef7GfMssGoHjfZsfOzib007osWUkzw');
+const stripe = require('stripe')('sk_test_GYexMim4IscFS9hVWosbTGoQ00fIXq9M5d');
 
 module.exports = {
     charge: async (req, res) => {
