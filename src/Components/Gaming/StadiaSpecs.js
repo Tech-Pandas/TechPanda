@@ -15,8 +15,7 @@ const StadiaSpecs = () => {
             <StadiaHeader />
 
             <div className='specimg'>
-                {/* <h2>What's in the box</h2> */}
-                <img src='https://9to5google.com/stadia-founders-edition-requirements-and-specs-google-store/' />
+                <img className='ctrlspec' src='https://9to5google.com/stadia-founders-edition-requirements-and-specs-google-store/' alt='pic' />
             </div>
             <div className='techspecsdetails'>
                 <div className='detailtitle'>
@@ -47,7 +46,7 @@ const StadiaSpecs = () => {
                 </div>
             </div>
             <div className='stadiafooterpic-container'>
-                <img className='stadiafooterpic' src='https://purepng.com/public/uploads/large/google-stadia-logo-3cx.png' />
+                <img className='stadiafooterpic' src='https://purepng.com/public/uploads/large/google-stadia-logo-3cx.png' alt='pic' />
             </div>
         </div>
     )

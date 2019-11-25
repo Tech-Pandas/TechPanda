@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Stadia.css';
 import ReactPlayer from 'react-player';
-import { useSpring, animated, useTransition } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 // import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Button from '@material-ui/core/Button';
 import StadiaHeader from './StadiaHeader';
@@ -10,8 +10,8 @@ import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`
-const trans2 = (x, y) => `translate3d(${x / 8 + 35}px,${y / 8 - 230}px,0)`
-const trans3 = (x, y) => `translate3d(${x / 6 - 250}px,${y / 6 - 200}px,0)`
+// const trans2 = (x, y) => `translate3d(${x / 8 + 35}px,${y / 8 - 230}px,0)`
+// const trans3 = (x, y) => `translate3d(${x / 6 - 250}px,${y / 6 - 200}px,0)`
 const trans4 = (x, y) => `translate3d(${x / 3.5}px,${y / 3.5}px,0)`
 
 const Stadia = () => {
@@ -57,7 +57,7 @@ const Stadia = () => {
             </div>
             <div className='below-animation-container'>
                 <div className='below-animation-container-img'>
-                    <img className='below-animation-img' src='https://lh3.googleusercontent.com/IThKxE6QggBZnPh_uJSXfTAH1U7tOznqFuB0e1nrmTEgZ74V_pv8XH18kH_wZ92xwlTiMH3G7RPVV-B0SaGK3io=rw-w2010' />
+                    <img className='below-animation-img' src='https://lh3.googleusercontent.com/IThKxE6QggBZnPh_uJSXfTAH1U7tOznqFuB0e1nrmTEgZ74V_pv8XH18kH_wZ92xwlTiMH3G7RPVV-B0SaGK3io=rw-w2010' alt='pic' />
                 </div>
                 <div className='below-animation'>
                     <h1>Introducing the Stadia Controller.</h1>
@@ -66,11 +66,11 @@ const Stadia = () => {
                 </div>
             </div>
             <div className='laststadiaimg'>
-                <h1>Bring Stadia into your living room</h1>
-                <h1>through Google Chromecast Ultra.</h1>
-                <h3>Play on your TV in up to 4K Ultra HD with HDR.</h3>
-                <h3>Stunning graphics at up to 60 FPS.</h3>
-                <h3>Works seamlessly with the Stadia Controller.</h3>
+                <h1 className='laststadiaimg1'>Bring Stadia into your living room</h1>
+                <h1 className='laststadiaimg1'>through Google Chromecast Ultra.</h1>
+                <h3 className='laststadiaimg3'>Play on your TV in up to 4K Ultra HD with HDR.</h3>
+                <h3 className='laststadiaimg3'>Stunning graphics at up to 60 FPS.</h3>
+                <h3 className='laststadiaimg3'>Works seamlessly with the Stadia Controller.</h3>
             </div>
         </div>
     )
