@@ -11,7 +11,15 @@ function IphoneTechSpecsPage() {
             <IphoneHeader/>
             
             <body id='iphone-tech-specs-body'>
-                <img className='iphone-heading-photo' src='https://images-na.ssl-images-amazon.com/images/G/01/appcore/phone/11pro/iPhone_11_Pro_Desktop_01._CB436769811_.jpg'/>
+
+                {/* <div className='iphone-headings'>
+                    <h1>iPhone 11 Pro</h1>
+                    <h1>iPhone 11 Pro Max</h1>
+                </div>
+                <div className='iphone-heading-line'/> */}
+                <img className='iphone-heading-photo' src='https://images-na.ssl-images-amazon.com/images/G/01/appcore/phone/11pro/iPhone_11_Pro_Desktop_01._CB436769811_.jpg' alt='pic' />
+
+
                 <div className='iphone-heading-line'/>
                 <div className='iphone-headings'>
                     <div>
