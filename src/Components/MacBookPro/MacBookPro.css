@@ -8,9 +8,9 @@
     background-color: white;
 }
 
-.config-toggles {
+.mac-config-toggles {
     height: 73.5vh;
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,8 +116,8 @@
     border: 2px rgb(50, 50, 50) solid;
 }
 
-.product-options {
-    width: 100%;
+.mac-product-options {
+    width: 60vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
