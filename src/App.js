@@ -19,7 +19,7 @@ import Stadia from './Components/Gaming/Stadia';
 import StadiaSpecs from './Components/Gaming/StadiaSpecs';
 
 import IphonePage from './Components/OtherProductPages/IphonePage';
-import IphoneTechSpecsPage from './Components/OtherProductPages/IphoneTechSpecsPage'
+import IphoneTechSpecsPage from './Components/OtherProductPages/IphoneTechSpecsPage';
 
 import IphoneSelectorPage from './Components/ProductSelectorPage/IphoneSelectorPage';
 
