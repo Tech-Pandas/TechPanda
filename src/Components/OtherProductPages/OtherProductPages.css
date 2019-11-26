@@ -1,1 +1,93 @@
-/* Hi */
+/* iPhone tech specs body */
+
+#iphone-tech-specs-body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 1000vh;
+    width: 100%;
+    background-color: black;
+    margin: 0px;
+}
+
+#iphone-page-header-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    border-bottom: 1px black solid;
+    box-shadow: 0px 5px 7px 0px black;
+    position: sticky;
+    top: 0px;
+    background-color: black;
+    z-index: 100;
+}
+
+.iphone-product-logo {
+    width: 180px;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+.iphone-header-2-center-menu {
+    margin-left: 7%;
+}
+
+.iphone-product-header-2-menu-buttons {
+    font-size: 16px;
+    border: 0px;
+    border-radius: 15px;
+    outline: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.iphone-product-header-2-menu-buttons:hover {
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+}
+
+.iphone-product-header-2-text-p-1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    font-weight: 700;
+    color: white;
+}
+
+.iphone-product-header-2-text-p-2{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: -14px;
+    font-weight: 300;
+    color: white;
+}
+
+/* body */
+
+.iphone-headings {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    margin-top: 50px;
+    margin-left: 20%;
+    font-size: 15px;
+}
+
+.iphone-heading-line {
+    height: 1px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: rgb(100, 100, 100);
+}
+
+.iphone-heading-photo {
+    height: auto;
+    widows: 100%;
+}
