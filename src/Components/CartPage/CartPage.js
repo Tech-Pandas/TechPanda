@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { getUser, getCart } from '../../redux/reducer'
-import axios from 'axios';
 import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 // import { withRouter } from 'react-router-dom';
 import Form from '../StripeComponent/Form';
@@ -18,8 +17,7 @@ import './CartPage.css';
 
 
 function CartPage(props) {
-    const [productId, setProductId] = useState(0)
-    const [cart, setCart] = useState({})
+    const [cart] = useState({})
 
 
 
