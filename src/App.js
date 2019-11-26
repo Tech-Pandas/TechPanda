@@ -18,8 +18,8 @@ import CartPage from './Components/CartPage/CartPage'
 import Stadia from './Components/Gaming/Stadia';
 import StadiaSpecs from './Components/Gaming/StadiaSpecs';
 
-import iPhonePage from './Components/OtherProductPages/iPhonePage';
-import iPhoneTechSpecsPage from './Components/OtherProductPages/iPhoneTechSpecsPage'
+import IphonePage from './Components/OtherProductPages/IphonePage';
+import IphoneTechSpecsPage from './Components/OtherProductPages/IphoneTechSpecsPage'
 
 import IphoneSelectorPage from './Components/ProductSelectorPage/IphoneSelectorPage';
 
@@ -41,8 +41,8 @@ function App() {
               <Route path='/cart' component={CartPage} />
               <Route path='/stadia' component={Stadia} />
               <Route path='/stadiaspecs' component={StadiaSpecs} />
-              <Route path='/iphone' component={iPhonePage} />
-              <Route path='/iphone-tech-specs' component={iPhoneTechSpecsPage} />
+              <Route path='/iphone' component={IphonePage} />
+              <Route path='/iphone-tech-specs' component={IphoneTechSpecsPage} />
               <Route path='/mac-book-pro' component={MacBookPro} />
             </HashRouter>
           </Provider>

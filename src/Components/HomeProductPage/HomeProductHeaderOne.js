@@ -77,7 +77,7 @@ function HomeProductHeaderOne(props) {
                 <a href='/#/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' alt='pic' /></a>
                 <a href='/#/'><p className='left-header-1-text'>Pixel 4</p></a>
 
-                <a href='/#/iphone'><p className='left-header-1-text'>iPhone 11 Pro Max</p></a>
+                <a href='/#/iphone'><p className='left-header-1-text'>iPhone 11 Pro</p></a>
                 <a href='/#/stadia'><p className='left-header-1-text'>Stadia</p></a>
             </div>
             
