@@ -5,7 +5,8 @@ const initialState = {
     email: '',
     user: {},
     loggedIn: false,
-    cart: []
+    cart: [],
+    savedCart: []
 }
 
 const UPDATE_EMAIL = 'UPDATE_EMAIL';
@@ -13,6 +14,7 @@ const GET_USER = 'GET_USER'
 const LOGOUT = 'LOGOUT'
 const ADD_DEVICE_TO_CART = 'ADD_DEVICE_TO_CART'
 const GET_CART = 'GET_CART'
+const CLEAR_CART = 'CLEAR_CART'
 
 export function addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productRam, productProcessor){
     return{
@@ -49,9 +51,18 @@ export const getCart = (user_id) => {
     let data = axios.get(`/api/cart/${user_id}`).then(res => res.data).then(res => {
         return res
     })
+    console.log(data)
+    
     return {
         type: GET_CART,
         payload: data
+    }
+}
+
+export const clearSavedCart = () => {
+    return{
+        type: CLEAR_CART,
+        payload: []
     }
 }
 
@@ -72,7 +83,21 @@ export default function reducer(state = initialState, action){
         case GET_CART + "_PENDING":
             return {...state}
         case GET_CART + "_FULFILLED":
-            return {...state, cart: [...state.cart, payload]}
+            console.log(payload)
+            let products = payload.map(e => {
+                return {
+                    productSize: e.size,
+                    productColor: e.color, 
+                    productStorage: e.storage, 
+                    pandaCare: e.panda_care,
+                    productPrice: e.price,
+                    productType: e.type,
+                    productName: e.name,
+                    productRam: e.ram,
+                    productProcessor: e.processor
+                }
+            })
+            return {...state, savedCart: [...state.savedCart, products]}
         case LOGOUT + "_FULFILLED":
             return { user: {}, users: {}, loggedIn: false };
         case UPDATE_EMAIL:
@@ -80,6 +105,8 @@ export default function reducer(state = initialState, action){
             return {...state, email};
         case ADD_DEVICE_TO_CART:            
             return {...state, cart: [...state.cart, payload]}
+        case CLEAR_CART:
+            return{...state, savedCart: payload}
         default:
             return state;
     }
