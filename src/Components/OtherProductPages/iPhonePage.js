@@ -14,8 +14,6 @@ import IphoneHeader from './IphoneHeader';
 // const Blue = ({ children }) => <span style={{ color: '#57C7FF' }}>{children}</span>
 // const Gray = ({ children }) => <span style={{ color: '#909090' }}>{children}</span>
 
-//ain't workin' doe
-
 class IphonePage extends Component {
   render() { 
     return (
