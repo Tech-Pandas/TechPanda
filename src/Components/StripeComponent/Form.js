@@ -7,9 +7,6 @@ import {withRouter} from 'react-router-dom';
 // import StripeExpiryTextField from '../StripeComponent/StripeExpiryTextField';
 // import StripeCVCTextField from '../StripeComponent/StripeCVCTextField';
 
-
-
-
 function Form(props) {
 
     const [name] = useState('');
@@ -31,24 +28,16 @@ function Form(props) {
 
     // console.log(props)
     return (
-        <div>
+        <div id='stripe-component'>
             Form
-            <form
-                onSubmit={handleSubmit}
-            >
-                <label
-                    value={name}
-                >
-                    {props.user.user_name}
-                </label>
-                {/* <input
-                    type='text'
-                    value={name}
-                    onChange={e => setName({ name: e.target.value })}
-                /> */}
+            <form onSubmit={handleSubmit}>
+                <label value={name}>{props.user.user_name}</label>
+                
                 <label>Amount: {props.cart.productPrice}</label>
+                
                 <CardElement />
-                <button>Submit</button>
+                
+                <button className='home-product-heading-button'>Submit</button>
             </form>
         </div>
     )

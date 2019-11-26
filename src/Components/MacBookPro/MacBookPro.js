@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {addDeviceToCart} from '../../redux/reducer';
-import './ProductSelectorPage.css';
+// import './MacBookPro.css';
 
 import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 
 
 
-function ProductSelectorPage(props){
+function MacBookPro(props){
     const [productSize, setProductSize] = useState('product size')
     const [productColor, setProductColor] = useState('product color')
     const [productStorage, setProductStorage] = useState('product storage')
@@ -249,7 +249,7 @@ function ProductSelectorPage(props){
                             <div className='product-option'>
 
                                 <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440' alt='pic' />
-                                <p className='product-selector-heading-2'>iPhone 11 Pro</p>
+                                <p className='product-selector-heading-2'>MacBook Pro 16-inch model</p>
                                 <p className='product-selector-heading-3'>5.8" display</p>
                                 <p className='product-selector-heading-3'>From $999</p>
                                 <button className='product-selector-button' onClick={() => decreaseProductSize()}>Select</button>
@@ -390,4 +390,4 @@ const mapDispatchToProps = {
     addDeviceToCart
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductSelectorPage)
+export default connect(mapStateToProps, mapDispatchToProps)(MacBookPro)

@@ -23,6 +23,10 @@ import iPhoneTechSpecsPage from './Components/OtherProductPages/iPhoneTechSpecsP
 
 import IphoneSelectorPage from './Components/ProductSelectorPage/IphoneSelectorPage';
 
+// MacBook Import //
+
+import MacBookPro from './Components/MacBookPro/MacBookPro';
+
 function App() {
   return (
     <div className="App">
@@ -39,6 +43,7 @@ function App() {
               <Route path='/stadiaspecs' component={StadiaSpecs} />
               <Route path='/iphone' component={iPhonePage} />
               <Route path='/iphone-tech-specs' component={iPhoneTechSpecsPage} />
+              <Route path='/mac-book-pro' component={MacBookPro} />
             </HashRouter>
           </Provider>
         </Elements>
