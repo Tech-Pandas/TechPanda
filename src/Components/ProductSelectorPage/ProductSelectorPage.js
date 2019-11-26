@@ -335,17 +335,16 @@ function ProductSelectorPage(props){
                     <button className='product-selector-bottom-button-1' onClick={() => moveBack()}>Back</button>
                 ) : <button className='blank-white-button'></button>
             }
-                
                 <div className='product-selector-dots'>
                     {displayProductSize ? (
                         <div className='product-selector-dots'>
                             <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
-                            <div className='product-selector-button-lines'/>
+                            <div className='product-selector-button-lines-2'/>
                         </div>
                     ) : (
                         <div className='product-selector-dots'>
-                            <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
-                            <div className='product-selector-button-lines-2'/>
+                            <button className='progress-buttons-2' onClick={() => moveToSize()}></button>
+                            <div className='product-selector-button-lines'/>
                         </div>
                     )}
                     {displayProductColor ? (
