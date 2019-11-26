@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 import './Iphone.css';
 import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 import IphoneHeader from './IphoneHeader';
-
+//Working
 // const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 // const Pink = ({ children }) => <span style={{ color: '#FF6AC1' }}>{children}</span>
 // const Yellow = ({ children }) => <span style={{ color: '#EFF59B' }}>{children}</span>
