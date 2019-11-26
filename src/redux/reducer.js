@@ -5,8 +5,7 @@ const initialState = {
     email: '',
     user: {},
     loggedIn: false,
-    cart: [],
-    savedCart: []
+    cart: []
 }
 
 const UPDATE_EMAIL = 'UPDATE_EMAIL';
@@ -14,7 +13,6 @@ const GET_USER = 'GET_USER'
 const LOGOUT = 'LOGOUT'
 const ADD_DEVICE_TO_CART = 'ADD_DEVICE_TO_CART'
 const GET_CART = 'GET_CART'
-const CLEAR_CART = 'CLEAR_CART'
 
 export function addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productRam, productProcessor){
     return{
@@ -59,13 +57,6 @@ export const getCart = (user_id) => {
     }
 }
 
-export const clearSavedCart = () => {
-    return{
-        type: CLEAR_CART,
-        payload: []
-    }
-}
-
 export const logout = () => {
     return {
       type: LOGOUT,
@@ -80,24 +71,24 @@ export default function reducer(state = initialState, action){
             return { ...state };
         case GET_USER + "_FULFILLED":
             return { ...state, user: payload, loggedIn: true };
-        case GET_CART + "_PENDING":
-            return {...state}
-        case GET_CART + "_FULFILLED":
-            console.log(payload)
-            let products = payload.map(e => {
-                return {
-                    productSize: e.size,
-                    productColor: e.color, 
-                    productStorage: e.storage, 
-                    pandaCare: e.panda_care,
-                    productPrice: e.price,
-                    productType: e.type,
-                    productName: e.name,
-                    productRam: e.ram,
-                    productProcessor: e.processor
-                }
-            })
-            return {...state, savedCart: [...state.savedCart, products]}
+        // case GET_CART + "_PENDING":
+        //     return {...state}
+        // case GET_CART + "_FULFILLED":
+        //     console.log(payload)
+        //     let products = payload.map(e => {
+        //         return {
+        //             productSize: e.size,
+        //             productColor: e.color, 
+        //             productStorage: e.storage, 
+        //             pandaCare: e.panda_care,
+        //             productPrice: e.price,
+        //             productType: e.type,
+        //             productName: e.name,
+        //             productRam: e.ram,
+        //             productProcessor: e.processor
+        //         }
+        //     })
+        //     return {...state, savedCart: [...state.savedCart, products]}
         case LOGOUT + "_FULFILLED":
             return { user: {}, users: {}, loggedIn: false };
         case UPDATE_EMAIL:
@@ -105,8 +96,6 @@ export default function reducer(state = initialState, action){
             return {...state, email};
         case ADD_DEVICE_TO_CART:            
             return {...state, cart: [...state.cart, payload]}
-        case CLEAR_CART:
-            return{...state, savedCart: payload}
         default:
             return state;
     }

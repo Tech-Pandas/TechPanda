@@ -4,10 +4,10 @@
     display: flex;
     flex-direction: column;
     align-content: center;
-    height: 1000vh;
+    height: auto;
     width: 100%;
     background-color: black;
-    margin: 0px;
+    padding-bottom: 100px;
 }
 
 #iphone-page-header-2 {
@@ -70,14 +70,10 @@
 
 /* body */
 
-.iphone-headings {
-    width: 80%;
-    display: flex;
-    justify-content: space-evenly;
-    color: white;
-    margin-top: 50px;
-    margin-left: 20%;
-    font-size: 15px;
+.iphone-heading-photo {
+    height: auto;
+    widows: 100%;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(60%, transparent) , to(rgba(250, 250, 250, 0.1)));
 }
 
 .iphone-heading-line {
@@ -87,7 +83,14 @@
     background-color: rgb(100, 100, 100);
 }
 
-.iphone-heading-photo {
-    height: auto;
-    widows: 100%;
+.iphone-headings {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin-top: 50px;
+    margin-left: 10%;
+    font-size: 15px;
+    text-align: left;
+    padding-bottom: 50px;
 }

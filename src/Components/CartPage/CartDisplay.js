@@ -6,17 +6,7 @@ function CartDisplay(props){
 
     return(
         <div>
-            {props.productObj.productName ? (
-                <div>
-                    hit first condition
-                    {props.productObj.productName}
-                </div>
-            ) : (
-                <div>
-                    hitting second condition
-                    {props.productObj.name}
-                </div>
-            )}
+            {props.productObj.productName}
         </div>
     )
 }

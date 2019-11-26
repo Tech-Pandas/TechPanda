@@ -18,7 +18,7 @@ function IphoneHeader() {
                     <p className='iphone-product-header-2-text-p-2'>with 0% APR Apple Store Financing*</p>
                 </div>
                 
-                <a href='#/productconfig'><button className='product-header-2-buy-button'>Buy</button></a>
+                <a href='/#/productconfigiphone'><button className='product-header-2-buy-button'>Buy</button></a>
             </div>
         </div>
         
