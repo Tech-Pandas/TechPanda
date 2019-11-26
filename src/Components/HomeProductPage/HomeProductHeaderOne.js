@@ -66,7 +66,7 @@ function HomeProductHeaderOne(props) {
         setAnchorEl(null);
     };
 
-    console.log(props)
+    // console.log(props)
     //-------- Style Done Here --------///
 
     return (

@@ -6,6 +6,7 @@ import { getUser, getCart } from '../../redux/reducer'
 import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 // import { withRouter } from 'react-router-dom';
 import Form from '../StripeComponent/Form';
+import CartDisplay from './CartDisplay'
 
 // Style //
 
@@ -17,8 +18,7 @@ import './CartPage.css';
 
 
 function CartPage(props) {
-    const [cart] = useState({})
-
+    const [cart, setCart] = useState({})
 
 
     useEffect(() => {
@@ -31,71 +31,33 @@ function CartPage(props) {
         if(props.user.user_id){
            props.getCart(props.user.user_id)
         }
-    }, [props.cart])
-
-    console.log(props)
-    console.log(cart)    
+    }, [])
+    
+    for(const prop in props.cart){
+        console.log(prop, props.cart)
+    }
+    console.log(props)  
+    console.log(props.cart[0])  
+    const dbCart = props.cart[0]
 
     return (
         <div>
             <HomeProductHeaderOne />
             <div>
-                CartPage
-                {cart.firstProduct ? (
-                    <div>
-                        <p>hit db cart data</p>
-                        {cart.firstProduct.name}<br/>
-                        {cart.firstProduct.color}<br/>
-                        {cart.firstProduct.storage}<br/>
-                        {cart.firstProduct.size}<br/>
-                        {cart.firstProduct.panda_care}<br/>
-                        {cart.firstProduct.price}<br/>
-                            {cart.secondProduct ? (
-                                <div>
-                                    <p>hit db cart data</p>
-                                    {cart.secondProduct.name}<br/>
-                                    {cart.secondProduct.color}<br/>
-                                    {cart.secondProduct.storage}<br/>
-                                    {cart.secondProduct.size}<br/>
-                                    {cart.secondProduct.panda_care}<br/>
-                                    {cart.secondProduct.price}<br/>
-
-                                    
-                                    {cart.thirdProduct ? (
-                                        <div>
-                                            {cart.thirdProduct.name}<br/>
-                                            {cart.thirdProduct.color}<br/>
-                                            {cart.thirdProduct.storage}<br/>
-                                            {cart.thirdProduct.size}<br/>
-                                            {cart.thirdProduct.panda_care}<br/>
-                                            {cart.thirdProduct.price}<br/>
-                                        </div>
-                                    ): null}
-                                
-                                </div>
-                            ): null}
-                    </div>
-                ) : (
-                    <div>
-                        {cart.productName ? (
-                            <div>
-                                hit cart.productName<br/>
-                                {cart.productName}<br/>
-                                {cart.productColor}<br/>
-                                {cart.productStorage}<br/>
-                                {cart.productSize}
-                                {cart.pandaCare ? (
-                                    <p>with PandaCare</p>
-                                ) : (
-                                    <p>You are defenseless.</p>
-                                )}
-                                {cart.productPrice}<br/>
-                            </div>
-                        ) : (
-                            <p>nothing in cart</p>
-                        )}
-                    </div>
-                )}
+                CartPage            
+                <div>
+                    {dbCart ? (
+                        dbCart.map(e => {
+                            return <CartDisplay productObj={e}/>
+                        }
+                        )
+                    ) : (
+                        props.cart.map(e => {
+                            return <CartDisplay productObj={e}/>
+                        }
+                        )
+                    )}
+                </div>
             </div>
             <div>
                 <Form />
@@ -118,3 +80,60 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
+
+
+// {cart.firstProduct ? (
+//     <div>
+//         <p>hit db cart data</p>
+//         {cart.firstProduct.name}<br/>
+//         {cart.firstProduct.color}<br/>
+//         {cart.firstProduct.storage}<br/>
+//         {cart.firstProduct.size}<br/>
+//         {cart.firstProduct.panda_care}<br/>
+//         {cart.firstProduct.price}<br/>
+//             {cart.secondProduct ? (
+//                 <div>
+//                     <p>hit db cart data</p>
+//                     {cart.secondProduct.name}<br/>
+//                     {cart.secondProduct.color}<br/>
+//                     {cart.secondProduct.storage}<br/>
+//                     {cart.secondProduct.size}<br/>
+//                     {cart.secondProduct.panda_care}<br/>
+//                     {cart.secondProduct.price}<br/>
+
+                    
+//                     {cart.thirdProduct ? (
+//                         <div>
+//                             {cart.thirdProduct.name}<br/>
+//                             {cart.thirdProduct.color}<br/>
+//                             {cart.thirdProduct.storage}<br/>
+//                             {cart.thirdProduct.size}<br/>
+//                             {cart.thirdProduct.panda_care}<br/>
+//                             {cart.thirdProduct.price}<br/>
+//                         </div>
+//                     ): null}
+                
+//                 </div>
+//             ): null}
+//     </div>
+// ) : (
+//     <div>
+//         {cart.productName ? (
+//             <div>
+//                 hit cart.productName<br/>
+//                 {cart.productName}<br/>
+//                 {cart.productColor}<br/>
+//                 {cart.productStorage}<br/>
+//                 {cart.productSize}
+//                 {cart.pandaCare ? (
+//                     <p>with PandaCare</p>
+//                 ) : (
+//                     <p>You are defenseless.</p>
+//                 )}
+//                 {cart.productPrice}<br/>
+//             </div>
+//         ) : (
+//             <p>nothing in cart</p>
+//         )}
+//     </div>
+// )}

@@ -15,7 +15,7 @@ function Form(props) {
         e.preventDefault();
         try {
             let token = await props.stripe.createToken({ name: name });
-            console.log(token)
+            // console.log(token)
             if (token.error) {
                 return alert('Invalid')
             }
@@ -26,7 +26,7 @@ function Form(props) {
         }
     }
 
-    console.log(props)
+    // console.log(props)
     return (
         <div id='stripe-component'>
             Form
