@@ -16,7 +16,7 @@ function IphoneTechSpecsPage() {
                     <h1>iPhone 11 Pro Max</h1>
                 </div>
                 <div className='iphone-heading-line'/> */}
-                <img className='iphone-heading-photo' src='https://images-na.ssl-images-amazon.com/images/G/01/appcore/phone/11pro/iPhone_11_Pro_Desktop_01._CB436769811_.jpg'/>
+                <img className='iphone-heading-photo' src='https://images-na.ssl-images-amazon.com/images/G/01/appcore/phone/11pro/iPhone_11_Pro_Desktop_01._CB436769811_.jpg' alt='pic' />
             </body>
         </div>
     )
