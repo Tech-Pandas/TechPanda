@@ -46,13 +46,12 @@ export const getUser = () => {
 };
 
 export const getCart = (user_id) => {
-    console.log('hit cart')
-    axios.get(`/api/cart/${user_id}`).then(res => res.data).then(res => {
-        console.log(res)
+    let data = axios.get(`/api/cart/${user_id}`).then(res => res.data).then(res => {
+        return res
     })
     return {
         type: GET_CART,
-        payload: axios.get(`/api/cart/${user_id}`).then(res => res.data)
+        payload: data
     }
 }
 
@@ -71,10 +70,8 @@ export default function reducer(state = initialState, action){
         case GET_USER + "_FULFILLED":
             return { ...state, user: payload, loggedIn: true };
         case GET_CART + "_PENDING":
-            console.log('still pending', payload)
             return {...state}
-        case GET_USER + "_FULFILLED":
-            console.log(payload)
+        case GET_CART + "_FULFILLED":
             return {...state, cart: [...state.cart, payload]}
         case LOGOUT + "_FULFILLED":
             return { user: {}, users: {}, loggedIn: false };

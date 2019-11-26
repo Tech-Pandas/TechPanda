@@ -38,35 +38,17 @@
     },
 
     getCart: async (req, res) => {
+
         const {userid} = req.params
         const db = req.app.get('db')
 
         let existingCart = await db.get_cart(userid)
+        console.log(existingCart)
 
-        if(existingCart[2]){
-            let firstProduct = await db.get_product(existingCart[0].product_id)
-            let secondProduct = await db.get_product(existingCart[1].product_id)
-            let thirdProduct = await db.get_product(existingCart[2].product_id)
-            let products = {
-                firstProduct: firstProduct[0],
-                secondProduct: secondProduct[0],
-                thirdProduct: thirdProduct[0] 
+        if(existingCart[0]){
+            res.status(200).send(existingCart.map(e => e))
+            } else {
+                res.sendStatus(500)
             }
-            res.status(200).send(products)
         }
-        if(existingCart[1]){
-            let firstProduct = await db.get_product(existingCart[0].product_id)
-            let secondProduct = await db.get_product(existingCart[1].product_id)
-            let products = {
-                firstProduct: firstProduct[0],
-                secondProduct: secondProduct[0] 
-            }
-            res.status(200).send(products)
-        } else if (existingCart[0]){
-            let firstProduct = await db.get_product(existingCart[0].product_id)
-            res.status(200).send(firstProduct)
-        } else {
-            res.sendStatus(500)
-        }
-    }
  }
