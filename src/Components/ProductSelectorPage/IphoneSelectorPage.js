@@ -13,7 +13,7 @@ function ProductSelectorPage(props){
     const [productStorage, setProductStorage] = useState('product storage')
     const [pandaCare, setPandaCare] = useState(false)
     const [productName, setProductName] = useState('iPhone 11 Pro')
-    const [productType, setProductType] = useState('phone')
+    const [productType] = useState('phone')
     const [productReview, setProductReview] = useState({productSize: '', productColor: '', productStorage: '', pandaCare: false, productPrice: 0, productType: 'phone', productName: 'iPhone 11 Pro'})
     const [Max, setMax] = useState(false)
     const [extraStorage, setExtraStorage] = useState(false)

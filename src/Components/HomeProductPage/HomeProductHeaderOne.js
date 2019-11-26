@@ -115,13 +115,6 @@ function HomeProductHeaderOne(props) {
     )
 }
 
-
-{/* <button
-    onClick={() => props.logout()}
->
-    Logout
-</button> */}
-
 const mapStateToProps = (state) => {
     return {
         user: state.user,
