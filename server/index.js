@@ -115,7 +115,7 @@ app.post('/api/redirect', (req, res, next) => {
 
 app.post('/api/productid', cartCtrl.getProductID)
 app.post('/api/cart', cartCtrl.addCart)
-app.get('/api/cart/:userid', cartCtrl.getCart)
+app.get('/api/cart', cartCtrl.getCart)
 
 
 //------ Stripe Endpoints -------//
