@@ -38,17 +38,22 @@
     },
 
     getCart: async (req, res) => {
-
         const {userid} = req.params
         const db = req.app.get('db')
 
         let existingCart = await db.get_cart(userid)
-        console.log(existingCart)
 
         if(existingCart[0]){
-            res.status(200).send(existingCart.map(e => e))
-            } else {
-                res.sendStatus(500)
+            let products = []
+            for(let i = 0; i < existingCart.length; i++){
+                let product = await db.get_product(existingCart[i].product_id)
+                console.log(product[0])
+                products.push(product[0])
             }
+            res.status(200).send(products)
+            } else {
+            res.sendStatus(500)
         }
+    }
+
  }

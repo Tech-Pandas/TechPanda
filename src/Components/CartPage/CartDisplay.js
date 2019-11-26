@@ -2,6 +2,7 @@ import React from 'react';
 
 function CartDisplay(props){
     console.log(props)
+    console.log(props.productObj)
 
     return(
         <div>
@@ -13,7 +14,7 @@ function CartDisplay(props){
             ) : (
                 <div>
                     hitting second condition
-                    {props.productObj.product_name}
+                    {props.productObj.name}
                 </div>
             )}
         </div>

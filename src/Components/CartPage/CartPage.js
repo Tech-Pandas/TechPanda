@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { getUser, getCart } from '../../redux/reducer'
+import { getUser, getCart, addDeviceToCart, clearSavedCart } from '../../redux/reducer'
 import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 // import { withRouter } from 'react-router-dom';
 import Form from '../StripeComponent/Form';
@@ -32,13 +32,32 @@ function CartPage(props) {
            props.getCart(props.user.user_id)
         }
     }, [])
+
+    useEffect(() => {
+        if(props.savedCart[0]){
+            // console.log(props.savedCart[0])
+            let products = props.savedCart[0]
+            // console.log(products)
+            products.map(e => {
+                // console.log(e)
+                const {productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productRam, productProcessor} = e
+                props.addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productRam, productProcessor)
+            })
+            products = []
+            // console.log(products)
+        }
+        // console.log(props.savedCart)
+        // console.log(props.cart)
+
+    }, [props.savedCart])
+
+    useEffect(() => {
+        props.clearSavedCart()
+    }, [props.cart])
     
-    for(const prop in props.cart){
-        console.log(prop, props.cart)
-    }
-    console.log(props)  
-    console.log(props.cart[0])  
-    const dbCart = props.cart[0]
+    // console.log(props)  
+    // console.log(props.savedCart)  
+    // console.log(props.cart)   
 
     return (
         <div>
@@ -46,7 +65,7 @@ function CartPage(props) {
             <div>
                 CartPage            
                 <div>
-                    {dbCart ? (
+                    {/* {dbCart ? (
                         dbCart.map(e => {
                             return <CartDisplay productObj={e}/>
                         }
@@ -56,7 +75,7 @@ function CartPage(props) {
                             return <CartDisplay productObj={e}/>
                         }
                         )
-                    )}
+                    )} */}
                 </div>
             </div>
             <div>
@@ -69,6 +88,7 @@ function CartPage(props) {
 const mapStateToProps = (state) => {
     return {
         cart: state.cart,
+        savedCart: state.savedCart,
         user: state.user,
         loggedIn: state.loggedIn
     }
@@ -76,7 +96,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     getUser, 
-    getCart
+    getCart,
+    addDeviceToCart,
+    clearSavedCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
