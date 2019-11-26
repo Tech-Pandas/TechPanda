@@ -5,6 +5,8 @@ import { Route } from 'react-router-dom';
 import { HashRouter } from 'react-router-dom';
 import './App.css';
 
+// Test Comment //
+
 //----Stripe----//
 import { StripeProvider, Elements } from 'react-stripe-elements';
 import { stripeApiKey } from './stripeApiKey';
