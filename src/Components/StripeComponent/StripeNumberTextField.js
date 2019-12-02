@@ -70,6 +70,7 @@ export default function StripeNumberTextField(otherProps) {
 
 const useStyles = makeStyles({
     cardNumber: {
-        width: '65%'
+        width: '65%',
+        border: '1px black solid',
     }
 })
