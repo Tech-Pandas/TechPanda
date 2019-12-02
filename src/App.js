@@ -28,6 +28,8 @@ import IphoneSelectorPage from './Components/ProductSelectorPage/IphoneSelectorP
 // MacBook Import //
 
 import MacBookPro from './Components/MacBookPro/MacBookPro';
+import MacBookProHomePage from './Components/MacBookPro/MacBookProHomePage';
+import MacBookProTechSpecs from './Components/MacBookPro/MacBookProTechSpecs';
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
               <Route path='/iphone' component={IphonePage} />
               <Route path='/iphone-tech-specs' component={IphoneTechSpecsPage} />
               <Route path='/mac-book-pro' component={MacBookPro} />
+              <Route path='/macbookpro-home' component={MacBookProHomePage} />
+              <Route path='/macbookpro-tech-specs' component={MacBookProTechSpecs} />
             </HashRouter>
           </Provider>
         </Elements>
