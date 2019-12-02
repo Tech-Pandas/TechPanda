@@ -6,7 +6,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import axios from 'axios';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -18,8 +18,8 @@ function HomeProductHeaderOne(props) {
             props.getUser();
         }
         axios.get('/api/cart')
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
     }, [])
 
     const userLogin = () => {
@@ -28,7 +28,7 @@ function HomeProductHeaderOne(props) {
 
     const logoutUser = () => {
         // const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
-        
+
         // axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
         // .then(res => {
         //     setProductId(res.data)
@@ -39,10 +39,10 @@ function HomeProductHeaderOne(props) {
         // })
 
         console.log('hitting logout', props)
-        const {cart} = props
-        axios.post('/api/cart', {cart})
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
+        const { cart } = props
+        axios.post('/api/cart', { cart })
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
         props.logout()
 
         props.history.push('/')
@@ -67,7 +67,7 @@ function HomeProductHeaderOne(props) {
 
     return (
         <div id='home-product-page-header-1'>
-            
+
             <div id='left-header-1-stuff'>
 
                 <a href='/#/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' alt='pic' /></a>
@@ -75,8 +75,9 @@ function HomeProductHeaderOne(props) {
 
                 <a href='/#/iphone'><p className='left-header-1-text'>iPhone 11 Pro</p></a>
                 <a href='/#/stadia'><p className='left-header-1-text'>Stadia</p></a>
+                <a href='/#/macbookpro-home'><p className='left-header-1-text'>MacBookPro</p></a>
             </div>
-            
+
             <div className='cart-user-icons'>
                 <div>
                     <a href='/#/cart'><ShoppingCartIcon></ShoppingCartIcon></a>
@@ -99,8 +100,8 @@ function HomeProductHeaderOne(props) {
                         </Menu>
                     </div>
                 ) : (
-                        <img 
-                            src='https://static.thenounproject.com/png/2366460-200.png' 
+                        <img
+                            src='https://static.thenounproject.com/png/2366460-200.png'
                             onClick={() => userLogin()}
                             className='user-icon'
                             alt='pic'
