@@ -217,7 +217,7 @@ function ProductSelectorPage(props){
             productImage
         })
         console.log(productImage)
-        props.addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage)
+        props.addDeviceToCart(productName, productPrice, productImage, productSize, productColor, productStorage, pandaCare, productType)
         props.history.push('/cart')
     }
     

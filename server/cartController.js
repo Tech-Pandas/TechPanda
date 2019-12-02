@@ -45,7 +45,7 @@
 
         if(cart){
             req.session.cart = {...req.session.cart}
-            console.log('passed conditional', req.session)
+            // console.log('passed conditional', req.session)
 
             res.status(200).send(cart)
         } else {
@@ -55,8 +55,8 @@
 
     getCart: async (req, res) => {
         const {cart} = req.session
-        console.log('SESSION IS HERE',
-        req.session)
+        // console.log('SESSION IS HERE',
+        // req.session)
 
         if(cart){
             res.status(200).send(cart)

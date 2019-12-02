@@ -17,6 +17,10 @@ import './CartPage.css';
 //-----Stripe Import----//
 
 
+function useForceUpdate(){
+    const [value, setValue] = useState(0); // integer state
+    return () => setValue(value => ++value); // update the state to force render
+}
 
 function CartPage(props) {
     // const [cart, setCart] = useState({})
@@ -53,10 +57,12 @@ function CartPage(props) {
             console.log(updatedPrice)
         })
         setTotal(updatedPrice)
-    }, [])
+    })
 
-    // console.log(props.cart)   
+    console.log(props.cart)   
     // console.log(total)   
+
+    const forceUpdate = useForceUpdate()
 
 
     return (
@@ -67,8 +73,8 @@ function CartPage(props) {
                 <h1>Shopping Cart</h1>            
                 <div>
                     {props.cart ? (
-                        props.cart.map(e => {
-                            return <CartDisplay productObj={e}/>
+                        props.cart.map((e,i) => {
+                            return <CartDisplay productObj={e} productId={i} forceUpdate={forceUpdate}/>
                         }
                         )
                     ) : (
