@@ -23,12 +23,14 @@
     /* margin-left: -50px; */
     /* z-index: 1; */
     color: white;
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    /* align-items: center; */
+    /* padding: 20px; */
+    /* padding-top: 300px; */
     margin: 20px;
+    z-index: 1;
 }
 
 .therewaspro1 {
@@ -56,6 +58,7 @@
     /* border-top: 1px solid white; */
     border-bottom: 1px solid white;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .whitephonetext {
@@ -67,6 +70,7 @@
 
 .whitephonediv {
     width: 50vw;
+    height: 100vh;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -78,20 +82,69 @@
 
 .whitephotodiv {
     max-width: 50vw;
-    max-height: 100%;
+    max-height: 100vh;
     padding: 15px;
-    margin-bottom: 50px;
+    /* margin-bottom: 450px; */
 }
-
-/* .cameraphoto {
-    background-image: url('https://www.apple.com/v/iphone-11-pro/c/images/overview/camera/camera_hero_static__bkn3b0mlxrjm_large.jpg');
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-} */
 
 .black {
-    height: 100vh;
+    /* height: 100vh; */
     background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    padding-top: 50px;
+    /* padding-bottom: 150px; */
 }
+
+.cameraphoto {
+    height: 100vh;
+    /* width: 60vw; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    padding: 100px;
+    border: 30px solid #111;
+}
+
+@keyframes eleven {
+    from{
+        transform: scale(1.2);  
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+.camerabottom {
+    /* transform: rotate(360deg);
+    animation: spin 6s infinite; */
+    /* height: 100vh; */
+    width: 240px;
+    height: 470px;
+    display: flex;
+    justify-content: center;
+    border: 20px solid #111;
+    padding: 15px;
+    margin: 10px;
+    animation: eleven 15s ease-out;
+    /* z-index: -1; */
+}
+
+.threecam {
+    background-image: url('https://www.apple.com/v/iphone-11-pro/c/images/overview/camera/camera_hero_static__bkn3b0mlxrjm_large.jpg');
+    color: white;
+}
+
+.mountain {
+    max-width: 90%;
+}
+
+
+
 
