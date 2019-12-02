@@ -9,7 +9,7 @@ function StadiaHeader() {
                 <p className='stadianame'>Stadia Premiere Edition</p>
             </div>
 
-            <div className='product-header-2-center-menu'>
+            <div className='product-header-2-stadia-center-menu'>
                 <a href='/#/stadia'><button className='product-header-2-menu-buttons'>Overview</button></a>
                 <Link to ='/stadiaspecs'><button className='product-header-2-menu-buttons'>Tech Specs</button></Link>
             </div>
