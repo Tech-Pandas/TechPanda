@@ -13,6 +13,17 @@
     padding-top: 18px
 }
 
+#remove-button {
+    border: none;
+    color: rgb(50, 125, 230);
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+#remove-button:hover {
+    cursor: pointer;
+}
+
 .product-image {
     width: 15vw;
     height: auto;

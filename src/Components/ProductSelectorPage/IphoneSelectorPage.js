@@ -148,7 +148,7 @@ function ProductSelectorPage(props){
     }
 
     const doubleIncreaseStorage = () => {
-        setExtraStorage(false)
+        setExtraStorage(true)
         setDoubleExtraStorage(true)
         setProductStorage('516GB')
         moveForward()
@@ -202,8 +202,6 @@ function ProductSelectorPage(props){
         setPandaCare(false)
         moveForward()
     }
-
-   
     
     const determineProductPrice = () => {
         let price = 999
@@ -211,16 +209,18 @@ function ProductSelectorPage(props){
             price += 100
         }
         if(extraStorage){
-            price += 149
+            price += 150
         }
         if(doubleExtraStorage){
-            price += 100
+            price += 200
         }
         if(pandaCare){
             price += 100
         }
         return price
     }
+
+   
 
     let productPrice = determineProductPrice()
     const addToCart = (productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage) => {
@@ -236,7 +236,7 @@ function ProductSelectorPage(props){
             productImage
         })
         console.log(productImage)
-        props.addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage)
+        props.addDeviceToCart( productName, productPrice, productImage, productSize, productColor, productStorage, pandaCare, productType)
         props.history.push('/cart')
     }
     
@@ -339,6 +339,7 @@ function ProductSelectorPage(props){
                         <div className='product-options'>
                         <div id='panda-care'>
                             <img id='po-image' src='https://vignette.wikia.nocookie.net/kungfupanda/images/7/73/KFP3-promo-po4.jpg/revision/latest/scale-to-width-down/350?cb=20150726165358' alt='pic' />
+
                             <p className='product-storage-option-text-3'>$100</p>
                             <button className='product-selector-button-2' onClick={() => yesIFreakingWantPandaCare()}>Get PandaCare!</button>
                             <button className='product-selector-button-2' onClick={() => noIDontWantPandaCare()}>No thanks</button>
@@ -371,17 +372,97 @@ function ProductSelectorPage(props){
             
         </body>
         <footer>
-            <nav className='product-config-footer'>
+        <nav className='product-config-footer'>
                 {!displayProductSize ? (
-                    <button className='product-selector-bottom-button-1' onClick={() => moveBack()}>Back</button>
-                ) : <button className='blank-white-button'></button>
-            }
-                
-                <div>
-                    <button onClick={() => moveToSize()}>Size</button>
-                    <button onClick={() => moveToColor()}>Color</button>
-                    <button onClick={() => moveToStorage()}>Storage</button>
-                    <button onClick={() => moveToPandaCare()}>PandaCare</button>
+                        <button className='product-selector-bottom-button-1' onClick={() => moveBack()}>Back</button>
+                    ) : <button className='blank-white-button'></button>
+                    }
+
+                <div className='product-selector-dots'>
+                    {displayProductSize ? (
+                        <>
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>
+
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-2' onClick={() => moveToColor()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>                    
+                                
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-2' onClick={() => moveToStorage()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>
+
+                            <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>
+                        </>
+                    ) : null}
+
+                    {displayProductColor ? (
+                        <>
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
+                                <div className='product-selector-button-lines-2'/>
+                            </div>
+                                
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-1' onClick={() => moveToColor()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>
+
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-2' onClick={() => moveToStorage()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>                
+
+                            <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>    
+                        </>
+                    ) : null}
+
+                    {displayProductStorage ? (
+                        <>
+                        <div className='product-selector-dots'>
+                            <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
+                            <div className='product-selector-button-lines-2'/>
+                        </div>
+                            
+                        <div className='product-selector-dots'>
+                            <button className='progress-buttons-1' onClick={() => moveToColor()}></button>
+                            <div className='product-selector-button-lines-2'/>
+                        </div>
+
+                        <div className='product-selector-dots'>
+                            <button className='progress-buttons-1' onClick={() => moveToStorage()}></button>
+                            <div className='product-selector-button-lines'/>
+                        </div>                
+
+                        <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>    
+                    </>
+                    ) : null}
+
+                    {displayPandaCare ? (
+                        <>
+                        <div className='product-selector-dots'>
+                            <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
+                            <div className='product-selector-button-lines-2'/>
+                        </div>
+                            
+                        <div className='product-selector-dots'>
+                            <button className='progress-buttons-1' onClick={() => moveToColor()}></button>
+                            <div className='product-selector-button-lines-2'/>
+                        </div>
+
+                        <div className='product-selector-dots'>
+                            <button className='progress-buttons-1' onClick={() => moveToStorage()}></button>
+                            <div className='product-selector-button-lines-2'/>
+                        </div>                
+
+                        <button className='progress-buttons-1' onClick={() => moveToPandaCare()}></button>    
+                    </>
+                    ): null}
+
                 </div>
 
                 {!displayProductReview ? (

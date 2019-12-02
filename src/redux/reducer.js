@@ -13,8 +13,9 @@ const GET_USER = 'GET_USER'
 const LOGOUT = 'LOGOUT'
 const ADD_DEVICE_TO_CART = 'ADD_DEVICE_TO_CART'
 const GET_CART = 'GET_CART'
+const REMOVE_DEVICE_FROM_CART = 'REMOVE_DEVICE_FROM_CART'
 
-export function addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage, productRam, productProcessor){
+export function addDeviceToCart(productName, productPrice, productImage, productSize, productColor, productStorage, pandaCare, productType, productRam, productProcessor){
     console.log(productImage)
     return{
         type: ADD_DEVICE_TO_CART,
@@ -30,6 +31,14 @@ export function addDeviceToCart(productSize, productColor, productStorage, panda
             productProcessor,
             productImage
         }
+    }
+}
+
+export function removeDeviceFromCart(productId){
+    console.log('hit removeDeviceFromCart', productId)
+    return {
+        type: REMOVE_DEVICE_FROM_CART,
+        payload: productId
     }
 }
 
@@ -78,9 +87,13 @@ export default function reducer(state = initialState, action){
         case UPDATE_EMAIL:
             let email = payload;
             return {...state, email};
-        case ADD_DEVICE_TO_CART:
-            console.log(payload)            
+        case ADD_DEVICE_TO_CART:    
             return {...state, cart: [...state.cart, payload]}
+        case REMOVE_DEVICE_FROM_CART:
+            console.log(payload)
+            state.cart.splice(payload, 1)
+            console.log(state)
+            return {...state}
         default:
             return state;
     }

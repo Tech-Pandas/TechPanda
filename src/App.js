@@ -19,6 +19,7 @@ import CartPage from './Components/CartPage/CartPage'
 
 import Stadia from './Components/Gaming/Stadia';
 import StadiaSpecs from './Components/Gaming/StadiaSpecs';
+import StadiaConfig from './Components/Gaming/StadiaConfig';
 
 import IphonePage from './Components/OtherProductPages/IphonePage';
 import IphoneTechSpecsPage from './Components/OtherProductPages/IphoneTechSpecsPage';
@@ -45,6 +46,7 @@ function App() {
               <Route path='/cart' component={CartPage} />
               <Route path='/stadia' component={Stadia} />
               <Route path='/stadiaspecs' component={StadiaSpecs} />
+              <Route path='/stadiaconfig' component={StadiaConfig} />
               <Route path='/iphone' component={IphonePage} />
               <Route path='/iphone-tech-specs' component={IphoneTechSpecsPage} />
               <Route path='/mac-book-pro' component={MacBookPro} />

@@ -20,7 +20,7 @@ function StadiaHeader() {
                     <p className='product-header-2-text-p-2'>Free Shipping</p>
                 </div>
                 
-                <a href='#/productconfig'><button className='product-header-2-buy-button'>Buy</button></a>
+                <a href='#/stadiaconfig'><button className='product-header-2-buy-button'>Buy</button></a>
             </div>
         </div>
         
