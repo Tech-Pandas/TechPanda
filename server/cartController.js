@@ -39,25 +39,29 @@
 
     addCart: async (req, res) => {
         const {cart} = req.body
-        console.log('hit addCart', req.session)
+        // console.log('hit addCart', req.session)
+        console.log('hit addCart', cart)
+        req.session.cart = []
 
         if(cart){
-            req.session.cart = cart
+            req.session.cart = {...req.session.cart}
             console.log('passed conditional', req.session)
 
-            res.sendStatus(200)
+            res.status(200).send(cart)
         } else {
-            res.sendStatus('nothing in cart')
+            res.sendStatus(500, 'nothing in cart')
         }
     },
 
     getCart: async (req, res) => {
         const {cart} = req.session
+        console.log('SESSION IS HERE',
+        req.session)
 
         if(cart){
             res.status(200).send(cart)
         } else {
-            res.sendStatus('no cart')
+            res.sendStatus(404)
         }
         
     }

@@ -7,6 +7,7 @@ import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 // import { withRouter } from 'react-router-dom';
 import Form from '../StripeComponent/Form';
 import CartDisplay from './CartDisplay'
+import Axios from 'axios';
 
 // Style //
 
@@ -18,7 +19,8 @@ import './CartPage.css';
 
 
 function CartPage(props) {
-    const [cart, setCart] = useState({})
+    // const [cart, setCart] = useState({})
+    const [total, setTotal] = useState(0)
 
 
     useEffect(() => {
@@ -27,19 +29,42 @@ function CartPage(props) {
         }
     }, [])
 
+    // const {cart} = props
     // useEffect(() => {
-    //     if(props.user.user_id){
-    //        props.getCart(props.user.user_id)
+    //     if(props.cart){
+    //         Axios.post(`/api/cart`, {cart})
+    //         .then(res => console.log(res))
+    //         .catch(err => console.log(err))
     //     }
     // }, [])
 
-    console.log(props.cart)   
+    // useEffect(() => {
+    //     Axios.get('/api/cart')
+    //     .then(res => console.log(res.data))
+    //     .catch(err => console.log(err))
+    // }, [])
+
+    useEffect(() => {
+        let updatedPrice = 0
+        props.cart.map(e => {
+            console.log(e.productPrice)
+            console.log(total)
+            updatedPrice = updatedPrice + e.productPrice
+            console.log(updatedPrice)
+        })
+        setTotal(updatedPrice)
+    }, [])
+
+    // console.log(props.cart)   
+    // console.log(total)   
+
 
     return (
-        <div>
-            <HomeProductHeaderOne />
-            <div>
-                CartPage            
+        <>
+        <HomeProductHeaderOne />
+        <div className='shopping-cart'>
+            <div className='cart-products'>
+                <h1>Shopping Cart</h1>            
                 <div>
                     {props.cart ? (
                         props.cart.map(e => {
@@ -51,10 +76,12 @@ function CartPage(props) {
                     )}
                 </div>
             </div>
-            <div>
-                <Form />
+            <div className='payment-form'>
+
+                <Form total={total}/>
             </div>
         </div>
+        </>
     )
 }
 

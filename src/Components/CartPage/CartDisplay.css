@@ -1,0 +1,24 @@
+.product-info-display {
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2vh
+}
+
+.price-remove-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 18px
+}
+
+.product-image {
+    width: 15vw;
+    height: auto;
+}
+
+.product-specs {
+    display: flex;
+    flex-direction: column;
+}

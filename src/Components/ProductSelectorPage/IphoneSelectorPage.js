@@ -14,6 +14,7 @@ function ProductSelectorPage(props){
     const [pandaCare, setPandaCare] = useState(false)
     const [productName, setProductName] = useState('iPhone 11 Pro')
     const [productType] = useState('phone')
+    const [productImage, setProductImage] = useState('https://cdn.macrumors.com/article-new/2019/09/iphone11prolineup.jpg')
     const [productReview, setProductReview] = useState({productSize: '', productColor: '', productStorage: '', pandaCare: false, productPrice: 0, productType: 'phone', productName: 'iPhone 11 Pro'})
     const [Max, setMax] = useState(false)
     const [extraStorage, setExtraStorage] = useState(false)
@@ -167,23 +168,27 @@ function ProductSelectorPage(props){
 
     const chooseSpaceGray = () => {
         setProductColor('Space Gray')
+        setProductImage('https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-space-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989577')
         moveForward()
     }
 
     const chooseSilver = () => {
         setProductColor('Silver')
+        setProductImage('https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-silver-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989256')
         moveForward()
 
     }
 
     const chooseMidnightGreen = () => {
         setProductColor('Midnight Green')
+        setProductImage('https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-midnight-green-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990073')
         moveForward()
 
     }
 
     const chooseGold = () => {
         setProductColor('Gold')
+        setProductImage('https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-gold-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990120')
         moveForward()
 
     }
@@ -198,10 +203,8 @@ function ProductSelectorPage(props){
         moveForward()
     }
 
-    console.log(Max)
-    console.log(extraStorage)
-    console.log(doubleExtraStorage)
-    console.log(pandaCare)
+   
+    
     const determineProductPrice = () => {
         let price = 999
         if(Max){
@@ -220,7 +223,8 @@ function ProductSelectorPage(props){
     }
 
     let productPrice = determineProductPrice()
-    const addToCart = (productSize, productColor, productStorage, pandaCare, productPrice, productName, productType) => {
+    const addToCart = (productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage) => {
+        console.log(productImage)
         setProductReview({
             productSize,
             productColor, 
@@ -228,9 +232,11 @@ function ProductSelectorPage(props){
             pandaCare,
             productPrice,
             productName,
-            productType
+            productType,
+            productImage
         })
-        props.addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)
+        console.log(productImage)
+        props.addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage)
         props.history.push('/cart')
     }
     
@@ -248,14 +254,14 @@ function ProductSelectorPage(props){
                         <div className='product-options'>
                             <div className='product-option'>
 
-                                <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440' alt='pic' />
+                                <img className='product-selector-images' src='https://cdn.macrumors.com/article-new/2019/09/iphone11prolineup.jpg' alt='pic' />
                                 <p className='product-selector-heading-2'>iPhone 11 Pro</p>
                                 <p className='product-selector-heading-3'>5.8" display</p>
                                 <p className='product-selector-heading-3'>From $999</p>
                                 <button className='product-selector-button' onClick={() => decreaseProductSize()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440' alt='pic' />                             
+                                <img className='product-selector-images' src='https://cdn.macrumors.com/article-new/2019/09/iphone11prolineup.jpg' alt='pic' />                             
                                 <p className='product-selector-heading-2'>iPhone 11 Pro Max</p>
                                 <p className='product-selector-heading-3'>6.5" display</p>
                                 <p className='product-selector-heading-3'>From $1099</p>
@@ -270,22 +276,22 @@ function ProductSelectorPage(props){
                         <h1 className='product-selector-heading'>Choose a color</h1>
                         <div className='product-options'>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/iFTsXZZ6XJeWsBkczmU7tNZjipAbAx9WT8VpuAP2ADNwnvZ0uO5hrD-X7MFAGmsSFqBi=rw-w1144' alt='pic' />                             
+                                <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-space-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989577' alt='pic' />                             
                                 <p className='product-selector-heading-random'>Space Gray</p>
                                 <button className='product-selector-button' onClick={() => chooseSpaceGray()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/8SX9vrX4at1Q3jOwkywP8TnjGvECUDB7LVKtc2g6D9cR1dOH_3UuFfI0awcwUYGpTw=rw-w1144' alt='pic' />
+                                <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-silver-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989256' alt='pic' />
                                 <p className='product-selector-heading-random'>Silver</p>
                                 <button className='product-selector-button' onClick={() => chooseSilver()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/5mfu9wvv04QIsSUbKz_6Uqlsjl9w7n_G260CHlux1U_dbVcxpkwWhUrQXyC2fQt3AkE=rw-w1144' alt='pic' />
+                                <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-midnight-green-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990073' alt='pic' />
                                 <p className='product-selector-heading-2'>Midnight Green</p>
                                 <button className='product-selector-button' onClick={() => chooseMidnightGreen()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://lh3.googleusercontent.com/5mfu9wvv04QIsSUbKz_6Uqlsjl9w7n_G260CHlux1U_dbVcxpkwWhUrQXyC2fQt3AkE=rw-w1144' alt='pic' />
+                                <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-gold-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990120' alt='pic' />
                                 <p className='product-selector-heading-2'>Gold</p>
                                 <button className='product-selector-button' onClick={() => chooseGold()}>Select</button>
                             </div>
@@ -351,7 +357,7 @@ function ProductSelectorPage(props){
                             <div>PandaCare</div>
                         ) : null}
                         {determineProductPrice()}<br/>
-                        <button onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)}>Add to cart</button>
+                        <button onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage)}>Add to cart</button>
                     </div>
                 ) : null}
             </div>
