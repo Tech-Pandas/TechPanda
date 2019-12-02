@@ -16,7 +16,7 @@ const HomeProductTechSpecs = () => {
             <HomeProductHeaderTwo/>
 
             <div className='specimg'>
-                <h2>Peek inside Pixel 4.</h2>
+                <h2 className='pixel-tech-heading'>Peek inside Pixel 4.</h2>
                 <img src='https://venturebeat.com/wp-content/uploads/2019/10/google-pixel-4-specs.png?fit=2000%2C1000&strip=all' alt='pic' />
             </div>
             <div className='icon-container'>

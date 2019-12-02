@@ -277,12 +277,12 @@ function ProductSelectorPage(props){
                         <div className='product-options'>
                             <div className='product-option'>
                                 <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-space-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989577' alt='pic' />                             
-                                <p className='product-selector-heading-random'>Space Gray</p>
+                                <p className='product-selector-heading-2'>Space Gray</p>
                                 <button className='product-selector-button' onClick={() => chooseSpaceGray()}>Select</button>
                             </div>
                             <div className='product-option'>
                                 <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-silver-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989256' alt='pic' />
-                                <p className='product-selector-heading-random'>Silver</p>
+                                <p className='product-selector-heading-2'>Silver</p>
                                 <button className='product-selector-button' onClick={() => chooseSilver()}>Select</button>
                             </div>
                             <div className='product-option'>
@@ -335,13 +335,13 @@ function ProductSelectorPage(props){
 
                 {displayPandaCare ? (
                    <div>
-                        <h1>Let Po protect your device!</h1>
+                        <h1 className='product-selector-heading'>Let Po protect your device!</h1>
                         <div className='product-options'>
                         <div id='panda-care'>
                             <img id='po-image' src='https://vignette.wikia.nocookie.net/kungfupanda/images/7/73/KFP3-promo-po4.jpg/revision/latest/scale-to-width-down/350?cb=20150726165358' alt='pic' />
-                            <button onClick={() => yesIFreakingWantPandaCare()}>Get PandaCare!</button>
-                            <button onClick={() => noIDontWantPandaCare()}>No thanks</button>
-                            <p>$100</p>
+                            <p className='product-storage-option-text-3'>$100</p>
+                            <button className='product-selector-button-2' onClick={() => yesIFreakingWantPandaCare()}>Get PandaCare!</button>
+                            <button className='product-selector-button-2' onClick={() => noIDontWantPandaCare()}>No thanks</button>
                         </div>
                     </div>
                    </div>
@@ -349,15 +349,22 @@ function ProductSelectorPage(props){
 
                 {displayProductReview ? (
                     <div>
-                        {/* pic of chosen product */}
-                <p>{productReview.name} {productSize}" display</p><br/>
-                        {productColor}<br/>
-                        {productStorage}<br/>
-                        {pandaCare ? (
-                            <div>PandaCare</div>
-                        ) : null}
-                        {determineProductPrice()}<br/>
-                        <button onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage)}>Add to cart</button>
+                        <h1 className='product-selector-heading'>Review your choice</h1>
+
+                        <div id='review-info-box'>
+                            <img className='product-selector-images' src={productImage} alt='pic' />
+                            <div id='review-info-box-text'>
+                                <p className='product-storage-option-text-3'>{productReview.name} {productSize}" display</p>
+                                <p className='product-storage-option-text-4'>{productColor}</p>
+                                <p className='product-storage-option-text-4'>{productStorage}</p>
+                                <p className='product-storage-option-text-4'>{pandaCare ? (
+                                    <p>PandaCare</p>
+                                ) : null}</p>
+                                <p className='product-storage-option-text-4'>{`$${determineProductPrice()}`}</p>
+                            </div>
+                        </div>
+                        
+                        <button className='product-selector-button-2' onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage)}>Add to cart</button>
                     </div>
                 ) : null}
             </div>

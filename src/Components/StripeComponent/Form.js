@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { injectStripe, CardElement } from 'react-stripe-elements';
+import { injectStripe, CardNumberElement, CardExpiryElement, CardCVCElement } from 'react-stripe-elements';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import { makeStyles } from "@material-ui/core";
 
 // import StripeNumberTextField from '../StripeComponent/StripeNumberTextField';
 // import StripeExpiryTextField from '../StripeComponent/StripeExpiryTextField';
@@ -27,17 +28,21 @@ function Form(props) {
     }
 
     console.log(props.cart)
+    const classes = useStyles();
     return (
         <div id='stripe-component'>
-            <form onSubmit={handleSubmit}>
+            <form class='stripe-content' onSubmit={handleSubmit}>
                 <label value={name}>{props.user.user_name}</label>
+                <h2 className='stripe-heading'>Subtotal: ${props.total}</h2>
                 
-                <label>Subtotal: ${props.total}</label>
-                
-                <CardElement />
-                
+                <div className='exp-cvc'>
+                    <CardNumberElement className={classes.cardNumber}/>
+                    <CardExpiryElement className={classes.exp}/>
+                    <CardCVCElement className={classes.cvc}/>
+                </div>
                 <button className='home-product-heading-button'>Pay Now</button>
             </form>
+            
         </div>
     )
 }
@@ -49,6 +54,25 @@ const mapStateToProps = (state) => {
     }
 }
 
-
+const useStyles = makeStyles({
+    cardNumber: {
+        width: '60%',
+        // border: '1px lightgray solid',
+        marginRight: '10px',
+        marginBottom: '10px',
+        marginTop: '10px',
+    },
+    exp: {
+        width: '24%',
+        // border: '1px lightgray solid',
+        marginRight: '10px',
+        marginTop: '10px',
+    },
+    cvc: {
+        width: '14%',
+        // border: '1px lightgray solid',
+        marginTop: '10px',
+    }
+})
 
 export default connect(mapStateToProps)(injectStripe(withRouter(Form)));
