@@ -463,33 +463,31 @@ body {
         height: auto;
         margin-bottom: 100px;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         overflow: hidden;
         padding-bottom: 200px;
     }
     
-    #home-product-body-top-images {
-        display: flex;
-        justify-content: space-between;
-        height: 120vh;
-    }
-    
     .pixel-4-photo-1 {
-        height: 60vh;
-        margin-top: 25vh;
-        margin-left: -25vw;
+        height: 100vh;
+        margin-top: 50vh;
+        margin-left: 0px;
+        transform: translateZ(-1px) scale(1.5);
+        z-index: -2;
+        animation: working 1.4s alternate-reverse;
     }
     
     .pixel-4-photo-2 {
-        height: 45vh;
-        margin-left: 30%;
-        margin-right: 30%;
-        margin-top: 15vh;
+        display: none;
     }
     
     .pixel-4-photo-3 {
-        height: 60vh;
-        margin-top: 18vh;
+        height: 100vh;
+        margin-left: 50vw;
+        margin-top: 40vh;
+        transform: translateZ(-1px) scale(1.5);
+        z-index: -1;
+        animation: isit 1.4s alternate-reverse;
     }
     
     #home-product-heading-2 {
@@ -504,10 +502,11 @@ body {
     
     .big-phone-camera {
         position: relative;
-        height: 30vh;
-        width: 100vw;
+        height: 50vh;
+        width: 200vw;
         margin-top: 200px;
         margin-bottom: -220px; 
+        margin-left: -50vw;
         transform: translateZ(-1px) scale(2);
         z-index: -1; 
     }
