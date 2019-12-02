@@ -16,7 +16,7 @@ import IphoneHeader from './IphoneHeader';
 class IphonePage extends Component {
   render() { 
     return (
-      
+      <div className='iphonepage'>
       <Parallax ref={ref => (this.parallax = ref)} pages={3} className='containpro'>
       <HomeProductHeaderOne />
       <IphoneHeader />
@@ -26,7 +26,7 @@ class IphonePage extends Component {
         />
       </div>
       {/* <div className='thisone' > */}
-        <ParallaxLayer offset={1} speed={0.3} className='therewasprocontainerwhite' style={{ backgroundColor: 'rgba(0,0,0,1)' }}>
+        <ParallaxLayer offset={1} speed={0.45} className='therewasprocontainerwhite' style={{ backgroundColor: 'rgba(0,0,0,1)' }}>
           <div className='whitephonediv'>
           <h1 className='whitephonetext'>Meet the first triple‑camera system to combine cutting‑edge technology with the legendary simplicity of iPhone. Capture up to four times more scene. Get beautiful images in drastically lower light. Shoot the highest‑quality video in a smartphone — then edit with the same tools you love for photos. You’ve never shot with anything like it.</h1>
           </div>
@@ -46,17 +46,28 @@ class IphonePage extends Component {
           </h3>
         </ParallaxLayer>
         <div className='black'>
-          {/* <img className='cameraphoto' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/camera/camera_hero_static__bkn3b0mlxrjm_large.jpg' /> */}
+        <div className='cameraphoto'>
+          {/* <img className='camerabottom' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/camera/camera_hero_static__bkn3b0mlxrjm_large.jpg' alt='pic' /> */}
+          <img className='camerabottom' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/hero/triptych_left_landscape__eczd4p0wyv6u_medium_2x.jpg' alt='pic' />
+          <img className='camerabottom' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/hero/triptych_middle_landscape__c14zbto4v402_medium_2x.jpg' alt='pic' />
+          <img className='camerabottom' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/hero/triptych_right_landscape__ik46z8u34ki2_medium.jpg' alt='pic' />
         </div>
-        {/* <div className='cameraphoto'>
-          <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/camera/camera_three_lens_system_lens_bottom_static__bgt0lgmyg3bm_large_2x.jpg' alt='pic' />
         </div>
-         */}
-        {/* <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: 'gray' }} /> */}
-      {/* </div>   */}
-
-        {/* <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: ('https://www.apple.com/v/iphone-11-pro/c/images/overview/hero/triptych_left_landscape__eczd4p0wyv6u_small_2x.jpg', true), backgroundSize: 'cover' }} /> */}
       </Parallax>
+        {/* <div className='threecam'>
+            <img className='threecam' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/camera/camera_hero_static__bkn3b0mlxrjm_large.jpg' alt='pic' />
+            <h1>Pro camera system</h1>
+            <h1>We've three-upped ourselves.</h1>
+        </div> 
+        <div>
+          <ReactPlayer url='blob:https://www.apple.com/d4cd4b9b-b392-4370-87c7-d7d6d15bfde9' alt='vid' playing muted />
+          <ReactPlayer url='blob:https://www.apple.com/28deace1-37f6-404f-9bac-4b5fd063a38e' alt='vid' playing muted />
+          <h1>Ultra Wide</h1>
+          <h1>Take it alllllll in.</h1>
+          <h3>When you just can’t squeeze everything into the frame, zoom out. Because the new Ultra Wide camera captures four times more scene than ever. It’s like stepping back — way back — without taking a step. Bring on those mountain ranges, soaring cathedrals, and iconic skylines.</h3>
+          <img className='mountain' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/galleries/ultra-wide-gallery/hero__egkp929h78sy_medium_2x.jpg' alt='pic' />
+        </div>  */}
+      </div>
     )
   }
 }

@@ -26,7 +26,7 @@ function Form(props) {
         }
     }
 
-    // console.log(props)
+    console.log(props.cart)
     return (
         <div id='stripe-component'>
             <form onSubmit={handleSubmit}>
