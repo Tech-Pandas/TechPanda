@@ -14,7 +14,8 @@ function ProductSelectorPage(props){
     const [pandaCare, setPandaCare] = useState(false)
     const [productName, setProductName] = useState('Pixel 4')
     const [productType] = useState('phone')
-    const [productReview, setProductReview] = useState({productSize: '', productColor: '', productStorage: '', pandaCare: false, productPrice: 0, productType: 'phone', productName: 'Pixel 4'})
+    const [productImage, setProductImage] = useState('https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440')
+    const [productReview, setProductReview] = useState({productSize: '', productColor: '', productStorage: '', pandaCare: false, productPrice: 0, productType: 'phone', productName: 'Pixel 4', productImage: 'https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440'})
     const [XL, setXL] = useState(false)
     const [extraStorage, setExtraStorage] = useState(false)
     const [displayProductSize, setDisplayProductSize] = useState(true)
@@ -159,17 +160,20 @@ function ProductSelectorPage(props){
 
     const chooseOrange = () => {
         setProductColor('Oh So Orange')
+        setProductImage('https://lh3.googleusercontent.com/5mfu9wvv04QIsSUbKz_6Uqlsjl9w7n_G260CHlux1U_dbVcxpkwWhUrQXyC2fQt3AkE=rw-w1144')
         moveForward()
     }
 
     const chooseWhite = () => {
         setProductColor('Clearly White')
+        setProductImage('https://lh3.googleusercontent.com/8SX9vrX4at1Q3jOwkywP8TnjGvECUDB7LVKtc2g6D9cR1dOH_3UuFfI0awcwUYGpTw=rw-w1144')
         moveForward()
 
     }
 
     const chooseBlack = () => {
         setProductColor('Just Black')
+        setProductImage('https://lh3.googleusercontent.com/iFTsXZZ6XJeWsBkczmU7tNZjipAbAx9WT8VpuAP2ADNwnvZ0uO5hrD-X7MFAGmsSFqBi=rw-w1144')
         moveForward()
 
     }
@@ -199,7 +203,9 @@ function ProductSelectorPage(props){
     }
 
     let productPrice = determineProductPrice()
-    const addToCart = (productSize, productColor, productStorage, pandaCare, productPrice, productName, productType) => {
+
+    const addToCart = (productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage) => {
+        console.log(productImage)
         setProductReview({
             productSize,
             productColor, 
@@ -207,15 +213,17 @@ function ProductSelectorPage(props){
             pandaCare,
             productPrice,
             productName,
-            productType
+            productType,
+            productImage
         })
-        props.addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)
+        console.log(productImage)
+        props.addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage)
         props.history.push('/cart')
     }
     
     // console.log(productReview)
     // console.log(props)
-    // console.log(determineProductPrice())
+    console.log(productImage)
     return(
         <nav>
             <HomeProductHeaderOne/>
@@ -311,19 +319,19 @@ function ProductSelectorPage(props){
                         <h1 className='product-selector-heading'>Review your choice</h1>
 
                         <div id='review-info-box'>
-                            <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440' alt='pic' />
+                            <img className='product-selector-images' src={productImage} alt='pic' />
                             <div id='review-info-box-text'>
                                 <p className='product-storage-option-text-3'>{productReview.name} {productSize}" display</p>
                                 <p className='product-storage-option-text-4'>{productColor}</p>
                                 <p className='product-storage-option-text-4'>{productStorage}</p>
                                 <p className='product-storage-option-text-4'>{pandaCare ? (
-                                    <div>PandaCare</div>
+                                    <p>PandaCare</p>
                                 ) : null}</p>
                                 <p className='product-storage-option-text-4'>{`$${determineProductPrice()}`}</p>
                             </div>
                         </div>
                         
-                        <button className='product-selector-button-2' onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType)}>Add to cart</button>
+                        <button className='product-selector-button-2' onClick={() => addToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage)}>Add to cart</button>
                     </div>
                 ) : null}
             </div>
@@ -332,48 +340,95 @@ function ProductSelectorPage(props){
         <footer>
             <nav className='product-config-footer'>
                 {!displayProductSize ? (
-                    <button className='product-selector-bottom-button-1' onClick={() => moveBack()}>Back</button>
-                ) : <button className='blank-white-button'></button>
-            }
+                        <button className='product-selector-bottom-button-1' onClick={() => moveBack()}>Back</button>
+                    ) : <button className='blank-white-button'></button>
+                    }
+
                 <div className='product-selector-dots'>
                     {displayProductSize ? (
+                        <>
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>
+
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-2' onClick={() => moveToColor()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>                    
+                                
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-2' onClick={() => moveToStorage()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>
+
+                            <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>
+                        </>
+                    ) : null}
+
+                    {displayProductColor ? (
+                        <>
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
+                                <div className='product-selector-button-lines-2'/>
+                            </div>
+                                
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-1' onClick={() => moveToColor()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>
+
+                            <div className='product-selector-dots'>
+                                <button className='progress-buttons-2' onClick={() => moveToStorage()}></button>
+                                <div className='product-selector-button-lines'/>
+                            </div>                
+
+                            <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>    
+                        </>
+                    ) : null}
+
+                    {displayProductStorage ? (
+                        <>
                         <div className='product-selector-dots'>
                             <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
                             <div className='product-selector-button-lines-2'/>
                         </div>
-                    ) : (
-                        <div className='product-selector-dots'>
-                            <button className='progress-buttons-2' onClick={() => moveToSize()}></button>
-                            <div className='product-selector-button-lines'/>
-                        </div>
-                    )}
-                    {displayProductColor ? (
+                            
                         <div className='product-selector-dots'>
                             <button className='progress-buttons-1' onClick={() => moveToColor()}></button>
                             <div className='product-selector-button-lines-2'/>
                         </div>
-                    ) : (
+
                         <div className='product-selector-dots'>
-                            <button className='progress-buttons-2' onClick={() => moveToColor()}></button>
+                            <button className='progress-buttons-1' onClick={() => moveToStorage()}></button>
                             <div className='product-selector-button-lines'/>
+                        </div>                
+
+                        <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>    
+                    </>
+                    ) : null}
+
+                    {displayPandaCare ? (
+                        <>
+                        <div className='product-selector-dots'>
+                            <button className='progress-buttons-1' onClick={() => moveToSize()}></button>
+                            <div className='product-selector-button-lines-2'/>
                         </div>
-                    )}
-                    {displayProductStorage ? (
+                            
+                        <div className='product-selector-dots'>
+                            <button className='progress-buttons-1' onClick={() => moveToColor()}></button>
+                            <div className='product-selector-button-lines-2'/>
+                        </div>
+
                         <div className='product-selector-dots'>
                             <button className='progress-buttons-1' onClick={() => moveToStorage()}></button>
                             <div className='product-selector-button-lines-2'/>
-                        </div>
-                    ) : (
-                        <div className='product-selector-dots'>
-                            <button className='progress-buttons-2' onClick={() => moveToStorage()}></button>
-                            <div className='product-selector-button-lines'/>
-                        </div>
-                    )}
-                    {displayPandaCare ? (
-                        <button className='progress-buttons-1' onClick={() => moveToPandaCare()}></button>
-                    ): (
-                        <button className='progress-buttons-2' onClick={() => moveToPandaCare()}></button>
-                    )}
+                        </div>                
+
+                        <button className='progress-buttons-1' onClick={() => moveToPandaCare()}></button>    
+                    </>
+                    ): null}
+
                 </div>
 
                 {!displayProductReview ? (

@@ -29,15 +29,14 @@ function Form(props) {
     // console.log(props)
     return (
         <div id='stripe-component'>
-            Form
             <form onSubmit={handleSubmit}>
                 <label value={name}>{props.user.user_name}</label>
                 
-                <label>Amount: {props.cart.productPrice}</label>
+                <label>Subtotal: ${props.total}</label>
                 
                 <CardElement />
                 
-                <button className='home-product-heading-button'>Submit</button>
+                <button className='home-product-heading-button'>Pay Now</button>
             </form>
         </div>
     )

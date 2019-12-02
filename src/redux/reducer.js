@@ -14,7 +14,8 @@ const LOGOUT = 'LOGOUT'
 const ADD_DEVICE_TO_CART = 'ADD_DEVICE_TO_CART'
 const GET_CART = 'GET_CART'
 
-export function addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productRam, productProcessor){
+export function addDeviceToCart(productSize, productColor, productStorage, pandaCare, productPrice, productName, productType, productImage, productRam, productProcessor){
+    console.log(productImage)
     return{
         type: ADD_DEVICE_TO_CART,
         payload: {
@@ -26,7 +27,8 @@ export function addDeviceToCart(productSize, productColor, productStorage, panda
             productType,
             productName,
             productRam,
-            productProcessor
+            productProcessor,
+            productImage
         }
     }
 }
@@ -46,7 +48,7 @@ export const getUser = () => {
 };
 
 export const getCart = (user_id) => {
-    let data = axios.get(`/api/cart/${user_id}`).then(res => res.data).then(res => {
+    let data = axios.get(`/api/cart/`).then(res => res.data).then(res => {
         return res
     })
     console.log(data)
@@ -71,30 +73,13 @@ export default function reducer(state = initialState, action){
             return { ...state };
         case GET_USER + "_FULFILLED":
             return { ...state, user: payload, loggedIn: true };
-        // case GET_CART + "_PENDING":
-        //     return {...state}
-        // case GET_CART + "_FULFILLED":
-        //     console.log(payload)
-        //     let products = payload.map(e => {
-        //         return {
-        //             productSize: e.size,
-        //             productColor: e.color, 
-        //             productStorage: e.storage, 
-        //             pandaCare: e.panda_care,
-        //             productPrice: e.price,
-        //             productType: e.type,
-        //             productName: e.name,
-        //             productRam: e.ram,
-        //             productProcessor: e.processor
-        //         }
-        //     })
-        //     return {...state, savedCart: [...state.savedCart, products]}
         case LOGOUT + "_FULFILLED":
             return { user: {}, users: {}, loggedIn: false };
         case UPDATE_EMAIL:
             let email = payload;
             return {...state, email};
-        case ADD_DEVICE_TO_CART:            
+        case ADD_DEVICE_TO_CART:
+            console.log(payload)            
             return {...state, cart: [...state.cart, payload]}
         default:
             return state;
