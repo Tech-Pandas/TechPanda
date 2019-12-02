@@ -1,16 +1,29 @@
- /* .checkout{
-    height: 50vh;
-    width: 50vw;
-}
-
 #stripe-component {
     display: flex;
     flex-direction: column;
-     align-items: center; 
+    justify-content: center;
+    height: 22.54vh;
+    width: 50%;
+    text-align: left;
+    padding-left: 10%;
+} 
+
+.stripe-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     justify-content: space-between;
-    height: 40vh;
-    width: 100%;
-}  */
+    margin-bottom: 10px;
+}
+
+.stripe-heading {
+    /* margin-top: 0px; */
+}
+
+.exp-cvc {
+    display: flex;
+    /* justify-content: center; */
+}
 
 .shopping-cart {
     width: 100%;

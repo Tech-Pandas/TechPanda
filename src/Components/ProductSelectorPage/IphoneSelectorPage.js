@@ -277,12 +277,12 @@ function ProductSelectorPage(props){
                         <div className='product-options'>
                             <div className='product-option'>
                                 <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-space-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989577' alt='pic' />                             
-                                <p className='product-selector-heading-random'>Space Gray</p>
+                                <p className='product-selector-heading-2'>Space Gray</p>
                                 <button className='product-selector-button' onClick={() => chooseSpaceGray()}>Select</button>
                             </div>
                             <div className='product-option'>
                                 <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-silver-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989256' alt='pic' />
-                                <p className='product-selector-heading-random'>Silver</p>
+                                <p className='product-selector-heading-2'>Silver</p>
                                 <button className='product-selector-button' onClick={() => chooseSilver()}>Select</button>
                             </div>
                             <div className='product-option'>
@@ -335,13 +335,14 @@ function ProductSelectorPage(props){
 
                 {displayPandaCare ? (
                    <div>
-                        <h1>Let Po protect your device!</h1>
+                        <h1 className='product-selector-heading'>Let Po protect your device!</h1>
                         <div className='product-options'>
                         <div id='panda-care'>
                             <img id='po-image' src='https://vignette.wikia.nocookie.net/kungfupanda/images/7/73/KFP3-promo-po4.jpg/revision/latest/scale-to-width-down/350?cb=20150726165358' alt='pic' />
+
+                            <p className='product-storage-option-text-3'>$100</p>
                             <button className='product-selector-button-2' onClick={() => yesIFreakingWantPandaCare()}>Get PandaCare!</button>
                             <button className='product-selector-button-2' onClick={() => noIDontWantPandaCare()}>No thanks</button>
-                            <p>$100</p>
                         </div>
                     </div>
                    </div>
