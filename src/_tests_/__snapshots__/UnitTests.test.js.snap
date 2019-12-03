@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`make sure that '/' renders the home(Pixel 4) page 1`] = `
+<a
+  href="#/"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/' renders the home(Pixel 4) page 2`] = `
+<a
+  href="#/"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/cart' renders the cart page 1`] = `
+<a
+  href="#/cart"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/iphone' renders the iPhone page 1`] = `
+<a
+  href="#/iphone"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/iphone-tech-specs' renders the iPhone tech specs page 1`] = `
+<a
+  href="#/iphone-tech-specs"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/iphone-tech-specs' renders the iPhone tech specs page 2`] = `
+<a
+  href="#/iphone-tech-specs"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/mac-book-pro' renders the MacBook Pro page 1`] = `
+<a
+  href="#/mac-book-pro"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/mac-book-pro' renders the MacBook Pro page 2`] = `
+<a
+  href="#/mac-book-pro"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/mac-book-pro' renders the MacBook Pro selector page 1`] = `
+<a
+  href="#/mac-book-pro"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/macbookpro-home' renders the MacBook Pro Home page 1`] = `
+<a
+  href="#/macbookpro-home"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/macbookpro-home' renders the MacBook Pro Home page 2`] = `
+<a
+  href="#/macbookpro-home"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/macbookpro-tech-specs' renders the MacBook Pro tech specs page 1`] = `
+<a
+  href="#/macbookpro-tech-specs"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/productconfig' renders the Pixel 4 selector page 1`] = `
+<a
+  href="#/productconfig"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/productconfig' renders the Pixel 4 selector page 2`] = `
+<a
+  href="#/productconfig"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/productconfigiphone' renders the iPhone selector page 1`] = `
+<a
+  href="#/productconfigiphone"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/stadia' renders the stadia page 1`] = `
+<a
+  href="#/stadia"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/stadiaconfig' renders the stadia selector page 1`] = `
+<a
+  href="#/stadiaconfig"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/stadiaspecs' renders the stadia specs page 1`] = `
+<a
+  href="#/stadiaspecs"
+  onClick={[Function]}
+/>
+`;
+
+exports[`make sure that '/techspecs' renders the Pixel 4 techspecs page 1`] = `
+<a
+  href="#/techspecs"
+  onClick={[Function]}
+/>
+`;
