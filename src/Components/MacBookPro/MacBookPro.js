@@ -135,13 +135,13 @@ function MacBookPro(props) {
 
     const increaseProductSize = () => {
         setProductSize('16')
-        setProductName('16')
+        setProductName('MacBook Pro 16 inch')
         setMax(true)
         moveForward()
     }
 
     const decreaseProductSize = () => {
-        setProductName('13')
+        setProductName('MacBook Pro 13 inch')
         setProductSize('13')
         setMax(false)
         moveForward()
