@@ -232,3 +232,7 @@
   .ctrlspec {
       margin-top: 50px;
   }
+
+  #stadia-container {
+      background: white;
+  }

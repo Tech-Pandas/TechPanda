@@ -19,7 +19,7 @@ function StadiaConfig(props){
         <>
             <HomeProductHeaderOne />
             <div className='stadia-review'>
-                <img id='stadia-image' src='https://lh3.googleusercontent.com/juhcCwWyeBiln3s-KYVMYsTMCDrKTWoaQI-BnHRzilMBQ0koWgAfIHwfoX2oLbGIC3Hr=rw-w1716'/>
+                <img id='stadia-image' src='https://lh3.googleusercontent.com/juhcCwWyeBiln3s-KYVMYsTMCDrKTWoaQI-BnHRzilMBQ0koWgAfIHwfoX2oLbGIC3Hr=rw-w1716' alt='pic'/>
                 <p>Stadia Premiere Edition</p>
                 <p>$129</p>
                 <p>Includes Chromecast Ultra and 3 months of Stadia Pro</p>

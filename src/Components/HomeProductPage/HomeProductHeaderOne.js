@@ -75,7 +75,7 @@ function HomeProductHeaderOne(props) {
 
                 <a href='/#/iphone'><p className='left-header-1-text'>iPhone 11 Pro</p></a>
                 <a href='/#/stadia'><p className='left-header-1-text'>Stadia</p></a>
-                <a href='/#/macbookpro-home'><p className='left-header-1-text'>MacBookPro</p></a>
+                <a href='/#/macbookpro-home'><p className='left-header-1-text'>MacBook Pro</p></a>
             </div>
 
             <div className='cart-user-icons'>
