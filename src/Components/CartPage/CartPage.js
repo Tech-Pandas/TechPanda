@@ -48,6 +48,8 @@ function CartPage(props) {
     //     .catch(err => console.log(err))
     // }, [])
 
+    console.log(props)
+
     useEffect(() => {
         let updatedPrice = 0
         props.cart.map(e => {
