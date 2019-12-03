@@ -192,6 +192,12 @@ a {
 
 /* BODY */
 
+#home-page {
+    background-color: white;
+    position: absolute;
+    z-index: -100;
+}
+
 #home-product-heading {
     font-size: 60px;
     font-weight: 700;

@@ -8,7 +8,7 @@ import HomeProductHeaderTwo from './HomeProductHeaderTwo';
 
 function HomeProductPage() {
     return(
-        <div>
+        <div id='home-page'>
             <HomeProductHeaderOne/>
             <HomeProductHeaderTwo/>
 
