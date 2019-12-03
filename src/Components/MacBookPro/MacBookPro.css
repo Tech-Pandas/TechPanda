@@ -358,7 +358,81 @@
 }
 
 .tech-specs-div {
-    height: 15vh;
-    width: 70vw;
-    border-bottom: black solid 1px;
+    /* padding-top: 15%; */
+    height: 30vh;
+    width: 65vw;
+    border-bottom: grey solid 1px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.title-macbook-specs {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.macbook-specs-content {
+    width: 80%;
+}
+
+.price-macbook-specs {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 25%;
+}
+
+.padding-mac-techspecs {
+    padding-top: 3%;
+}
+
+.tech-specs-div-big {
+    /* padding-top: 15%; */
+    height: 50vh;
+    width: 65vw;
+    border-bottom: grey solid 1px;
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    /* align-content: flex-start; */
+    text-align: left;
+}
+
+.macbook-specs-content-processor {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.macbook-specs-content-storage {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-right: 5%;
+}
+
+.macbook-specs-content-memory {
+    width: 80%;
+    display: flex;
+    /* justify-content: space-evenly; */
+    text-align: left;
+}
+
+.macbook-specs-content-graphics {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.macbook-specs-content-battery {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
 }
