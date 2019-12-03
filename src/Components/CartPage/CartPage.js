@@ -7,7 +7,6 @@ import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 // import { withRouter } from 'react-router-dom';
 import Form from '../StripeComponent/Form';
 import CartDisplay from './CartDisplay'
-import Axios from 'axios';
 
 // Style //
 

@@ -16,7 +16,7 @@ function CartDisplay(props){
 
     return(
         <div className='product-info-display'>
-            <img className='product-image' src={props.productObj.productImage} />
+            <img className='product-image' src={props.productObj.productImage} alt=''/>
 
             {props.productObj.productColor ? (
                 <div className='product-specs'>  
