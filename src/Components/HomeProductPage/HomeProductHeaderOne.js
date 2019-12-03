@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getUser, logout } from '../../redux/reducer';
 import Button from '@material-ui/core/Button';
@@ -11,7 +11,6 @@ import { withRouter } from 'react-router-dom';
 
 
 function HomeProductHeaderOne(props) {
-    const [productId, setProductId] = useState(0)
 
     useEffect(() => {
         if (!props.user.loggedIn) {
