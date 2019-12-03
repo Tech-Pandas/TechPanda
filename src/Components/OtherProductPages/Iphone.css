@@ -169,6 +169,66 @@
     margin-left: 40px;
 }
 
+.long-phone {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 100px;
+    background: #111111;
+    color: white;
+    border-top: 3px solid black;
+}
+
+#phonewave {
+    width: 200px;
+    margin-bottom: 60px;
+}
+
+.info-section {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: white;
+    overflow: scroll;
+    padding: 80px;
+    background: black;
+}
+
+.info-section > h4 {
+    color: #aaa;
+    line-height: 5px;
+}
+
+.info-section > h2 {
+    font-size: 40px;
+    margin: -5px;
+    line-height: 55px;
+}
+
+.long-phone > img {
+    width: 50%;
+}
+
+.icon-section {
+    background: #111;
+    margin-top: 30px;
+    padding: 40px;
+    line-height: 30px;
+}
+
+.icon-section > img {
+    padding-top: 20px;
+}
+
+.splash-container {
+    background: rgba(0, 0, 0, .9);
+}
+
+.splash {
+    max-width: 100%;
+}
+
 
 
 
