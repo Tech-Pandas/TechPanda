@@ -1,14 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './StadiaConfig.css'
 import {connect} from 'react-redux';
 import {addDeviceToCart} from '../../redux/reducer';
-import StadiaHeader from './StadiaHeader';
+// import StadiaHeader from './StadiaHeader';
 import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 
 function StadiaConfig(props){
-    const [productName, setProductName] = useState('Google Stadia')
-    const [productPrice, setProductPrice] = useState(129)
-    const [productImage, setProductImage] = useState('https://lh3.googleusercontent.com/juhcCwWyeBiln3s-KYVMYsTMCDrKTWoaQI-BnHRzilMBQ0koWgAfIHwfoX2oLbGIC3Hr=rw-w1716')
+    const [productName] = useState('Google Stadia')
+    const [productPrice] = useState(129)
+    const [productImage] = useState('https://lh3.googleusercontent.com/juhcCwWyeBiln3s-KYVMYsTMCDrKTWoaQI-BnHRzilMBQ0koWgAfIHwfoX2oLbGIC3Hr=rw-w1716')
 
     const addToCart = () => {
         props.addDeviceToCart(productName, productPrice, productImage)
@@ -19,6 +19,7 @@ function StadiaConfig(props){
         <>
             <HomeProductHeaderOne />
             <div className='stadia-review'>
+
                 <img id='stadia-image' src='https://lh3.googleusercontent.com/juhcCwWyeBiln3s-KYVMYsTMCDrKTWoaQI-BnHRzilMBQ0koWgAfIHwfoX2oLbGIC3Hr=rw-w1716' alt='pic'/>
                 <p>Stadia Premiere Edition</p>
                 <p>$129</p>

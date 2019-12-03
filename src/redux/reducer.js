@@ -90,9 +90,7 @@ export default function reducer(state = initialState, action){
         case ADD_DEVICE_TO_CART:    
             return {...state, cart: [...state.cart, payload]}
         case REMOVE_DEVICE_FROM_CART:
-            console.log(payload)
             state.cart.splice(payload, 1)
-            console.log(state)
             return {...state}
         default:
             return state;
