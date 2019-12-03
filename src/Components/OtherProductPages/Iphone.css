@@ -192,7 +192,6 @@
     flex-direction: column;
     text-align: left;
     color: white;
-    overflow: scroll;
     padding: 80px;
     background: black;
 }
