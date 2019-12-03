@@ -1,11 +1,7 @@
 .therewaspro {
     font-size: 80px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: gray; */
     text-align: center;
-    /* color: #f5f5f7; */
     color: white;
     font-weight: 600;
 }
@@ -19,16 +15,9 @@
 }
 
 .therewasprocontainerwhite {
-    /* background-image: url('https://www.apple.com/v/iphone-11-pro/c/images/overview/camera/camera_three_lens_system_phone__cokiuc6tixw2_large.jpg'); */
-    /* margin-left: -50px; */
-    /* z-index: 1; */
     color: white;
-    /* position: absolute; */
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
-    /* padding: 20px; */
-    /* padding-top: 300px; */
     margin: 20px;
     z-index: 1;
 }
@@ -36,9 +25,6 @@
 .therewaspro1 {
     font-size: 28px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* -webkit-text-fill-color: gray;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white; */
     font-weight: 500;
     margin: 5px;
     color: #aaa;
@@ -55,7 +41,6 @@
     width: 100%;
     word-wrap: break-word;
     text-align: center;
-    /* border-top: 1px solid white; */
     border-bottom: 1px solid white;
     box-sizing: border-box;
     z-index: 1;
@@ -82,13 +67,10 @@
 
 .whitephotodiv {
     max-width: 50vw;
-    max-height: 100vh;
     padding: 15px;
-    /* margin-bottom: 450px; */
 }
 
 .black {
-    /* height: 100vh; */
     background: black;
     display: flex;
     flex-direction: column;
@@ -97,12 +79,10 @@
     align-content: center;
     box-sizing: border-box;
     padding-top: 50px;
-    /* padding-bottom: 150px; */
 }
 
 .cameraphoto {
     height: 100vh;
-    /* width: 60vw; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -110,6 +90,7 @@
     box-sizing: border-box;
     padding: 100px;
     border: 30px solid #111;
+    transform: translateZ(-1px);
 }
 
 @keyframes eleven {
@@ -122,9 +103,6 @@
 }
 
 .camerabottom {
-    /* transform: rotate(360deg);
-    animation: spin 6s infinite; */
-    /* height: 100vh; */
     width: 240px;
     height: 470px;
     display: flex;
@@ -133,16 +111,62 @@
     padding: 15px;
     margin: 10px;
     animation: eleven 15s ease-out;
-    /* z-index: -1; */
 }
 
 .threecam {
-    background-image: url('https://www.apple.com/v/iphone-11-pro/c/images/overview/camera/camera_hero_static__bkn3b0mlxrjm_large.jpg');
     color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background: black;
+    height: 100vh;
+    background: black;
+    border-bottom: 1px solid #111;
 }
 
+
+
 .mountain {
-    max-width: 90%;
+    max-width: 80%;
+    border-radius: 50%;
+    box-shadow: 0px 8px 16px 0px rgba(100, 100, 100, .4);
+}
+
+.mountain-container {
+    background-image: url('https://www.apple.com/v/iphone-11-pro/c/images/overview/camera/camera_hero_static__bkn3b0mlxrjm_large.jpg');
+    color: white;
+    padding: 100px;
+    border-top: 3px solid #111;
+    box-shadow: 0px -100px 10px -100px rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+}
+
+.ultrawide {
+    color: #aaa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 64px;
+    text-align: left;
+}
+
+.allin {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 60px;
+    text-align: left;
+}
+
+.ultrawide,.allin {
+    line-height: 25px;
+    margin-left: 40px;
+} 
+
+.mountain-container > h3 {
+    font-size: 22px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 40px;
+    text-align: left;
+    width: 62%;
+    line-height: 25px;
+    padding-top: 30px;
+    margin-left: 40px;
 }
 
 
