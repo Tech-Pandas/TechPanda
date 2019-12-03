@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Parallax} from 'react-spring/renderprops-addons';
+import { Parallax } from 'react-spring/renderprops-addons';
 // import ReactPlayer from 'react-player';
 import './MacBookPro.css';
 import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';

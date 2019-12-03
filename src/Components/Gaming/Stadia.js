@@ -21,7 +21,7 @@ const Stadia = () => {
 
     if(isToggled === true) {
     return (
-        <div className='stadia-container'>
+        <div id='stadia-container'>
             <HomeProductHeaderOne />
             <StadiaHeader />
             <animated.div className='vid'>
@@ -47,7 +47,7 @@ const Stadia = () => {
                     style={{ transform: props.xy.interpolate(trans1) }}
                     className='animating' 
                     >
-                        <animated.div class="card2" style={{ transform: props.xy.interpolate(trans4) }}><img className='stadiactrl' src='https://lh3.googleusercontent.com/qdi7ms63qrk2Hq1FkMk3EvhCqx8FLmLA2Skn9meZv7V8hVUcks4Ae5TpN5Q97Z7oz6-SuJXwEaU_FalZPNgdUQ=rw-w2010' alt='Stadia' />
+                        <animated.div className="card2" style={{ transform: props.xy.interpolate(trans4) }}><img className='stadiactrl' src='https://lh3.googleusercontent.com/qdi7ms63qrk2Hq1FkMk3EvhCqx8FLmLA2Skn9meZv7V8hVUcks4Ae5TpN5Q97Z7oz6-SuJXwEaU_FalZPNgdUQ=rw-w2010' alt='Stadia' />
                         </animated.div>
                         {/* <animated.div class="card1" style={{ transform: props.xy.interpolate(trans1) }} />
                         <animated.div class="card2" style={{ transform: props.xy.interpolate(trans2) }} />

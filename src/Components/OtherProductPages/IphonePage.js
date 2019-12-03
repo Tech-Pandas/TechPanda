@@ -1,16 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import ReactPlayer from 'react-player';
 import './Iphone.css';
 import HomeProductHeaderOne from '../HomeProductPage/HomeProductHeaderOne';
 import IphoneHeader from './IphoneHeader';
 import Button from '@material-ui/core/Button';
+import { useSpring, animated } from 'react-spring';
 
-class IphonePage extends Component {
-  render() { 
+const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
+const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`
+// const trans2 = (x, y) => `translate3d(${x / 8 + 35}px,${y / 8 - 230}px,0)`
+// const trans3 = (x, y) => `translate3d(${x / 6 - 250}px,${y / 6 - 200}px,0)`
+const trans4 = (x, y) => `translate3d(${x / 3.5}px,${y / 3.5}px,0)`
+
+const IphonePage = () => {
+
+    const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
+
     return (
       <div className='iphonepage'>
-      <Parallax ref={ref => (this.parallax = ref)} pages={3} className='containpro'>
+      <Parallax ref={ref => (props.parallax = ref)} pages={3} className='containpro'>
       <HomeProductHeaderOne />
       <IphoneHeader />
       <div className='iphoneplayer'>
@@ -51,53 +60,61 @@ class IphonePage extends Component {
           <h1 className='ultrawide'>Ultra Wide</h1>
           <h1 className='allin'>Take it alllllll in.</h1>
           <h3>When you just can’t squeeze everything into the frame, zoom out. Because the new Ultra Wide camera captures four times more scene than ever. It’s like stepping back — way back — without taking a step. Bring on those mountain ranges, soaring cathedrals, and iconic skylines.</h3>
-          <img className='mountain' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/galleries/ultra-wide-gallery/hero__egkp929h78sy_medium_2x.jpg' alt='pic' />
+          <animated.img onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+            style={{ transform: props.xy.interpolate(trans1) }} style={{ transform: props.xy.interpolate(trans4) }} className='mountain' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/galleries/ultra-wide-gallery/hero__egkp929h78sy_medium_2x.jpg' alt='pic' />
         </div> 
         <div className='long-phone'>
           <section className='info-section'>
-            <img id='phonewave' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/pro_display_hero_1_dark__bs3bzy9s1seq_medium_2x.jpg' alt=''/>
+            <img id='phonewave' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/pro_display_hero_1_dark__bs3bzy9s1seq_medium_2x.jpg' alt='pic' />
             <h2>The Super Retina XDR display boasts not one but two new record levels of brightness and understands when to use them. It hits up to 800 nits when you’re out in the sun — great for shooting and making selects on the go — and up to 1200 nits when you’re viewing extreme dynamic range content. It’s like having a Pro Display XDR on your iPhone.</h2>
             <h3>The brightest, sharpest iPhone display ever</h3>
+            <ul>
             <h4>Up to</h4>
-            <h2>800 nits <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_nits__nmuk9gi20fmq_medium.jpg' alt=''/> </h2>
+            <h2>800 nits <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_nits__nmuk9gi20fmq_medium.jpg' alt='pic' /> </h2>
             <h4>for better viewing in sunlight</h4>
+            </ul>
+            <ul>
             <h4>Up to</h4>
-            <h2>1200 nits <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_nits__nmuk9gi20fmq_medium.jpg' alt=''/> </h2>
+            <h2>1200 nits <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_nits__nmuk9gi20fmq_medium.jpg' alt='pic' /> </h2>
             <h4>for HDR photos & movies</h4>
-            <h2>2,000,000:1 <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_contrast_ratio__cc8mn3g34xo2_medium.jpg' alt=''/> </h2>
+            </ul>
+            <ul>
+            <h2>2,000,000:1 <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_contrast_ratio__cc8mn3g34xo2_medium.jpg' alt='pic' /> </h2>
             <h4>contrast ratio</h4>
-            <h2>458 pixels <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_pixels__bzb4io3rav7m_medium.jpg' alt=''/> </h2>
+            </ul>
+            <ul>
+            <h2>458 pixels <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_pixels__bzb4io3rav7m_medium.jpg' alt='pic' /> </h2>
             <h4>per inch</h4>
+            </ul>
             <section className='icon-section'>
-            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_oled_color__cuswu62nmpiu_medium.jpg' alt=''/>
+            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_oled_color__cuswu62nmpiu_medium.jpg' alt='pic' />
             <h3>Custom OLED</h3>
-            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_color_accuracy__fvdk87ak466a_medium.jpg' alt=''/>
+            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_color_accuracy__fvdk87ak466a_medium.jpg' alt='pic' />
             <h3>Wide color gamut</h3>
-            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_true_tone__elbdqyt346eu_medium.jpg' alt=''/>
+            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_true_tone__elbdqyt346eu_medium.jpg' alt='pic' />
             <h3>True Tone</h3>
-            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_haptic_touch__j65rzqfw5iyy_medium.jpg' alt=''/>
+            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_haptic_touch__j65rzqfw5iyy_medium.jpg' alt='pic' />
             <h3>Haptic Touch</h3>
-            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_tap_wake__bvok0gw7uhau_medium.jpg' alt=''/>
+            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_tap_wake__bvok0gw7uhau_medium.jpg' alt='pic' />
             <h3>Tap or raise to wake</h3>
-            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_night_shift__b6vabdyecoeu_medium.jpg' alt=''/>
+            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_night_shift__b6vabdyecoeu_medium.jpg' alt='pic' />
             <h3>Night Shift</h3>
-            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_efficient__bjd5gzjbdwpe_medium.jpg' alt=''/>
+            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_efficient__bjd5gzjbdwpe_medium.jpg' alt='pic' />
             <h3>More efficient</h3>
-            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_true_blacks__bwwkqt6yyjle_medium.jpg' alt=''/>
+            <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/icon_true_blacks__bwwkqt6yyjle_medium.jpg' alt='pic' />
             <h3>True blacks</h3>
             </section>
           </section>
-          <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/pro_display_hero_2_dark__bihff5tm6vg2_medium_2x.jpg' alt=''/>
+          <img src='https://www.apple.com/v/iphone-11-pro/c/images/overview/display/pro_display_hero_2_dark__bihff5tm6vg2_medium_2x.jpg' alt='pic' />
         </div>
         <div className='splash-container'>
           <h1>Splashes? Pffft.</h1>
           <h3>Our most water-resistant iPhone ever.</h3>
-          <img className='splash' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/water-resistance/splashes__d3a02nzl9p4y_medium_2x.jpg' alt=''/>
+          <img className='splash' src='https://www.apple.com/v/iphone-11-pro/c/images/overview/water-resistance/splashes__d3a02nzl9p4y_medium_2x.jpg' alt='pic' />
         </div>
         <a href='#/productconfigiphone'><Button color='primary'>See Options</Button></a>
       </div>
     )
   }
-}
 
 export default IphonePage;
