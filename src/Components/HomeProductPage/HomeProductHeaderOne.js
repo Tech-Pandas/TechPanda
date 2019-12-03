@@ -17,9 +17,9 @@ function HomeProductHeaderOne(props) {
         if (!props.user.loggedIn) {
             props.getUser();
         }
-        axios.get('/api/cart')
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        // axios.get('/api/cart')
+        //     .then(res => console.log(res))
+        //     .catch(err => console.log(err))
     }, [])
 
     const userLogin = () => {
