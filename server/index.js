@@ -16,7 +16,8 @@ const {
   CONNECTION_STRING,
   AUTH0_DOMAIN,
   AUTH0_CLIENT_ID,
-  AUTH0_CLIENT_SECRET
+  AUTH0_CLIENT_SECRET,
+  API_DOMAIN
 } = process.env;
 const cartCtrl = require("./cartController");
 const stripeCtrl = require("./stripeController");
@@ -97,15 +98,15 @@ app.get("/api/getUser", (req, res, next) => {
 app.get(
   "/api/login",
   passport.authenticate("auth0", {
-    failureRedirect: "http://localhost:3000/#/"
+    failureRedirect: `http://${API_DOMAIN}:3000/#/`
   }),
   (req, res) => {
-    res.redirect("http://localhost:3000/#/");
+    res.redirect(`http://${API_DOMAIN}:3000/#/`);
   }
 );
 app.get("/api/logout", (req, res) => {
   req.logout();
-  let returnTo = "http://localhost:3000/";
+  let returnTo = `http://${API_DOMAIN}:3000/`;
   res.redirect(
     `https://${AUTH0_DOMAIN}/v2/logout?returnTo=${returnTo}&client_id=${AUTH0_CLIENT_ID}`
   );
