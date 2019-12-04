@@ -37,6 +37,8 @@ function HomeProductPage() {
                     <ReactPlayer 
                         url='https://techpandas.s3-us-west-1.amazonaws.com/googlesittingvideo.mp4' 
                         playing
+                        muted
+                        autoPlay
                         loop 
                         />
 
