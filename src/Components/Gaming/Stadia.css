@@ -106,7 +106,7 @@
 
 .stadiactrl {
     max-width: 1500px;
-    padding: 20px;
+    padding: 50px;
     animation: raise 9s infinite;
     animation-timing-function: ease;
     transition: 2s ease;
