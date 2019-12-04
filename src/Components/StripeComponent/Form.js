@@ -3,6 +3,7 @@ import { injectStripe, CardNumberElement, CardExpiryElement, CardCVCElement } fr
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import { makeStyles } from "@material-ui/core";
+import swal from 'sweetalert';
 
 // import StripeNumberTextField from '../StripeComponent/StripeNumberTextField';
 // import StripeExpiryTextField from '../StripeComponent/StripeExpiryTextField';
@@ -18,9 +19,17 @@ function Form(props) {
             let token = await props.stripe.createToken({ name: name });
             // console.log(token)
             if (token.error) {
-                return alert('Invalid')
+                return swal({
+                    title: "Invalid",
+                    text: "There was an error submitting your request",
+                    icon: "error",
+                  });
             }
-            alert('Payment Submitted')
+            swal({
+                title: "Payment Submitted",
+                text: "Your payment was successful",
+                icon: "success",
+              });
             props.history.push('/')
         } catch (e) {
             throw e;
