@@ -96,7 +96,6 @@ app.get('/api/login', passport.authenticate('auth0', {
         res.redirect('http://localhost:3000/#/');
     });
 app.get('/api/logout', (req, res) => {
-    console.log('hit logout')
     req.logout();
     let returnTo = 'http://localhost:3000/';
     res.redirect(
@@ -112,6 +111,7 @@ app.post('/api/redirect', (req, res, next) => {
 
 
 // ----------cart ---------//
+// no longer in use
 
 app.post('/api/productid', cartCtrl.getProductID)
 app.post('/api/cart', cartCtrl.addCart)

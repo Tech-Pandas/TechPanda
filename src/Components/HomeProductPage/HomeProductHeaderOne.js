@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getUser, logout } from '../../redux/reducer';
 import Button from '@material-ui/core/Button';
@@ -7,8 +7,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import axios from 'axios';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { withRouter } from 'react-router-dom';
-
-
 
 function HomeProductHeaderOne(props) {
 
@@ -61,9 +59,8 @@ function HomeProductHeaderOne(props) {
         setAnchorEl(null);
     };
 
-    // console.log(props)
     //-------- Style Done Here --------///
-
+    
     return (
         <div id='home-product-page-header-1'>
 
@@ -80,6 +77,10 @@ function HomeProductHeaderOne(props) {
             <div className='cart-user-icons'>
                 <div>
                     <a href='/#/cart'><ShoppingCartIcon></ShoppingCartIcon></a>
+                    {/* {props.count ? (
+                        <span>{`(${props.cart.length})`}</span>
+                        
+                    ) : null} */}
                     {/* <img src='https://carlisletheacarlisletheatre.org/images/shopping-cart-icon-grey-9.jpg' className='cart-icon' /> */}
                 </div>
                 {props.loggedIn ? (

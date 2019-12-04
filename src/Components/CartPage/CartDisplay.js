@@ -4,15 +4,12 @@ import {removeDeviceFromCart} from '../../redux/reducer';
 import './CartDisplay.css'
 
 function CartDisplay(props){
-    console.log(props)
-    // console.log(props.productObj)
 
     const removeProduct = (productId) => {
         props.removeDeviceFromCart(productId)
         props.forceUpdate()
     }
 
-    console.log(props)
 
     return(
         <div className='product-info-display'>

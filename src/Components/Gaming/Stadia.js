@@ -40,7 +40,7 @@ const Stadia = () => {
                     <h4>
                         There’s no need to overpay for expensive hardware. With Stadia, you get up to 4K 60 FPS gameplay on TVs without the hassle of time‑consuming game downloads or in‑game updates. And you can take your favorite games with you on your laptop, tablet, or phone as long as you have Wi‑Fi.
                     </h4>
-                    <a href='#/productconfig'><button className='stadiabuy'>Buy</button></a>
+                    <a href='#/stadiaconfig'><button className='stadiabuy'>Buy</button></a>
                     </span>
                     <animated.div
                     onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
