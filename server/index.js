@@ -98,15 +98,15 @@ app.get("/api/getUser", (req, res, next) => {
 app.get(
   "/api/login",
   passport.authenticate("auth0", {
-    failureRedirect: `http://${API_DOMAIN}:3000/#/`
+    failureRedirect: `http://${API_DOMAIN}`
   }),
   (req, res) => {
-    res.redirect(`http://${API_DOMAIN}:3000/#/`);
+    res.redirect(`http://${API_DOMAIN}`);
   }
 );
 app.get("/api/logout", (req, res) => {
   req.logout();
-  let returnTo = `http://${API_DOMAIN}:3000/`;
+  let returnTo = `http://${API_DOMAIN}`;
   res.redirect(
     `https://${AUTH0_DOMAIN}/v2/logout?returnTo=${returnTo}&client_id=${AUTH0_CLIENT_ID}`
   );
