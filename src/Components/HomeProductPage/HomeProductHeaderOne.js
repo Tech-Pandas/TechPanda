@@ -1,128 +1,155 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getUser, logout } from '../../redux/reducer';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import axios from 'axios';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import { withRouter } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { getUser, logout } from "../../redux/reducer";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import axios from "axios";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { withRouter } from "react-router-dom";
+
+import { API_DOMAIN } from '../../Config';
 
 function HomeProductHeaderOne(props) {
-
-    useEffect(() => {
-        if (!props.user.loggedIn) {
-            props.getUser();
-        }
-        // axios.get('/api/cart')
-        //     .then(res => console.log(res))
-        //     .catch(err => console.log(err))
-    }, [])
-
-    const userLogin = () => {
-        window.location.href = 'http://localhost:5000/api/login';
-    };
-
-    const logoutUser = () => {
-        // const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
-
-        // axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
-        // .then(res => {
-        //     setProductId(res.data)
-        // })
-        // axios.post('/api/cart', {user_id: props.user.id, product_id: productId, quantity: 1})
-        // .then(res => {
-        //     console.log(res)
-        // })
-
-        console.log('hitting logout', props)
-        const { cart } = props
-        axios.post('/api/cart', { cart })
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-        props.logout()
-
-        props.history.push('/')
-        // console.log(props)
+  useEffect(() => {
+    if (!props.user.loggedIn) {
+      props.getUser();
     }
+    // axios.get('/api/cart')
+    //     .then(res => console.log(res))
+    //     .catch(err => console.log(err))
+  }, []);
 
+  const userLogin = () => {
+    window.location.href = `http://${API_DOMAIN}:5000/api/login`;
+  };
 
-    //------- Adding Style here --------///
+  const logoutUser = () => {
+    // const {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor} = props.cart
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    // axios.post('/api/productid', {productSize, productColor, productStorage, pandaCare, productPrice, productType, productName, productRam, productProcessor})
+    // .then(res => {
+    //     setProductId(res.data)
+    // })
+    // axios.post('/api/cart', {user_id: props.user.id, product_id: productId, quantity: 1})
+    // .then(res => {
+    //     console.log(res)
+    // })
 
-    const handleClick = event => {
-        setAnchorEl(event.currentTarget);
-    };
+    console.log("hitting logout", props);
+    const { cart } = props;
+    axios
+      .post("/api/cart", { cart })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+    props.logout();
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+    props.history.push("/");
+    // console.log(props)
+  };
 
-    //-------- Style Done Here --------///
-    
-    return (
-        <div id='home-product-page-header-1'>
+  //------- Adding Style here --------///
 
-            <div id='left-header-1-stuff'>
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-                <a href='/#/'><img id='logo' src='https://static.thenounproject.com/png/337525-200.png' alt='pic' /></a>
-                <a href='/#/'><p className='left-header-1-text'>Pixel 4</p></a>
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
 
-                <a href='/#/iphone'><p className='left-header-1-text'>iPhone 11 Pro</p></a>
-                <a href='/#/stadia'><p className='left-header-1-text'>Stadia</p></a>
-                <a href='/#/macbookpro-home'><p className='left-header-1-text'>MacBook Pro</p></a>
-            </div>
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-            <div className='cart-user-icons'>
-                <div>
-                    <a href='/#/cart'><ShoppingCartIcon></ShoppingCartIcon></a>
-                    {/* {props.count ? (
+  //-------- Style Done Here --------///
+
+  return (
+    <div id="home-product-page-header-1">
+      <div id="left-header-1-stuff">
+        <a href="/#/">
+          <img
+            id="logo"
+            src="https://static.thenounproject.com/png/337525-200.png"
+            alt="pic"
+          />
+        </a>
+        <a href="/#/">
+          <p className="left-header-1-text">Pixel 4</p>
+        </a>
+
+        <a href="/#/iphone">
+          <p className="left-header-1-text">iPhone 11 Pro</p>
+        </a>
+        <a href="/#/stadia">
+          <p className="left-header-1-text">Stadia</p>
+        </a>
+        <a href="/#/macbookpro-home">
+          <p className="left-header-1-text">MacBook Pro</p>
+        </a>
+      </div>
+
+      <div className="cart-user-icons">
+        <div>
+          <a href="/#/cart">
+            <ShoppingCartIcon></ShoppingCartIcon>
+          </a>
+          {/* {props.count ? (
                         <span>{`(${props.cart.length})`}</span>
                         
                     ) : null} */}
-                    {/* <img src='https://carlisletheacarlisletheatre.org/images/shopping-cart-icon-grey-9.jpg' className='cart-icon' /> */}
-                </div>
-                {props.loggedIn ? (
-                    <div>
-                        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                            <img src={props.user.user_image} alt='' className='user-image' alt='pic' />
-                        </Button>
-                        <Menu
-                            id="simple-menu"
-                            anchorEl={anchorEl}
-                            keepMounted
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        >
-                            <MenuItem >{props.user.user_name}</MenuItem>
-                            <MenuItem onClick={() => logoutUser()}>Logout</MenuItem>
-                        </Menu>
-                    </div>
-                ) : (
-                        <img
-                            src='https://static.thenounproject.com/png/2366460-200.png'
-                            onClick={() => userLogin()}
-                            className='user-icon'
-                            alt='pic'
-                        ></img>
-                    )}
-            </div>
+          {/* <img src='https://carlisletheacarlisletheatre.org/images/shopping-cart-icon-grey-9.jpg' className='cart-icon' /> */}
         </div>
-    )
+        {props.loggedIn ? (
+          <div>
+            <Button
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+            >
+              <img
+                src={props.user.user_image}
+                alt=""
+                className="user-image"
+                alt="pic"
+              />
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem>{props.user.user_name}</MenuItem>
+              <MenuItem onClick={() => logoutUser()}>Logout</MenuItem>
+            </Menu>
+          </div>
+        ) : (
+          <img
+            src="https://static.thenounproject.com/png/2366460-200.png"
+            onClick={() => userLogin()}
+            className="user-icon"
+            alt="pic"
+          ></img>
+        )}
+      </div>
+    </div>
+  );
 }
 
-const mapStateToProps = (state) => {
-    return {
-        user: state.user,
-        loggedIn: state.loggedIn,
-        cart: state.cart
-    }
-}
+const mapStateToProps = state => {
+  return {
+    user: state.user,
+    loggedIn: state.loggedIn,
+    cart: state.cart
+  };
+};
 
 const mapDispatchToProps = {
-    getUser,
-    logout
-}
+  getUser,
+  logout
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomeProductHeaderOne))
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(HomeProductHeaderOne));
