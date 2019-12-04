@@ -22,9 +22,7 @@ function useForceUpdate(){
 }
 
 function CartPage(props) {
-    // const [cart, setCart] = useState({})
     const [total, setTotal] = useState(0)
-
 
     useEffect(() => {
         if (!props.user.loggedIn) {
@@ -47,24 +45,15 @@ function CartPage(props) {
     //     .catch(err => console.log(err))
     // }, [])
 
-    console.log(props)
-
     useEffect(() => {
         let updatedPrice = 0
         props.cart.map(e => {
-            console.log(e.productPrice)
-            console.log(total)
             updatedPrice = updatedPrice + e.productPrice
-            console.log(updatedPrice)
         })
         setTotal(updatedPrice)
-    })
-
-    console.log(props.cart)   
-    // console.log(total)   
+    }) 
 
     const forceUpdate = useForceUpdate()
-
 
     return (
         <>

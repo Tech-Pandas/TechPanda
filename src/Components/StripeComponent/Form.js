@@ -27,7 +27,6 @@ function Form(props) {
         }
     }
 
-    console.log(props.cart)
     const classes = useStyles();
     return (
         <div id='stripe-component'>
