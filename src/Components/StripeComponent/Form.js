@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { injectStripe, CardNumberElement, CardExpiryElement, CardCVCElement } from 'react-stripe-elements';
 import { connect } from 'react-redux';
+import {clearCart} from '../../redux/reducer'
 import {withRouter} from 'react-router-dom';
 import { makeStyles } from "@material-ui/core";
 import swal from 'sweetalert';
@@ -14,6 +15,7 @@ function Form(props) {
     const [name] = useState('');
 
     const handleSubmit = async (e) => {
+      
         e.preventDefault();
         try {
             let token = await props.stripe.createToken({ name: name });
@@ -34,6 +36,7 @@ function Form(props) {
         } catch (e) {
             throw e;
         }
+        props.clearCart()
     }
 
     const classes = useStyles();
@@ -83,4 +86,8 @@ const useStyles = makeStyles({
     }
 })
 
-export default connect(mapStateToProps)(injectStripe(withRouter(Form)));
+const mapDispatchToProps = {
+    clearCart
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(injectStripe(withRouter(Form)));

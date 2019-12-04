@@ -14,6 +14,7 @@ const LOGOUT = 'LOGOUT'
 const ADD_DEVICE_TO_CART = 'ADD_DEVICE_TO_CART'
 const GET_CART = 'GET_CART'
 const REMOVE_DEVICE_FROM_CART = 'REMOVE_DEVICE_FROM_CART'
+const CLEAR_CART = 'CLEAR_CART'
 
 export function addDeviceToCart(productName, productPrice, productImage, productSize, productColor, productStorage, pandaCare, productType, productRam, productProcessor){
     console.log(productImage)
@@ -39,6 +40,13 @@ export function removeDeviceFromCart(productId){
     return {
         type: REMOVE_DEVICE_FROM_CART,
         payload: productId
+    }
+}
+
+export function clearCart(){
+    return{
+        type: CLEAR_CART,
+        payload: []
     }
 }
 
@@ -92,6 +100,8 @@ export default function reducer(state = initialState, action){
         case REMOVE_DEVICE_FROM_CART:
             state.cart.splice(payload, 1)
             return {...state}
+        case CLEAR_CART:
+            return {...state, cart: payload}
         default:
             return state;
     }
