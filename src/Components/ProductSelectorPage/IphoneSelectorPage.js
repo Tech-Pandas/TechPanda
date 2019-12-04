@@ -254,7 +254,7 @@ function ProductSelectorPage(props){
                         <div className='product-options'>
                             <div className='product-option'>
 
-                                <img className='product-selector-images' src='https://cdn.macrumors.com/article-new/2019/09/iphone11prolineup.jpg' alt='pic' />
+                                <img className='product-selector-images-3' src='http://bazaaronlinestores.com/wp-content/uploads/2019/10/i11pro.jpg'  alt='pic' />
                                 <p className='product-selector-heading-2'>iPhone 11 Pro</p>
                                 <p className='product-selector-heading-3'>5.8" display</p>
                                 <p className='product-selector-heading-3'>From $999</p>
@@ -276,22 +276,38 @@ function ProductSelectorPage(props){
                         <h1 className='product-selector-heading'>Choose a color</h1>
                         <div className='product-options'>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-space-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989577' alt='pic' />                             
+                                {Max ? (
+                                    <img className='product-selector-images-4' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-space-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989577' alt='pic' />  
+                                ) : (
+                                    <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-space-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989577' alt='pic' />  
+                                )}                           
                                 <p className='product-selector-heading-2'>Space Gray</p>
                                 <button className='product-selector-button' onClick={() => chooseSpaceGray()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-silver-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989256' alt='pic' />
+                                {Max ? (
+                                    <img className='product-selector-images-4' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-silver-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989256' alt='pic' />
+                                ) : (
+                                    <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-silver-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954989256' alt='pic' />
+                                )}
                                 <p className='product-selector-heading-2'>Silver</p>
                                 <button className='product-selector-button' onClick={() => chooseSilver()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-midnight-green-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990073' alt='pic' />
+                                {Max ? (
+                                    <img className='product-selector-images-4' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-midnight-green-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990073' alt='pic' />
+                                ) : (
+                                    <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-midnight-green-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990073' alt='pic' />
+                                )}
                                 <p className='product-selector-heading-2'>Midnight Green</p>
                                 <button className='product-selector-button' onClick={() => chooseMidnightGreen()}>Select</button>
                             </div>
                             <div className='product-option'>
-                                <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-gold-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990120' alt='pic' />
+                                {Max ? (
+                                    <img className='product-selector-images-4' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-gold-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990120' alt='pic' />
+                                ) : (
+                                    <img className='product-selector-images-2' src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-gold-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566954990120' alt='pic' />
+                                )}
                                 <p className='product-selector-heading-2'>Gold</p>
                                 <button className='product-selector-button' onClick={() => chooseGold()}>Select</button>
                             </div>
@@ -355,7 +371,8 @@ function ProductSelectorPage(props){
                         <div id='review-info-box'>
                             <img className='product-selector-images' src={productImage} alt='pic' />
                             <div id='review-info-box-text'>
-                                <p className='product-storage-option-text-3'>{productReview.name} {productSize}" display</p>
+                                <p className='product-storage-option-text-3'>{productName}</p>
+                                <p className='product-storage-option-text-3'>{productSize}" display</p>
                                 <p className='product-storage-option-text-4'>{productColor}</p>
                                 <p className='product-storage-option-text-4'>{productStorage}</p>
                                 <p className='product-storage-option-text-4'>{pandaCare ? (
