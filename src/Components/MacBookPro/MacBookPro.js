@@ -328,7 +328,8 @@ function MacBookPro(props) {
                         <div id='review-info-box'>
                             <img className='product-selector-images' src={productImage} alt='pic' />
                             <div id='review-info-box-text'>
-                                <p className='product-storage-option-text-3'>{productReview.name} {productSize}" display</p>
+                                <p className='product-storage-option-text-3'>{productName}</p>
+                                <p className='product-storage-option-text-3'>{productSize}" display</p>
                                 <p className='product-storage-option-text-4'>{productColor}</p>
                                 <p className='product-storage-option-text-4'>{productStorage}</p>
                                 <p className='product-storage-option-text-4'>{pandaCare ? (

@@ -234,7 +234,7 @@ function ProductSelectorPage(props){
                         <h1 className='product-selector-heading'>Choose your Google Pixel 4</h1>
                         <div className='product-options'>
                             <div className='product-option'>
-                                <img className='product-selector-images' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440' alt='pic' />
+                                <img className='product-selector-images-3' src='https://lh3.googleusercontent.com/46-MkrqjTXZLED0XeoizNwB29A34Cen5M-Dvre15NOgyH8bq0A1UL-Dqa2VFRe700HK9=rw-w1440' alt='pic' />
                                 <p className='product-selector-heading-2'>Google Pixel 4</p>
                                 <p className='product-selector-heading-3'>Fullscreen 5.7" display</p>
                                 <p className='product-selector-heading-3'>From $799</p>
@@ -321,7 +321,8 @@ function ProductSelectorPage(props){
                         <div id='review-info-box'>
                             <img className='product-selector-images' src={productImage} alt='pic' />
                             <div id='review-info-box-text'>
-                                <p className='product-storage-option-text-3'>{productReview.name} {productSize}" display</p>
+                                <p className='product-storage-option-text-3'>{productName}</p>
+                                <p className='product-storage-option-text-3'>{productSize}" display</p>
                                 <p className='product-storage-option-text-4'>{productColor}</p>
                                 <p className='product-storage-option-text-4'>{productStorage}</p>
                                 <p className='product-storage-option-text-4'>{pandaCare ? (
